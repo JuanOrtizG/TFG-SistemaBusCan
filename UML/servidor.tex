@@ -1,0 +1,27 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin {sequencediagram}
+
+\newthread [blue!20] {main}{main}
+\newinst [1]{require}{Require}
+\newinst [1]{serial}{PortSerial}
+\newinst [1]{socket}{Socket}
+\newinst [2]{cliente}{Cliente}
+
+
+\begin{call} {main}{call}{require}{http()}
+\end{call}
+
+\begin{call}{main}{call}{require}{express()}
+ \end{call}
+
+ \begin{call}[1]{main}{call}{require}{socket()}
+ \end{call}
+
+\begin{call} {main}{parser.on()}{serial}{True}
+	\begin{call}{serial}{socket.emit()}{socket}{true}
+			\begin{call}{socket}{data(JSON)}{cliente}{true}
+			\end{call}
+	\end{call}
+	
+\end{call}
+\end {sequencediagram}

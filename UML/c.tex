@@ -1,0 +1,27 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin {sequencediagram}
+\newthread [blue!20] {main}{Main}
+\newinst [4]{sql}{Mysql}
+\newinst {port}{SerialPort}
+
+\begin{call}{main}{mysql-Init()}{sql}{return value}
+\end{call}
+\begin{call}{main}{mysql-real-connection()}{sql}{return value}
+\end{call}
+\begin {call}{main}{init-com()}{port}{return value}
+\end {call}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{sdblock}{Loop n}{Extracción de n Datos}
+	\begin{call}{main}{serial-port()}{port}{return data}
+	\end{call}
+	%%%%%%%%%%%%%%%%%%%%
+    \begin{call}{main}{mysql-query(data,tiempo)}{sql}{}
+	\end{call}
+\end{sdblock}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{call}{main}{end-com()}{port}{ }
+\end{call}
+\begin{call}{main}{mysql-close()}{sql}{}
+\end{call}
+
+\end {sequencediagram}

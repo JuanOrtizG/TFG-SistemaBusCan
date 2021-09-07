@@ -1,0 +1,8 @@
+
+%TEXTO EN JAVASCRIPT%%%%%%%%%%%%%%%%%%
+
+Client-side JavaScript extiende el núcleo del lenguaje proporcionando objetos para controlar un navegador y su modelo de objetos (DOM,  Document Object Model por sus siglas en inglés). Por ejemplo, las extensiones del lado del cliente permiten que una aplicación coloque elementos en un formulario HTML y responda a eventos del usuario, tales como clicks del ratón, ingreso de datos al formulario y navegación de páginas.
+•	Server-side JavaScript extiende el núcleo del lenguaje proporcionando objetos relevantes a la ejecución de javaScript en un servidor. Por ejemplo, las extensiones del lado del servidor permiten que una aplicación se comunique con una base de datos, proporcionar continuidad de la información de una invocación de la aplicación a otra, o efectuar manipulación de archivos en un servidor.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

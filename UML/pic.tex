@@ -1,0 +1,32 @@
+
+\begin {sequencediagram}
+\newthread {main}{Main}
+\newinst [1]{conf}{initCAN}
+\newinst [4]{can}{BufferCAN}
+\newinst [1]{serial}{PuertoSerial}
+
+ 
+
+%%%%%enlaces%%%%%
+
+\begin{call}{main}{init-CAN()}{conf}{}
+\end{call}
+\begin{call}{main}{init-Serial()}{serial}{}
+\end{call}
+
+
+\begin{sdblock}[blue!10]{Loop}{}
+	
+
+	\begin{call}[2]{main}{can-buffer-lleno()}{can}{return true/false}
+	\end{call}
+
+	\begin{call}[2]{main}{can-cant-bytes-rx()}{can}{return dato}
+	\end{call}
+    
+    \begin{call}[2]{main}{enviar(dato)}{serial}{}
+	\end{call}
+    
+    
+	\end{sdblock}
+\end {sequencediagram}

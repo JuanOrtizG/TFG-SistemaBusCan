@@ -1,0 +1,141 @@
+
+
+%%%%%%%%%%%%%%%%%%%% Fuente y color %%%%%%%%%%%%%%%%%%%%%%%%%
+
+%para resaltar el texto de color y en negrita.
+
+	\textcolor{blue}{\textbf {(buscar referencias ISO)}}
+    
+    
+    
+% para graficas de tipo historietas.
+paquete: 
+	\usepackage [colorinlistoftodos]{todonotes}
+comando:
+    \todo{Como se manejan estas isos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    
+    
+    ($t_b$)  %t_sub_b
+    
+%%%%%%%%%%%%%%%%%%%%%%% ECUACiÓN %%%%%%%%%%%%%%%%%%%%%%%%%%%   
+
+% Subindide:  ($t_b$)  %t_sub_b
+
+%citar ecuacion:  \textbf{Ecuación \ref{eq1}}
+
+%insertar ecuacion:
+
+ \begin {equation}
+ \label {eq1}
+ t_b = \frac {1}{f_b}
+ \end {equation}
+ 
+%% 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% IMAGEN %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./_imagenes/tiempo_bit.png}
+	\caption[Segmento del tiempo de un bit.]{Segmento del tiempo de un bit.\textbf{ Fuente:} \cite{DSEEPC}.}
+	\label{TB} % Etiqueta para la referencia.
+\end{figure}
+
+% CITAR IMAGEN
+
+\textbf{Figura \ref{TB}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%% LISTAS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin {itemize}
+
+	\item primer item.
+	\item Segundo Item. 
+	\item Tercer Item. 
+	\item Cuarto Item.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%% tabla %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+País & Ciudad \\
+\hline \hline
+España & Madrid \\ \hline
+España & Valencia \\ \hline
+Francia & París \\ \hline
+\end{tabular}
+\caption{tabla muy sencilla.}
+\label{tabla: sencilla}
+\end{center}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%Caracteres raros%%%%%%%%%%%%%%%%%%%
+-20$^{\circ}$C a 85$^{\circ}$C  %grados centigrados
+\%   imprime el porcentual
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%TABLAS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Por ejemplo, la tabla (\ref{tabla:sencilla}):
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+País & Ciudad \\
+\hline \hline
+España & Madrid \\ \hline
+España & Valencia \\ \hline
+Francia & París \\ \hline
+\end{tabular}
+\caption{Tabla muy sencilla.}
+\label{tabla:sencilla}
+\end{center}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% Para lenguaje C %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent
+Escribe el siguiente código en un fichero llamado \texttt{hello.c}:
+ 
+\begin{lstlisting}[style=C]
+#include <stdio.h>
+int main(int argc, char* argv[]) {
+  puts("Hola mundo!");
+}
+\end{lstlisting}
+ 
+\noindent
+Ahora compila usando \texttt{gcc}:
+ 
+\begin{listing}[style=consola, numbers=none]
+$ gcc  -o hello hello.c
+\end{listing}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+

@@ -1,0 +1,236 @@
+%*****************************************************************************%
+%   Clase de documento                                                        %
+%*****************************************************************************%
+\documentclass[oneside, a4paper, 12pt]{book}
+
+%\hyphenation{in-dus-tria-les ge-ne-ral-men-te ins-ta-la-da e-la-bo-ra-do fun-cio-na-li-dad co-rres-pon-de di-gi-ta-les e-le-men-tos pos-te-rior-men-te mo-ni-to-ri-za-cion de-sa-rro-lla-do-ra o-pe-ra-ción u-sua-rios com-pa-ti-bi-li-dad ha-cer re-gis-tros o-pe-ra-cio-nes ins-ta-la-do pa-la-bras ma-ne-ra ha-bi-li-tan mul-ti-ple-xa-cion de-sa-rro-llo es-ca-la-ble se-rial bu-ses di-fe-ren-tes pro-ble-mas com-ple-jas a-rre-glos e-rro-res abs-trac-tos ac-ce-so co-ne-xio-nes mo-de-lo dis-po-si-ti-vo he-xa-de-ci-mal fa-bri-can-tes re-gis-tro di-fe-ren-cia re-a-li-za bas-tan-tes res-pec-ti-vos e-le-men-to co-or-de-na-da pri-me-ra-men-te re-fe-ren-te co-rres-pon-dien-te de-sa-rro-lla-das de-sa-rro-lla-ron o-pe-ra-ti-vos re-que-ri-mien-tos dis-po-si-ti-vos si-guien-tes ca-pa-ci-tan-cia di-se-ña-dos es-cri-tu-ra di-se-ño ge-ne-ra-dor ins-tru-men-tos}
+
+
+
+%*****************************************************************************%
+%   Paquetes principales                                                      %
+%*****************************************************************************%
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+%*****************************************************************************%
+%   Paquetes de figuras                                                       %
+%*****************************************************************************%
+\usepackage{float}
+\usepackage{graphicx}
+%*****************************************************************************%
+%   Paquetes para los titulos de graficos y tablas                            %
+%*****************************************************************************%
+\usepackage{caption}
+\captionsetup{font=normal,labelfont=bf}
+%*****************************************************************************%
+%   Paquetes para colorear fuentes                                            %
+%*****************************************************************************%
+\usepackage [colorinlistoftodos]{todonotes}
+
+%*****************************************************************************%
+%   Paquete para Diagrama de secuencia                     %
+%*****************************************************************************%
+\usepackage{tikz-uml}
+\usepackage[underline=true,rounded corners=false]{pgf-umlsd}
+
+%*****************************************************************************%
+%   Paquetes para fuente Arial                                                %
+%*****************************************************************************%
+\usepackage[scaled]{uarial}
+\renewcommand*\familydefault{\sfdefault}
+%*****************************************************************************%
+%   Paquete para ver la bibliografia en el índice general                     %
+%*****************************************************************************%
+\usepackage{url} % para usar url en la bibliografia
+\usepackage[nottoc, notlot, notlof]{tocbibind}
+%*****************************************************************************%
+%   Paquete para usar paragraphic........................                     %
+%*****************************************************************************%
+
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+%*****************************************************************************%
+%   Paginación y Márgenes                                                     %
+%*****************************************************************************%
+\usepackage{geometry}
+\geometry{top=27mm, bottom=27mm, left=35mm, right=25mm}
+%*****************************************************************************%
+%   Estilos de página Fancy                                                   %
+%*****************************************************************************%
+\usepackage{fancyhdr}
+% * <sertol7@hotmail.com> 2015-01-14T16:44:49.680Z:
+%
+%  Esto le cambie todo, el formato de los encabezados y pie de pagina le generaban error
+%
+\pagestyle{fancy}
+\fancyhead[L]{\vspace*{-3.5cm}{\fontsize{10pt}{10pt} {Universidad Nacional de Asunción}}\\{\fontsize{10pt}{10pt}{Trabajo Final de Grado}}\\{\fontsize{10pt}{10pt}{\ \ }}\\{\fontsize{10pt}{10pt}{\ \ }}}
+\fancyhead[C]{\vspace*{-3.5cm}{\fontsize{20pt}{10pt}{{\ \ }}}\\{\fontsize{20pt}{12pt}{\ \ }}\\{\fontsize{20pt}{10pt}{{\ \ }}}\\{\fontsize{20pt}{12pt}{\ \ }}\\{\bfseries \fontsize{8pt}{8pt}{DISEÑO E IMPLEMENTACIÓN DE UN SISTEMA DE MONITOREO VEHICULAR MEDIANTE EL PROTOCOLO BUS CAN}}}
+
+\fancyhead[R]{\vspace*{-3.5cm}{\fontsize{10pt}{10pt}{{Facultad de Ingeniería}}}\\{\fontsize{10pt}{12pt}{Ingenier\'ia Electrónica}}\\{\fontsize{10pt}{10pt}{\ \ }}\\{\fontsize{10pt}{10pt}{\ \ }}}
+
+\setlength{\headheight}{1cm}
+%\fancyfoot[L]{\fontsize{10pt}{12pt}Juan Ortíz}
+\fancyfoot[C]{{\fontsize{10pt}{12pt}{{Juan Ortíz}}}\\{\fontsize{10pt}{12pt}\thepage}}
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\footrulewidth}{1.5pt}
+
+\fancypagestyle{plain}{%					% Permite que al comenzar los capítulos también obtengan el pagestyle <<fancy>>
+\thispagestyle{fancy}
+}
+%*****************************************************************************%
+%   Titlesec                                                                  %
+%*****************************************************************************%
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\bf\large\filcenter}{\chaptertitlename\ \thechapter}{1pt}{}[]
+\titleformat{\section}[hang]{\bf\normalsize}{\thesection.}{5mm}{}
+\titleformat{\subsection}[hang]{\bf\normalsize}{\thesubsection.}{5mm}{}
+\titlespacing*{\chapter}{0pt}{-1.5\baselineskip}{1\baselineskip}
+%*****************************************************************************%
+%   Interlineado                                                              %
+%*****************************************************************************%
+\usepackage{setspace}
+\doublespacing
+%*****************************************************************************%
+%   Paquete para colores														                          %
+%*****************************************************************************%
+\usepackage{color}
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+%*****************************************************************************%
+%   Inclusion de codigos de lenguajes de programacion                          %
+%*****************************************************************************%
+\usepackage{listings}
+\lstset{ 
+language=C++,                % choose the language of the code
+framerule=0pt,
+basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+numbersep=5pt,                  % how far the line-numbers are from the code
+backgroundcolor=\color{gray97}, % choose the background color. You must add \usepackage{color}
+commentstyle=\color{gray45},
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=single,   		% adds a frame around the code
+tabsize=2,  		% sets default tabsize to 2 spaces
+captionpos=b,   		% sets the caption-position to bottom
+breaklines=true,    	% sets automatic line breaking
+breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+escapeinside={\%}{)}          % if you want to add a comment within your code
+   }
+
+% minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+   {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+\lstdefinestyle{consola}
+   {basicstyle=\scriptsize\bf\ttfamily,
+    backgroundcolor=\color{gray75},
+   }
+
+\lstdefinestyle{C}
+   {language=C,
+   }
+	
+%*****************************************************************************%
+%   Para utilizar simbolo del euro                               %
+%*****************************************************************************%
+\usepackage{eurosym}
+%*****************************************************************************%%   Combinación de filas y columnas de tablas                                 %
+%*****************************************************************************%
+%\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{multirow, array} 
+\usepackage{rotating}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tabulary}
+\usepackage{colortbl}
+
+%*****************************************************************************%
+%   Paquete para hacer que las referencias sean hipervinculos                 %
+%*****************************************************************************%
+\usepackage[pdftex]{hyperref}
+\hypersetup{colorlinks,%
+citecolor=black,%
+filecolor=black,%
+linkcolor=black,%
+urlcolor=black,%
+}
+
+\begin{document}
+%*****************************************************************************%
+%  Esta parte es para cambiar el formato de los títulos, capítulos, secciones %    
+%*****************************************************************************%
+\renewcommand{\contentsname}{ÍNDICE GENERAL}
+\renewcommand{\chaptername}{CAPÍTULO}
+\renewcommand{\appendixname}{APÉNDICE}
+\renewcommand{\bibname}{BIBLIOGRAFÍA}
+\renewcommand{\listfigurename}{ ÍNDICE DE FIGURAS}
+\renewcommand{\listtablename}{ÍNDICE DE TABLAS}
+\renewcommand{\tablename}{Tabla}
+
+%*****************************************************************************%
+%   Inclusión de las partes del libro                                         %
+%*****************************************************************************%
+
+%   Esta es la portada  
+\include{portada}
+
+%   Páginas preliminares 
+\frontmatter
+
+%\include{preliminares}
+
+%		Cuerpo del libro
+\mainmatter
+
+%   Índices                                                                   
+\tableofcontents
+\listoftables
+\listoffigures
+
+%		A partir de aqui estan los capítulos del libro
+
+
+%\include{Cap01}
+
+%\include{Cap02}
+
+\include{Cap03}
+
+%\include{Cap04}
+
+%\include{Cap05}
+
+%\include{Cap06}
+
+
+
+%\include{conclusion}
+
+\include{bibliografia}
+
+%Esta instruccion es para que aparezca la palabra
+%apencice en el indice                                                   
+%\addcontentsline{toc}{chapter}{APÉNDICE}
+%   Apéndice  (appendix)  
+%\appendix
+%\appendixpage
+%\input{apendice}
+
+\end{document} 

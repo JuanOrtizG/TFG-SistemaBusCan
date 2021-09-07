@@ -1,0 +1,29 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin {sequencediagram}
+\newthread [blue!20] {c}{Cliente}
+
+\newinst [1]{p}{Servidor PHP}
+\newinst [3]{sql}{Mysql}
+
+
+%\newinst {port}{SerialPort}
+
+%\begin {call}{p}{mysql_connect()}{sql}{}
+%\end{call}
+%\begin {call} {p}{mysql_connect()}{sql}{}
+%\end{call}
+
+\begin{call}[1]{p}{mysql-connect()}{sql}{}
+ \end{call}
+ \begin{call}[1]{p}{mysql-select-db()}{sql}{}
+ \end{call}
+ 	\begin{call}{c}{get()}{p}{json-encode()}
+ 		\begin{call}{p}{mysql-query()}{sql}{}
+        \end{call}
+        \begin{call}[2]{p}{mysql-fetch-array()}{p}{}
+        \end{call}
+ 	
+	\end{call}
+
+
+\end {sequencediagram}

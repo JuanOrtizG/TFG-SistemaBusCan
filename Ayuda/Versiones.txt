@@ -1,0 +1,6 @@
+%versión 5 24/08/2015
+%En esta version se incluyeron los temas de ISO, SAE y CIA. 
+%Estos cambios fueron agregados a la ultima parte del capitulo2.
+
+
+%Versión 6 // en proceso

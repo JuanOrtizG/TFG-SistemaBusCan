@@ -1,0 +1,43 @@
+\begin {sequencediagram}
+\newthread {main}{Main}
+
+
+\newinst [1]{serial}{PuertoSerial}
+\newinst [0]{name}{Init}
+\newinst [1]{can}{BufferCAN}
+
+\newinst [0]{pgn}{PGN}
+\newinst [0]{int}{interrupción}
+ 
+
+%%%%%enlaces%%%%%
+
+\begin{call}{main}{J1939init()}{name}{true}
+	\begin{call} 
+		{name}{address claim}{can}{true-false}
+	\end{call}
+\end{call}
+
+\begin{call}{main}{timer2()}{name}{true}
+\end{call}
+
+\begin{call}{main}{serial-init()}{name}{true}
+\end{call}
+
+\begin{call}{main}{serial-isr()}{int}{return PID}
+\end{call}
+
+
+\begin{sdblock}[blue!10]{Loop}{}
+
+	\begin{call}[2]{main}{j1939GetMessage()}{can}{return data}
+	\end{call}
+	
+	\begin{call}[2]{main}{lecturaParametro}{pgn}{true}\end{call}
+    
+    \begin{call}[2]{main}{print(JSON)}{serial}{void}
+	\end{call}
+    
+    
+	\end{sdblock}
+\end {sequencediagram}

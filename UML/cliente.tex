@@ -1,0 +1,31 @@
+
+
+
+\begin {sequencediagram}
+\newthread {cliente}{Cliente}
+\newinst [4]{SerG}{Servidor Google}
+
+\newinst {SerPHP}{Servidor PHP}
+\newinst {chart}{Chart}
+
+%%%%%enlaces%%%%%
+\begin{call}[2]{cliente}{google.charts.load()}{SerG}{}
+\end{call}
+
+\begin{call}{cliente}{google.visualization()}{SerG}{}
+	
+	\begin{call}{SerG}{}{chart}{}
+	\end{call}
+\end{call}
+%%%%%%%BLOCK %%%%%%
+
+\begin{sdblock}[blue!10]{SetInterval}{Cada 100ms}
+	\begin{call} [2]{cliente}{\$.get()}{SerPHP}{return JSON("datos")}
+	\end{call}
+    %%%%%%%%%%%%%%%
+    \begin{call}[2]{cliente}{Chart.draw("datos")}{chart}{return draw}
+	\end{call}
+\end{sdblock}
+
+
+\end {sequencediagram}
