@@ -89,66 +89,206 @@ A modo de resumen se indica las funciones básicas de los botones:
 \item MENU + DOWN: activa y desactiva el DM2 (Diagnostics Message 2, por sus siglas en inglés), esta opción no esta disponible en la versión básica.
 \end{itemize}
 
-\subsection{Parametros SAE J1939 Proveídos por el Simulador}
 
-\begin{itemize}
-\item Engine Speed (RPM): Revoluciones por minuto.
-\item Wheel Based Vehicle Speed (MPH): Velocidad del vehículo, 
-\item Engine Total Hours of Operation: Horas de operación del vehículo.
-\item Response Request for Engine Total Hours of Operation: Horas totales de operación del vehículo.
-\item Engine Clock: Reloj del motor.
-\item Response for Engine Clock Request
-\item Engine Clock setup: Configuración del reloj del motor.
-\item Engine Oil Pressure: Presión de aceite del motor.
-\item Engine Coolant Temperature: Temperatura del refrigerante.
-\item Battery Potential (Voltage) Switched: Potencial de la batería del vehículo.
-\item SAE J1939 Fuel Level: Nivel de Combustible. 
-\item Engine Turbocharger Boost Pressure: Presión del turbocompresor.
-\item Engine Instant Fuel Economy: Economía instantanea del combustible. 
-\item Engine Fuel Rate: Tasa de Combustible del motor.
-\item Accelerator Pedal Position: Posición del pedal de aceleración.
-\item Engine Intake Manifold 1 Temperature
-\item Engine Load \% at Current Speed: Carga del motor a la velocidad actual.
-\item Engine Trip Distance: Recorrido del motor.
-\item Total Vehicle Distance: Recorrido total del motor desde su fabricación.
-\item Cruise light: Luz indicadora de crucero.
-\item Engine Address Claim: Dirección de reclamo del motor.
-\item Engine Address CANNOT Claim
-\item Engine Response Request for Address Claim
-\item Engine Address Conflict Response with Contention
-\item Engine DM1 Red Stop Lamp OFF status
-\item Engine DM1 Amber Lamp OFF status
-\item SAE-J1939 Acknowledge protocol
-\item Engine DM1 Health-heart-beat*
-\item Water in fuel Indicator Health-heart-beat*: Indicador de agua en el combustible.
-\item Engine Oil Temperature: Temperatura de aceite.
-\item Engine Fuel Temperature (F): Temperatura del Combustible.
-\item Engine Oil Level (\%): Nivel de aceite en el vehículo.
-\item Engine Coolant Pressure (PSI): Presión del refrigerante del motor.
-\item Engine Coolant Level (\%): Nivel del refrigerante del motor.
-\item A/C High Pressure Fan Switch
-\item Refrigerant Low Pressure Switch: Interruptor de baja presión del refrigerante.
-\item Refrigerant High Pressure Switch: Interruptor de alta presión del refrigerante.
-\item Engine Wait to Start Lamp
-\item EPS (Engine Protection System)has Shutdown Engine
-\item EPS Approaching shutdown
-\item EPS Timer Override
-\item EPS Timer State
-\item EPS Configuration
-\item Engine Alarm Acknowledge: Reconocimiento del estado de alarma del motor.
-\item Engine Alarm Output Command Status: Estado del mando de salida de la alarma del motor.
-\item Engine Air Shutoff Command Status: Estado del mando del apagado del aire del motor.
-\item Engine Overspeed Test: Prueba de exceso de velocidad del motor.
-\item Engine Air Inlet Pressure: Presión de entrada de aire del motor.
-\item Engine Exhaust Gas Temperature: Temperatura de Gas de Escape del Motor.
-\item Actual Engine - Percent Torque: Par real del motor.
-\item Nominal Friction - Percent Torque: Fricción nominal - Porcentaje del torque.
-\item Engine Exhaust Gas Recirculation: Recirculación de gases de escape.
-\item Mass Flow Rate:  Índice de fluidez de masa
-\item Engine Inlet Air Mass Flow Rate (MFR): Índice de fluidez de masa de la entrada de aire del motor. 
-\item Vehicle Identification Number (VIN): Identificación del vehículo.
-  \cite{param}.
-
-\end{itemize}
 	
 \subsection{Medición de las Pruebas Realizadas}
+Se realiza una prueba con el simulador y para ello conectamos un bus entre el hardware y el simulador J1939, alimentados ambos por una fuente de tensión de 12v. Como se observa en la \textbf{Figura \ref{simulador_ref_c6}}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./Cap6imagen/simulador_fig_c6.jpg}
+	\caption [Conexión del Simulador J1939.]{Conexión del Simulador J1939 \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{simulador_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+Se conecta el modulo Xbee receptor al puerto USB de la computadora y se inicia el software al acceder en la página web, \textbf{Figura \ref{receptor_ref_c6}},  se selecciona el sistema J1939 y con el botón escucha se va recibiendo los datos enviados. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./Cap6imagen/receptor_fig_c6.jpg}
+	\caption [Receptor ubicado en el puerto USB.]{Receptor ubicado en el puerto USB \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{receptor_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+Se selecciona la opción datos y observamos todas las tramas J1939 que está presente en el bus, aquí se puede observar la dirección de destino y origen de los dispositivos, los 8 bytes de datos en el cual los valores FF significa que dichos datos no están disponibles, pero los demás datos distintos a FF significan que son datos reales y disponibles, también podemos observar la prioridad de los mensajes que varía entre 3 y 6 según la \textbf{Figura \ref{escucha_ref_c6}}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap6imagen/escucha_fig_c6.png}
+	\caption [Datos leídos del BUS CAN J1939.]{Datos leídos del BUS CAN J1939 \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{escucha_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+
+También se puede observar la frecuencia de tipos de paquetes CAN presentes en el bus, en la \textbf{Figura \ref{paquetes_ref_c6}}, los paquetes 0xF004 han sido recibidos 102 veces y los paquetes 0xFEF2 solamente 2 veces han sido captados. Hay varias Tramas CAN que el simulador nos envía y mientras van apareciendo, el hardware los va captando y a su vez enviando al camputador para su visualización. En el caso de la 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap6imagen/paquetes_fig_c6.png}
+	\caption [Tramas CAN J1939 presentes.]{Tramas CAN J1939 presentes \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{paquetes_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+
+
+
+En la \textbf{Figura \ref{real_ref_c6}} siguiente podemos observar la distribución de los datos aleatorios que van dejando el simulador en el bus, en este caso pertenece a la velocidad  del vehículo. Se puede ver la forma en la cual el simulador distribuye los datos con el tiempo.  Los datos van ingresando y el programa ajusta la gráfica para que quepan todos los datos y se pueda observar su comportamiento.  
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap6imagen/real_fig_c6.png}
+	\caption [Datos de Velocidad del BUS CAN J1939.]{Datos de velocidad del BUS CAN J1939 \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{real_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+
+En la \textbf{Figura \ref{gauge_ref_c6}} observamos una visualización en formato de tablero, para visualizar los datos manera familiar a la de un tablero de vehículo. 
+Para obtenerlo, presionamos velocidad y luego activar, para poder filtrar de entre todas las tramas la trama que contiene los datos de la velocidad, se observa una captura de velocidad de 158 metros por segundo. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap6imagen/gauge_fig_c6.png}
+	\caption [Tablero de Velocidad J1939.]{Tablero de velocidad J1939 \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{gauge_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+Para el sistema OBD II fue puesta a prueba el sistema en tres vehículos de las marcas Toyota 2019, Hyundai Creta 2021 y Hyundai Tucson 2011, en donde se realizó las medidas de distintos sensores para obtener datos de revoluciones por minuto del motor, voltaje de batería, velocidad y lectura de lista de sensores presentes en el vehículo,etc. Se puede ver en las \textbf{Figuras \ref{auto_ref_c6}, \ref{creta_ref_c6} y \ref{tucson_ref_c6} }  las imágenes de los tipos de vehículo automotor usados en las pruebas. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap6imagen/auto_fig_c6.jpg}
+	\caption [Vehículo utilizado para la Prueba OBD II.]{Vehículo utilizado para la Prueba OBD II \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{auto_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap6imagen/creta_fig_c6.jpg}
+	\caption [Vehículo Creta 2021 utilizado para la Prueba OBD II.]{Vehículo Creta 2021 utilizado para la Prueba OBD II \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{creta_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap6imagen/tucson_fig_c6.jpg}
+	\caption [Vehículo Tucson 2011 utilizado para la Prueba OBD II.]{Vehículo Tucson 2011 utilizado para la Prueba OBD II \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{tucson_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+En la \textbf{Figura\ref{panel_ref_c6}}observamos las consultas soportadas actualmente por el sistema, que son:
+\begin{itemize}
+    \item \textbf{Soportes PIDs}: presenta la lista de sensores del vehículo. 
+    \item \textbf{Consulta PID}: sirve para consultar sensores que no soporta el sistema de visualización pero podemos leer la codificación. 
+    \item \textbf{Revoluciones}: sirve para visualizar las revoluciones por minuto del motor vehicular.
+    \item \textbf{Batería, Temperatura y velocidad} son otras visualizaciones soportadas.     
+\end{itemize}
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap6imagen/soportes_fig_c6.png}
+	\caption [Panel Principla OBD II.]{Panel Principal OBD II \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{panel_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+
+
+En la \textbf{ Figura\ref{consola_ref_c6}} se pueden ver en modo consola las lecturas de algunos sensores del vehículo Toyota como las revoluciones por minuto, velocidad, niveles de batería y otros. Para el momento de la captura de imagen el sistema indicaba mediciones de rpm (revoluciones por minuto) del motor. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap6imagen/consola_fig_c6.png}
+	\caption [Datos recibidos del Vehículo.]{Datos recibidos del Vehículo \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{consola_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+
+ Se realizó una lectura de medición de temperatura del aceite de motor en reposo, es decir,  antes de arrancar el motor del vehículo, se observó la siguiente medición que se muestra en la \textbf{Figura \ref{temp_ref_c6}}. La medida fue de 38 grados Celsius, la misma se presenta con un termómetro animado del lado izquierdo y el valor númerico del lado derecho.
+ 
+ \begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap6imagen/temp_fig_c6.png}
+	\caption [Visualización de la medida del sensor de temperatura de aceite del motor en reposo.]{Visualización de la medida del sensor de temperatura de aceite del motor en reposo \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{temp_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+Otra medida de prueba fueron las revoluciones por minuto en estado de reposo, pero con el vehículo encendido, se observa en la \textbf{Figura \ref{rpm_ref_c6}} la lectura obtenida de 872 rpm del motor del vehículo, nuevamente en dos formatos para una lectura familiarizada con el tablero analógico de un vehículo y otra digitalmente. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap6imagen/rpm_fig_c6.png}
+	\caption [Visualización de la medida del sensor de revoluciones por minuto con el motor en reposo.]{Visualización de la medida del sensor de revoluciones por minuto con el motor en reposo.  \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{rpm_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+
+Para el vehículo modelo \textbf{Tucson 2011} se realizaron las pruebas de: 
+
+
+\begin{itemize}
+    \item lista de algunos sensores presentes en el vehículo
+    \item Sensor de velocidad
+    \item Voltaje de Batería en contacto marca una tensión de 12V y una vez encendido el motor marca una tensión de 14V, con lo cuál se puede concluir que son lecturas coherentes, pues el generador está activo y recargando la batería del vehículo. 
+    \item Medida de revoluciones por minuto del motor en estado de reposo. 
+    \item tiempo de encendido del motor
+\end{itemize}
+
+Algunas de estas  mediciones se muestran en la \textbf{Figura \ref{dash_ref_c6}}, además de una muestra por consola de los datos recibidos del hardware. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap6imagen/dash_fig_c6.jpg}
+	\caption [Visualización de varias medidas de sensores.]{Visualización de varias medidas de sensores.  \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{dash_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+
+El sistema provee una manera de leer los sensores que el hardware no tiene programado para hacerlo. Esto se realiza enviando el código PID deseado y  se traslada el calculo de la trama CAN al cliente. 
+Para el ejemplo se realiza la lectura del temporizador del vehículo, el cual nos indica el tiempo que lleva encendido el automotor. 
+Para ello se consulta el documento SAE J1979, se observa el código PID y la formula requerida de lectura del temporizador, estos datos se introducen en el sistema mediante la interfaz gráfica, \textbf{Figura \ref{consulta_ref_c6}}, una vez presionado el botón \"activar\", el software dibuja  una gráfica en el tiempo de los valores de la consulta. En la \textbf{Figura \ref{grafica_ref_c6}} se observa la lectura del temporizador en el tiempo indicando que el automóvil lleva encendido 650 segundos. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap6imagen/consulta_fig_c6.png}
+	\caption [Visualización de varias medidas de sensores.]{Visualización de varias medidas de sensores.  \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{consulta_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap6imagen/grafica_fig_c6.jpg}
+	\caption [Visualización de varias medidas de sensores.]{Visualización de varias medidas de sensores.  \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{grafica_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+Para el automotor modelo \textbf{Creta 2021} además de leer los mismos datos anteriores, se realizó una prueba en movimiento para medir los datos de los sensores de velocidad. La lectura se visualiza en la \textbf{Figura \ref{vel_ref_c6}} en dónde se compara con el tablero del vehículo.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./Cap6imagen/vel_fig_c6.png}
+	\caption [Comparación de la medida de Velocidad en un vehículo Creta 2021.]{Comparación de la medida de Velocidad en un vehículo Creta 2021.  \textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{vel_ref_c6} % Etiqueta para la referencia.
+\end{figure}
+
+Con estas pruebas se lograron la lectura de los sensores básicos presentes en los vehículos. 
