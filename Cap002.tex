@@ -1,0 +1,1200 @@
+\chapter[Capítulo 2. Marco Teórico y Fundamentos]{Estado del Arte y Marco Teórico}
+
+El presente capítulo se centra en el  marco teórico y los fundamentos de  monitoreo vehicular denominado diagnosis vehicular. En ese contexto, se exponen las principales características de los sistemas de diagnosis vehicular como las tecnologías utilizadas para su desarrollo. Finaliza el capítulo con las conclusiones más relevantes del mismo.
+
+
+\section{Generación de Diagnosis a Bordo}
+
+\subsection{Primera Generación de Diagnosis a Bordo (OBD-I)}
+
+Para notificar a los conductores del estado del vehículo y minimizar la contaminación atmosférica producida por el parque automovilístico, en 1987 se incluyó la primera generación de diagnosis a bordo en las nuevas producciones de vehículos vendidos, esto ocurrió en California (USA). Los vehículos tenían incorporados equipos electrónicos que ofrecían respuestas a demandas realizadas por las organizaciones americanas EPA (\textit{Environmental Protection Agency}) y SAE (\textit{Society Automobile Engineering}). 
+Más tarde se definieron los requisitos de la primera generación de diagnosis a bordo (OBD-I), el cual ofrecía:
+
+\begin{itemize}
+\item Incorporar indicadores luminosos para informar de algún tipo de fallos al conductor.
+\item Poner a disposición de los talleres de reparación un manual de códigos de fallos, para interpretar los errores leídos desde la memoria de los equipos electrónicos.
+\item Incorporar a los equipos electrónicos una memoria para almacenar fallos del vehículo. 
+\item Monitorizar la emisión de gases de escape y relacionar dicha emisión con los fallos de los componentes eléctricos que controlan el funcionamiento del motor.
+\end{itemize}
+
+La primera generación de OBDs fue concebida para notificar sobre el fallo de mecanismos del vehículo que contribuían a las emisiones de gases contaminantes para el medio ambiente. En este grupo de sistemas se incluían:
+
+\begin{itemize}
+\item Todos los sensores importantes del motor: temperatura de refrigeración del motor, temperatura interna del motor, posición de la mariposa, etc.
+\item Sistema de medida de nivel de combustible.
+\item Sistema de recirculación de los gases de escape.
+\end{itemize}
+
+La incorporación de la tecnología electrónica en el sector del automóvil permitió afrontar la necesidad de reducir la contaminación producida por los vehículos a motor, informar al conductor del estado de los mismos y reducir los tiempos para detectar fallos.
+
+\subsection {Segunda Generación de Diagnosis a Bordo (OBD-II)}
+La segunda generación de diagnosis a bordo surge de la necesidad de mejorar las prestaciones del OBD-I:
+
+\begin {itemize}
+\item Mejorar el diagnostico de los datos que ofrece el sensor de oxigeno.
+\item Detección del fallo del motor.
+\item Detección de oxigeno no quemado en la explosión dentro del motor lo cual permitió mejorar la eficiencia de los mismos.
+\item Incorporación de equipos de diagnosis (Scantools). Al detectar fallos ocurridos en los sistemas a bordo del vehículo se genera un código para representar dicho fallo. Dicho código se memoriza en una zona de históricos en el vehículo para ser monitoreado, utilizando Scantools off-line. 
+\end{itemize}
+
+A partir de 1996 se impone de forma masiva la implementación de los OBD-II. Los vehículos de turismo y de mercancías ligeros se vieron obligados a incorporar las nuevas funcionalidades. Una particularidad de los OBD-II, es el requisito de que todos los sistemas y componentes relacionados con el sistema de expulsión de gases deben ser monitorizados para detectar cualquier mal funcionamiento que pudiera dar lugar a un incremento significativo en la emisión de gases nocivos. 
+OBD-II advierte al conductor mediante  el uso de “displays”, el funcionamiento anómalo de alguno de los componentes del vehículo y proporciona los códigos significativos del tipo de fallo y de los componentes defectuosos. Los datos proporcionados por OBD-II permiten determinar con precisión el componente específico que se ha estropeado, ahorrando tiempo y costo de reparación. 
+En OBD-II la luz de chequeo o displays eran presentadas de tres formas:
+\begin{itemize}
+\item Destellos Ocasionales: se produce un parpadeo de forma ocasional cuando el defecto de funcionamiento es momentáneo, en cambio, si el defecto es más grave el parpadeo es continuo.
+\item Destellos constantes: indica que existe un problema que puede ocasionar un daño grave al motor si es que no se repara a tiempo. 
+\item Indicación de fallo grave: se activa cuando se presentan problemas muy graves, y permanece activo mientras el vehículo esté funcionando.
+\end{itemize}
+
+En todos los casos de diagnosis, la información que almacena la computadora central sobre los fallos ocurridos en el automóvil, se obtiene utilizando equipos de hardware concretos y un software apropiado conocido como “Scantools”, utilizando conectores y protocolos estandarizados.
+Dicha información consta de unos códigos también estandarizados, donde cada uno de ellos está asociado a la ubicación física donde se localiza e identifica el fallo.
+Europa estandarizó un sistema similar a OBD-I y OBD-II conocido como EOBD-I (European On Board Diagnostics, por sus siglas en inglés). Dicho estándar se empezó a aplicar a partir del 2001, y a partir de esa fecha todos los automóviles fabricados en Europa incorporan un sistema de diagnosis a bordo para monitorizar las emisiones de gases del motor.
+
+\subsection {Tercera Generación de Diagnosis de a Bordo (OBD-III)}
+
+
+EL objetivo principal de OBD-III es el de minimizar la demora entre la detección de un fallo o funcionamiento defectuoso y la reparación del vehículo. La nueva versión deberá ser capaz de recibir la información proporcionada por OBD-II, interpretarla, enviar conclusiones a los conductores y talleres de reparación con las claves de los fallos detectados, y al mismo tiempo crear  un histórico en un centro de datos, para ser utilizados en diagnosis y diseños futuros.
+
+
+En la  \textbf{Figura \ref{DenB}} se expone el concepto de OBD-III. Los fallos del vehículo son enviados  a un centro de atención al cliente que analiza los datos recibidos. El centro de atención al cliente notifica al cliente las acciones a tomar para eliminar el fallo. El centro de atención al cliente envía al taller la información necesaria para la reparación  y las pruebas posteriores una vez subsanada la avería. También existe una conexión con la central de datos donde se almacena todas las averías del vehículo de manera a obtener un historial de fallos.
+OBD-III es la capacidad de comunicación del vehículo con el mundo exterior. En este sentido se están proponiendo y utilizando diferentes alternativas tecnológicas que permitan leer datos almacenados por OBD-II y enviarlos a Centros de Atención al Cliente, Centro de Datos, Servicios Móviles de Mantenimiento, etc.
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./Cap2imagen/J_concepto_OBDIII.png}
+	\caption[Diagrama de bloques general del concepto OBD-III.]{Diagrama de bloques general del concepto OBD-III.\textbf{ Fuente:} \cite{DE}.}
+	\label{DenB} % preguntar que va aquí
+\end{figure}
+
+
+\section {EL Protocolo BUS CAN}
+
+El desarrollo del  protocolo BUS CAN se debió al incremento de los dispositivos electrónicos en los vehículos como por ejemplo el administrador del motor, controlador de luces, aire acondicionado, entre otros.  El desarrollo del protocolo BUS CAN fue necesario para intercambiar de una mejor manera la información entre los diferentes sistemas de control y sus sensores.
+Cuando no existía el protocolo BUS CAN los vehículos tenían un sistema de control e intercambio de información mediante conexiones punto a punto, es decir, los modulos que deseaban comunicarse entre si, debían estar conectados de forma directa o indirecta.
+En una conexión  directa  cada línea de comunicación está asociada a un par de estaciones o dispositivos, los cuales intercambian información a través de dicha conexión, en cambio, en una conexión indirecta  la comunicación es realizada  mediante una o más estaciones intermediarias.
+A medida que las necesidades de control en los vehículos  aumentaron se necesitaban de muchas conexiones y muchas líneas de comunicación, afectando considerablemente el costo de los materiales y el tiempo de producción del vehículo. La solución a este problema es la conexión de los dispositivos y sensores en un bus serial común para todos.
+
+\subsection {Reseña Histórica}
+La firma alemana Robert Bosch GmbH inició un proyecto de desarrollo de un protocolo de comunicación entre los distintos dispositivos y sensores  electrónicos para el interior del vehículo en el año 1983. Durante la especificación del sistema de bus serial se unió la empresa fabricante de automóviles Mercedez-Benz y el fabricante de semiconductores Intel Corp. 
+Robert Bosch presenta oficialmente el sistema serial BUS CAN en febrero del año 1986, en el congreso de la Sociedad de Ingenieros Automotrices (SAE), celebrado en la ciudad de Detroit, Estados Unidos.
+A un año después, la firma Intel realizo la primera implementación física del protocolo en el controlador CAN 82526 y tiempo después la firma Philips introdujo el controlador CAN 82C200, ambos integrados son la base del desarrollo de los controladores actuales.
+No tardo mucho para que el protocolo BUS CAN trascendiera a ambientes fuera de lo automovilístico, de hecho las primeras aplicaciones aparecieron en las ramas industriales, como por ejemplo sistemas de control de elevadores, maquinas textiles, maquinas de rayos X entre otros.
+Fue en 1992 cuando Mercedez-Benz implementó el protocolo  CAN en sus vehículos Clase "S". El sistema estaba compuesto por dos redes CAN, en la cual una red era de alta velocidad para la comunicación de las ECUs del motor, de la caja de cambios y el tablero de instrumentos; y una red de baja velocidad para el control del aire acondicionado y de los dispositivos electrónicos internos.  Esta implementación de Mercedez-Benz impulso a que otros fabricantes de automóviles comenzaran a utilizar redes BUS CAN en sus modelos de lujo, por ejemplo, BMW, Jaguar, Volvo, Saab, y VW, más tarde se agregaron a la lista Fiat, Renault y PSA. 
+La estandarización del protocolo CAN se logro en el año 1993 bajo la norma ISO 11898. Varias versiones y mejoras aparecieron a partir de entonces, \cite{DSEEPC}.
+
+\subsection {Clasificación de las Aplicaciones Automotrices}
+La SAE estableció la siguiente clasificación formal de acuerdo a las áreas de aplicación dentro del automóvil:
+\begin {itemize} 
+
+\item \textbf{Clase A:} Se refiere a la comunicación con nodos no inteligentes como interruptores, luces, posición del asiento, posición de los espejos, seguros de puertas, etc. La información que se transmite requiere bajas velocidades de transferencia de datos, menor a 10Kbps. La conexión de cables es sencilla y los costos por conexión de nodos es bajo.
+
+\item \textbf {Clase B:} En esta clase se distribuye una mayor cantidad de información, aquí se incluye la actualización del tablero de instrumentos y el control del aire acondicionado. La velocidad de transferencia de datos esta en el orden de 40Kbps
+
+\item \textbf{Clase C:} Comprende la transmisión de datos en tiempo real (real time) con latencia de mensajes menores a 1ms. En esta clase los paquetes de datos transmitidos son mayor a 1 byte a una velocidad que va de 250Kbps a 1Mbps. Dentro de esta categoría están las aplicaciones de comunicación entre los diferentes sistemas de control  de motor, transmisión, estabilidad, frenos y dirección.
+
+\item \textbf{Clase D:} En esta categoría se comunican grandes bloques de datos para aplicaciones de conexión del sistema de radio, teléfono, navegación GPS, consola de interfaz para controladores genéricos que tienen la finalidad de descargar programas, etc. La velocidad de datos requeridas está en el rango de 1 a 10Mbps \cite{DSEEPC}.
+\end{itemize}
+
+\section {Características del Protocolo BUS CAN}
+
+El BUS CAN es un protocolo de comunicación serie que soporta control distribuido en tiempo real con un alto nivel de seguridad y multiplicación  \cite{PSMR}. La red de BUS CAN comunica todos los dispositivos a través de un único bus de comunicación de datos, a estos dispositivos se los denomina comúnmente como nodos. Cada nodo es capaz de interactuar con cualquier otro nodo sin la necesidad de una conexión punto a punto entre ellos.
+El protocolo BUS CAN está definido internacionalmente por el conjunto de estándares ISO 11898, en dónde se definen las caracteristicas del protocolo, la capa física del bus, sus sistemas para alta y baja velocidad entre otros. El otro estándar que lo acompaña en el proceso de desarrollo del BUS CAN es la ISO 16845, el cual proporciona una  metodología y un conjunto de pruebas necesarias para comprobar la conformidad de cualquier implementación BUS CAN con base a la norma ISO 11898-1 \cite{ISO}, de esta manera se garantiza la comunicación entre los nodos BUS CAN de distintos fabricantes.
+
+\section {Capas del Modelo OSI y Capas del Protocolo CAN}
+El modelo de comunicación desarrollado por la ISO (International Organization for Standardization, por sus siglas en inglés), llamado OSI (Open System Interconnection, por sus siglas en inglés), es popular debido a que ayuda a dar una explicación  sencilla de la relación entre el hardware  y los protocolos utilizados en una red. El modelo OSI está conformado por 7 capas en las cuales cada una de las capas cumple con una función específica, que permite realizar la comunicación en una red.
+La arquitectura del protocolo BUS CAN como muestra en la \textbf{Figura \ref{ABC}}, de acuerdo al modelo de referencia OSI incluye tres capas: Física, Enlace de Datos y Aplicación, además establece una capa especial para la gestión y control del nodo llamada Capa de Supervisor. 
+
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./Cap2imagen/protocolocan.pdf}
+	\caption[Arquitectura de protocolos BUS CAN.]{Arquitectura de protocolos BUS CAN.\textbf{ Fuente:} \cite{DSEEPC}.}
+	\label{ABC} % preguntar que va aquí
+\end{figure}
+
+\subsection  {Capa Física}
+
+La capa física es responsable por la transferencia de bits entre diferentes nodos de red y define los aspectos del medio físico para la transmisión de datos entre los nodos. Los más importantes hacen referencia a los niveles de señal, sincronización, representación y tiempos en que los bits se transfieren al bus. 
+Las especificaciones Bosch del protocolo BUS CAN no define una capa física, sin embargo, el estándar  ISO 11898 establece las características que deben cumplir las aplicaciones para la transferencia en alta y baja velocidad.
+ 
+%\subsubsubsection{SubCapa Fisica} %%%%%% lo cambie
+\subsection{SubCapa Física}
+
+La SubCapa de señalización física (PLS, Physical Layer Signalling, por sus siglas en inglés) define la representación, tiempo y sincronización de los bits, y está implementada en los controladores del protocolo BUS CAN.
+
+
+%\subsubsubsubsection {Representación de los bits}
+\subsection{Representación de los Bits}
+
+Una trama BUS CAN está codificada de acuerdo con el método NRZ (No Return Zero, por sus siglas en inglés), el cual produce una frecuencia de menor operación. Sin embargo, en el caso de transmitir una gran cantidad de bits con la misma polaridad, la codificación NRZ no proporciona flancos que puedan utilizarse en la sincronización y para ello se implementa el procedimiento de inserción de bit (bit-stuffing) \textbf{Figura \ref{IB}}, Asegura que en la transmisión de una trama BUS CAN solamente puede haber un máximo de 5 bits consecutivos con la misma polaridad.
+
+
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./Cap2imagen/insercionbit.pdf}
+	\caption[Inserción de bit.]{Inserción de bit.\textbf{ Fuente:} \cite{DSEEPC}.}
+	\label{IB} % preguntar que va aquí
+\end{figure}
+
+%\subsubsubsubsection {Temporización de Bits}
+\subsection{Temporización de Bits}
+
+ El protocolo BUS CAN tiene flexibilidad para determinar los parámetros de velocidad de transferencia, punto de muestreo de bit y número de muestras realizadas en un periodo de bit. Por lo tanto en el diseño de una red BUS CAN se debe tener en cuenta los siguientes conceptos:
+
+\begin{itemize}
+
+\item Tiempo de bit ($t_b$): es el tiempo de duración de un bit.
+\item Velocidad de transferencia nominal ($f_b$): es el número de bits por segundo que una transmisión ideal emite sin sincronización.
+\item Tiempo de bit nominal: se obtiene mediante la \textbf{Ecuación \ref{eq1}} y se divide en cuatro segmentos de tiempo.
+
+\end{itemize}
+
+La longitud de los segmentos de tiempo en un intervalo de bit está definida en multiples enteros definidas por el periodo de un  oscilador $t_{clk}$. El parámetro $t_q$ es la unidad de tiempo discreta más pequeña utilizada en un modulo BUS CAN. En la \textbf{Figura \ref{TB}} se puede observar los segmentos de tiempo de un bit y en la \textbf{Figura \ref{DB}} se puede observar la derivación del tiempo de un bit.
+
+%insertar ecuacion:::
+\begin {equation}
+\label {eq1}
+t_b = \frac {1}{f_b}
+\end {equation}
+% insertar ecuacion___
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./Cap2imagen/tiempo_bit.pdf}
+	\caption[Segmento del tiempo de un bit.]{Segmento del tiempo de un bit.\textbf{ Fuente:} \cite{DSEEPC}.}
+	\label{TB} % preguntar que va aquí
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./Cap2imagen/derivacion_bit.pdf}
+	\caption[Derivación del tiempo de un bit.]{Derivación del tiempo de un bit.\textbf{ Fuente:} \cite{DSEEPC}.}
+	\label{DB} % preguntar que va aquí
+\end{figure}
+
+
+Los cuatro segmentos que forman un tiempo de bit nominal son:
+
+\begin{itemize} % para crear una lista
+\item Segmento de sincronización (Sync Seg): se utiliza para sincronizar los diferentes nodos del bus en un flanco dentro del mismo segmento.
+\item Segmento de tiempo de propagación (Prog Seg): sirve para compensar los tiempos de retardos físicos originados por la propagación de la señal en el bus y por los retardos internos en los nodos.
+\item Segmento de memoria temporal de fase 1 (Phase Seg1): se utiliza para compensar variaciones de tiempo entre los nodos y puede incrementarse durante la resincronización.
+\item Segmento de memoria temporal de fase 2 (Phase seg2): se utiliza para compensar variaciones de tiempo entre los nodos y puede reducirse durante la resincronización.
+
+\item Punto de muestreo (sample point): instante del tiempo en que se lee e interpreta el nivel del bus y se proporciona el valor del bit respectivo.
+\item Tiempo de procesamiento de la información: Es el periodo de tiempo que comienza con el punto de muestreo y se utiliza para calcular el nivel de bit subsecuente.
+\end{itemize}
+
+Para la transferencia de bits entre distintos nodos de red es necesario estudiar la capa física, la cual define parámetros como los niveles de señal, la sincronización, la impedancia de la línea de bus de comunicación de acuerdo con el medio físico adoptado y la velocidad de comunicación entre ellos. En el protocolo BUS CAN no todos los nodos conectados a la red mediante el bus necesitan transmitir a la misma velocidad, esto dependerá de las funciones que desempeña cada nodo y de la importancia de sus mensajes, es por ello que el protocolo BUS CAN posee varias tasas de transmisión de bits especificados  por el estándar ISO. Las velocidades van desde la tasa baja de 125kbps hasta la tasa alta de 1Mbps.
+La capa física define el medio de transmisión. La representación de los niveles lógicos en las líneas del bus de comunicación BUS CAN es realizada de acuerdo al nivel de tensión que serán establecidos en el mismo bus. Existen dos variables para representar las líneas del BUS: CANH y CANL. Un bit recesivo (1 lógico) es representado a través de dos líneas del bus con un nivel de tensión de 2.5V, de modo que la diferencia de potencial entre CANH  y CANL será de 0V, en cambio, un bit dominante (0 lógico) es representado colocando el CANH = 3.5V y el CANL = 1.5V. Esto da una diferencia de potencial para un bit dominante de cerca de 2V, \cite{PSMR}. De esta manera los datos no son representados por bits de nivel “0” y “1”, sino son representados por bits dominantes y recesivos como se muestra en la \textbf{Figura \ref{N_N}} . 
+
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./Cap2imagen/niveles.pdf}
+	\caption[Niveles nominales de la señal BUS CAN ISO 11898.]{Niveles nominales de la señal BUS CAN ISO11898.\textbf{ Fuente:} \cite{PSMR}.}
+	\label{N_N} % preguntar que va aquí
+\end{figure}
+
+Para evitar que los datos sean reflejados en forma de eco en el BUS de comunicación se colocan en los extremos del BUS, entre CANH y CANL, unas resistencias cuyos valores son empíricos, como se muestra en la \textbf{Figura \ref{T_B}}. 
+
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./Cap2imagen/terminador.pdf}
+	\caption[Terminador de bus.]{Terminador de bus.\textbf{ Fuente:} \cite{PSMR}.}
+	\label{T_B} % preguntar que va aquí
+\end{figure}
+
+
+\subsection {Capa de Enlace de Datos}
+%%%% desde aqui
+Esta capa describe el método para el intercambio de datos entre nodos dentro de un medio común.
+Los mensajes transmitidos por la red BUS CAN tiene dos versiones: la 2.0A y la 2.0B, en la primera un campo de la trama, destinado para el identificador,  está formada por 11 bits mientras que en la segunda está formada por 29bits.
+En la capa de enlace para el protocolo BUS CAN se utilizan dos subcapas: MAC (Media Access Control) y LLC (Logical Link Control).
+
+\subsection {MAC}
+
+En la red BUS CAN se brinda procesamiento en tiempo real a todos los nodos conectados al bus.  Para que los nodos tengan acceso al medio se utiliza un mecanismo de arbitraje que se describe a continuación:
+
+\begin{itemize}
+\item Cuando un nodo intenta acceder al medio y comunicarse con otro nodo, la capa de aplicación realiza la petición para envío de trama. En esta situación puede ocurrir que la capa de aplicación de varios nodos inicien el mismo procedimiento simultáneamente. Esto en el protocolo BUS CAN se resuelve asignando prioridades mediante el ID (identificador) de cada mensaje \textbf{Figura \ref{LID}}. Esto se realiza en el diseño del sistema, no puede modificarse de forma dinámica. El ID con menor número binario es el que posee mayor prioridad.
+\item Para acceder al medio se utiliza el CSMA/CD+AMP (Carrier Sense Multiple Access/Collision Detection with Arbitration on Message Priority, por sus siglas en inglés). Esto hace que los nodos que desean transmitir un mensaje en la red deban esperar a que el bus este libre, cuando esto pasa los nodos transmiten un bit de inicio (acceso multiple). Cada nodo lee el bus durante la transmisión y compara bit a bit la trama transmitida con la recibida, si se detecta una diferencia se lleva a cabo un mecanismo de arbitraje.
+
+\end {itemize}
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./Cap2imagen/logicacan.pdf}
+	\caption[Lógica del BUS CAN.]{Lógica del BUS CAN.\textbf{ Fuente:} \cite{PSMR}.}
+	\label{LID} % preguntar que va aquí
+\end{figure}
+
+
+\subsection {LLC}
+Es la capa del enlace de datos cuyas funciones son:
+
+\begin {itemize}
+\item Filtrar mensajes: El ID no define la dirección de destino del mensaje pero si el contenido, cada receptor recibe el mensaje y el mismo receptor determina si es para él o no.
+\item Notificar sobrecarga: si las condiciones internas del receptor requieren un retraso en la transmisión del mensaje, la sub capa LLC transmite una notificación de sobre carga.
+\item Proceso de recuperación: La sub capa LLC da la posibilidad de retransmisión automática de tramas cuando pierde su arbitraje o presenta un error en la transmisión.
+\end{itemize}
+
+\subsection {Transmisión de Mensajes}
+Para la transmisión y control de mensajes se define cuatro tipos de tramas: la trama de datos, la trama remota , la trama de error y la trama de sobre carga.
+
+\begin{itemize} % ITEM PRINCIPAL
+\item Trama de datos:  la trama de datos está formada por 7 campos, \textbf{Figura: \ref{TRD}}.
+
+			\begin{figure}[H]
+			\centering
+				\includegraphics[width=0.9\textwidth]{./Cap2imagen/trama_datos.pdf}
+			\caption[Formato de la trama de datos.]{Formato de la trama de datos.\textbf{ Fuente:} \cite{PSMR}.}
+			\label{TRD} 
+			\end{figure}
+
+				\begin{itemize} %ITEM SECUNDARIO%4tabulaciones
+				\item SoF (Stad of Frame): determina el inicio de la trama de datos y consiste en un bit dominante que sincroniza a todos los nodos activos en la red. Es el mismo para la trama estándar y extendida del BUS CAN.
+				\item Arbitration field: este campo cambia de acuerdo al formato de la trama.
+										
+											\begin {itemize} %ITEM TERCIARIO%8tabulaciones
+											\item El formato estándar está formado por un identificador de $11$ bits  y el bit de petición de transmisión remota RTR (Remote Transmission Request, por sus siglas en inglés). El bit menos significativo del identificador se transmite al último, además, no pueden ser recesivos los 7 bits más significativos.
+											\item En el formato extendido la trama tiene un identificador de $29$ bits, el bit de petición substituta SRR(Sustitute Remote Request, por sus siglas en inglés), el bit de extensión del identificador IDE(Identifier Extension) y el bit RTR. El identificador se divide en dos secciones: la primera denominada base (base ID) que es de $11$bits y la segunda sección de 18 bits conocida como extendida (extended ID). Los bits se transmiten en orden de mayor a menor prioridad.
+											\end {itemize} % FIN DE TERCIARIO
+
+El bit RTR debe ser dominante para ambos formatos de trama de datos y el bit SRR es un bit recesivo, por lo tanto las posibles colisiones entre ambos tipos de formatos de trama que tengan el mismo valor en el campo Base ID se resuelven de manera que el formato de trama estándar predomina sobre el formato de trama extendida. En dicha resolución también se involucra el bit IDE, el cual pertenece al campo de arbitraje en el caso de un formato extendido y se encuentra en el campo de control para el caso de un formato de trama estándar. La transmisión del bit IDE es dominante para el formato estándar y recesivo para el extendido. En la \textbf{Figura: \ref{FEE}} se especifica la diferencia entre el formanto estándar y el formato extendido
+
+			\begin{figure}[H]
+			\centering
+				\includegraphics[width=0.9\textwidth]{./Cap2imagen/datos_est_ext.pdf}
+			\caption[Trama de datos estándar y extendido.]{Trama de datos estándar y extendido.\textbf{ Fuente:} \cite{PSMR}.}
+			\label{FEE} 
+			\end{figure}
+
+
+				
+				
+				\item Control Field: Está compuesto de seis bits, IDE/r$1$, r$0$ y cuatro bits que forman el código de longitud de datos DLC (Data Length Code, por sus siglas en inglés). El primer bit que se transmite es IDE, el cual distingue entre los dos tipos de tramas; seguida r$0$, en nivel dominante y está reservado para futuras aplicaciones del protocolo BUS CAN; finalmente se transmite el DLC para indicar el numero de octetos contenidos en el campo de datos. 
+				\item Data Field: Puede tener una longitud de $0$ a $8$ octetos y contiene el mensaje a transmitir en la trama de BUS CAN. EL bit con mayor prioridad se transfiere primero.
+				\item CRC (Cyclic Redundant Check, por sus siglas en inglés): Es una secuencia de $15$ bits de verificación y un bit delimitador CRC (CRC delimiter) transmitido en un nivel recesivo. Mediante este campo se verifica si la trama fue alterada.
+				\item ACK (Acknowledgement, por sus siglas en inglés): está formada por dos bits : ACK (ACK slot) y delimitador ACK (ACK delimiter), este último siempre se transmite en un nivel recesivo. Todo nodo activo en la red CAN que recibe una trama válida, sobrescribe la ranura ACK con un nivel dominante, y con ello el transmisor verifica que su mensaje se envió correctamente. si por el contrario ningún nodo sobrescribe dicha ranura, el transmisor considera un error de transmisión.
+				\item End of Frame: El fin de la trama de datos y la trama remota están delimitadas por una secuencia de 7 bits recesivos que indican el fin de la trama. Cuando el EOF está activo se realiza una violación al procedimiento de inserción de bit, por ello dicho procedimiento no se aplica a este campo.
+				\end{itemize} %FIN SECUNDARIO
+
+
+
+\item Trama remota: permite iniciar una transmisión de mensaje de un nodo estando este en modo recepción mediante el envío de esta trama. Los campos de una trama remota son los mismos que la de una trama de datos, a excepción que la trama remota no contiene el campo de datos y el bit RTR es recesivo. EL valor del DLC debe coincidir con el de la trama de datos correspondiente. En la \textbf{Figura: \ref{TR}} se exponen las características de la trama.
+
+			\begin{figure}[H]
+			\centering
+				\includegraphics[width=0.9\textwidth]{./Cap2imagen/tramaremota.pdf}
+			\caption[Formato de trama remota.]{Formato de trama remota.\textbf{ Fuente:} \cite{DSEEPC}.}
+			\label{TR} 
+			\end{figure}
+
+
+\item Trama de error: durante la transmisión o recepción de una trama de datos o una trama remota, esta trama señaliza la detección de un error, iniciando nuevamente el envió del mensaje. En la \textbf{Figura: \ref{TE}} se expone como la trama de error está formada por dos campos:
+
+							\begin{itemize}
+							\item Error flag: hay dos formas de representarla:
+										\begin {itemize}
+										\item Active error flag: son seis bits dominantes consecutivos.
+										\item Passive error flag: son seis bits recesivos consecutivos, pero pueden sobrescribirse con bits dominantes de otros nodos.
+										\end {itemize}
+							\item Error delimiter: una trama de error termina con una secuencia de $8$ bits recesivos. Posterior a la transmisión de una bandera de error, el nodo transmite bits recesivos y verifica el nivel del bus hasta que reconozca un bit recesivo, entonces comienza la transmisión de otros siete bits recesivos. Con este mecanismo, el nodo puede determinar si fue el primero en transmitir una bandera de error y con ello detectar una condición de error.
+							\end {itemize}
+							
+								\begin{figure}[H]
+								\centering
+								\includegraphics[width=0.9\textwidth]{./Cap2imagen/trama_error.pdf}
+								\caption[Formato de trama de error.]{Formato de trama de error.\textbf{ Fuente:} \cite{DSEEPC}.}
+								\label{TE} 
+								\end{figure}
+
+
+					
+\item Trama de sobre carga: un receptor puede solicitar un retraso en la transmisión de la siguiente trama si las condiciones internas del receptor requieren un retraso en la transmisión del mensaje. Se permite en el protocolo BUS CAN el envio de dos tramas de sobre  carga como máximo, \textbf{Figura: \ref{TSC}}.
+Las tramas de sobrecarga se transmiten después de detectar las siguientes condiciones de error: 
+
+
+					\begin{itemize}
+		
+					\item Detección de un bit dominante durante los primeros dos bits del campo de intermisión. La detección de un bit dominante en el tercer bit del campo de intermisión se interpreta como un SOF. 
+					\item Cuando un receptor detecta un bit dominante en el ultimo bit del campo EOF, o cuando un nodo receptor o transmisor detecta un bit dominante en el ultimo bit del delimitador de una trama de error o sobrecarga.
+					\end{itemize}
+
+Una trama de sobrecarga se considera una forma especial de trama de error y tiene los siguientes campos:
+	
+								\begin{itemize}
+								\item Overload flag: se constituye por ocho bits dominantes. La forma completa corresponde a la bandera de error activa.
+								\item Oveload delimiter: formado por 8 bits recesivos.
+								\end{itemize}
+
+
+			\begin{figure}[H]
+			\centering
+				\includegraphics[width=0.9\textwidth]{./Cap2imagen/sobrecarga.pdf}
+			\caption[Formato de trama de sobrecarga.]{Formato de trama de sobrecarga.\textbf{ Fuente:} \cite{DSEEPC}.}
+			\label{TSC} 
+			\end{figure}
+				
+\end{itemize}
+
+\subsection {Espacio Entre Tramas}
+
+Para tener en cuenta las tramas de datos y las tramas remotas están separadas por un espacio entre tramas, en cambio las tramas de error y las tramas de sobrecarga se transmiten en forma sucesiva.
+Además el espacio entre tramas está formado por tres campos:
+
+	\begin{itemize}
+	\item Intermission: Consiste en tres bits recesivos. Durante su transmisión la única acción que puede realizarse es señalar una condición de sobrecarga, y no se permite que ningún nodo inicie la transmisión de una trama de datos o remota. 
+	\item Bus Idle: Se mantiene un nivel recesivo hasta que un nodo inicie la transmisión de una trama nueva.
+	\item Suspend transmission: El espacio entre tramas contiene un tiempo de inhibición de transmisión de ocho bits para nodos que se encuentran en estado de error pasivo.
+	\end{itemize}
+
+
+%\subsubsubsubsection {Codificación de Tramas}
+\subsection {Codificación de Tramas}
+
+Los campos de inicio de trama, identificador, control, datos y CRC están codificados de acuerdo al procedimiento de inserción de bit. Los campos restantes como el delimitador CRC, ACK y EOF tienen un formato fijo y no siguen el procedimiento de inserción de bit, de igual forma, las tramas de error y sobrecarga tienen un formato fijo y no se codifican por dicho procedimiento.
+
+%\subsubsubsubsection {Validación de Tramas}
+%\paragraph{Validación de Tramas}
+\subsection{Validación de Tramas}
+
+Para validar un trama difiere según el:
+
+\begin {itemize}
+\item Transmisor: La trama es válida si no existen errores hasta el final del campo EOF. Si existe un error, en la trama se activa el proceso de recuperación.
+\item Receptor: la trama es válida si no existen errores hasta el siguiente bit después del campo EOF.
+\end{itemize}
+
+
+%\subsubsubsubsection {Detección y Manejo de Errores}
+%\paragraph{Detección y Manejo de Errores}
+\subsection{Detección y Manejo de Errores}
+
+En una red el controlador de BUS CAN tiene la capacidad de detectar y manejar errores que surjan en la comunicación. Si un nodo detecta un error inmediatamente lo comunica al resto de  los nodos de la red. Si algún nodo lanza errores continuamente el protocolo BUS CAN tiene un algoritmo que se basa en la actividad del bus para desconectar a los nodos que envían fallos permanentemente, de esta manera los demás nodos no son perturbados por estos nodos defectuosos.
+
+%\subsubsubsubsection {Mecanismo de Detección de Errores}
+%\paragraph{Mecanismo de Detección de Errores}
+\subsection{Mecanismo de Detección de Errores}
+
+Para mantener la seguridad de la transmisión de datos, el protocolo BUS CAN define los siguientes mecanismos para la detección de errores: 
+\begin{itemize}
+\item Monitoreo de bits: Todo nodo verifica que el nivel de bits transmitido sea el mismo nivel del bus, y cuando dichos valores difieren se detecta un bit de error. El monitoreo de bits representa un mecanismo de seguridad global para la detección de todos los errores efectivos.
+\item Verificación del procedimiento de inserción de bit: hace referencia al hecho de detectar un error de inserción de bit cuando ocurren seis niveles consecutivos de bits con el mismo valor en un campo de trama codificado por el procedimiento de inserción de bit (Stuff error).
+\item Verificación de redundancia cíclica de 15 bits: Se detecta un error de CRC cuando la secuencia de CRC calculada por el nodo no corresponde al campo CRC de la trama recibida.
+\item Verificación de trama: Cuando un campo fijo contiene uno o más bits no válidos se detecta un error. 
+\item Verificación de aceptación: un transmisor detecta un error de aceptación (ACK error) cuando el slot ACK no cambia de estado dominante.
+\end{itemize}
+
+
+%\subsubsubsubsection {Manejo de Errores}
+%\paragraph*{Manejo de Errores}
+\subsection{Manejo de Errores}
+
+Cuando un nodo detecta algún tipo de error, ya sea de bit, de inserción, de forma o de aceptación, inicia una transmisión de un error flag en el siguiente bit. Cuando se detecta un error de CRC, se inicia la transmisión de una trama de error después del delimitador ACK, a excepción de que previamente se haya transmitido otra trama de error.
+El manejo de errores se lleva acabo de acuerdo con el diagrama de flujo de la \textbf {Figura: \ref{D_F}}
+%width = 0.33
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.40\textwidth]{./Cap2imagen/diagrama.pdf}
+	\caption[Diagrama de flujo para manejar errores.]{Diagrama de flujo para manejar errores.\textbf{ Fuente:} \cite{DSEEPC}.}
+	\label{D_F} % preguntar que va aquí
+\end{figure}
+
+%\subsubsubsubsection {Capacidad de Detección de Errores}
+%\paragraph{Capacidad de Detección de Errores}
+\subsection{Capacidad de Detección de Errores}
+
+Se utilizan diferentes mecanismos para detectar errores en los protocolos de bus seriales, generalmente se encarga el receptor de esta verificación. La capacidad de detectar errores de transmisión depende de los mecanismos de error y del protocolo utilizado.
+
+
+
+
+\section {Capa de Aplicación}
+
+La capa de Aplicación no se encuentra especificada en el estándar, por lo que se deja al usuario en la libertad de desarrollarla.
+Existen varias aplicaciones utilizadas como por ejemplo CANopen, DeviceNet y CAN aerospace. 
+
+Para utilizar una red BUS CAN de dos lineas, es recomendable utilizar el par trenzado para establecer la comunicación entre estos, debido a que este tipo de cable atenúa los efectos causados por interferencias electromagnéticas. 
+La velocidad en una red  BUS CAN es inversamente proporcional a la longitud del bus de comunicación. La mayor tasa de bits especificada es de 1Mbps a una distancia entre nodos de 40m. 
+
+
+%\subsubsection{Transceiver}
+\subsection {Hardware BUS CAN - Transceiver}
+
+El Transceiver se encarga de adaptar las señales de un controlador CAN  a los niveles utilizados por el nivel físico. Actúa como transmisor y receptor de datos. Transforma los datos utilizados por el controlador BUS CAN en señales eléctricas que son compatibles con las características eléctricas del bus de comunicación. De la misma manera, este recibe los datos del bus de comunicación y los adapta para que pueda ser recibida por el controlador BUS CAN.
+
+\subsection {Hardware BUS CAN - Controlador}
+
+Encargado de la comunicación entre el microprocesador de la unidad de control y el transceiver. 
+ 
+\subsection{Estandares Existentes}
+
+%Estandares <<
+Para entender los estándares presentes en el mercado del protocolo BUS CAN se deben comprender el trabajo de las siguientes sociedades:
+
+\textbf{ SAE Internacional (SAE - Society of Automotive Engineers)}: La Sociedad de Ingenieros Automoción, es la organización enfocada en la movilidad de los profesionales en la ingeniería aeroespacial, automoción, y todas las industrias comerciales especializadas en la construcción de los vehículos. El principal objetivo de la sociedad es el desarrollo de los estándares para todos los tipos de vehículos, incluyendo coches, camiones, barcos, aviones, etc. Cada uno que se interese por los factores humanos y los estándares ergonómicos, puede ser miembro de esta organización. 
+
+Entre uno de los estándares encontramos al OBD-II, todos los vehículos modernos están equipados con el sistema diagnóstico conocido como On-Board Diagnostics II (OBDII, por sus siglas en inglés). Si este funciona mal, la luz de control del motor se enciende para avisar al conductor que tiene que revisar los códigos DTC (Diagnostic TRouble Codes):
+
+SAE se encarga de la estandarización de los datos que se utilizan en el protocolo BUS CAN y en otros protocolos de comunicación en vehículos de automoción, es decir, para los automóviles terrestres estandariza el sistema de diagnóstico conocido como OBD II.
+
+Los estándares SAE más conocidos son: 
+
+\textbf{SAE J1962}: Define las características del conector OBD II.  La especificación prevé dos interfaces de hardware estándar, llamado conector tipo A y conector tipo B, de 16 pines. Ambos tipos tienen una ranura entre las dos filas de pines, pero el tipo B tiene la ranura interrumpida en el medio, \cite{J1962}. 
+
+\textbf{SAE J1979}: Define un método para la solicitud de varios datos de diagnóstico y una lista de parámetros estándar que podrían estar disponibles a partir de la ECU (engine control unit, por sus siglas en inglés), \cite{J1979}.
+
+\textbf{SAE J1850}: Define el tipo de protocolo para el conector OBD II, no necesariamente es BUS CAN. 
+
+\textbf{SAE J2284}: A partir del 2008 este estándar reemplaza al estándar SAE-J1850, define la versión específica de BUS CAN usado en el conector OBD II, \cite{J2284}. 
+
+\textbf{SAE J1939}: Basado en el CAN 2.0B es una capa superior del protocolo CAN para camiones y autobuses que define la SAE, se divide en varias partes que describen la capa física, la capa de enlace de datos, gestión de la red y posee un gran número de mensajes predefinidos, \cite{J1939}, \cite{J1939_}.
+
+\textbf{ISO (International Organization for Standardization)}:  La Organización Internacional de Normalización es el organismo encargado de promover el desarrollo de normas internacionales de fabricación (tanto de productos como de servicios), comercio y comunicación para todas las ramas industriales. Su función principal es la de buscar la estandarización de normas de productos y seguridad para las empresas u organizaciones (públicas o privadas) a nivel internacional, \cite{ISO}.
+
+Actualmente el Protocolo BUS CAN está estandarizado por la ISO según las siguientes normas:
+
+\textbf{ISO 11898-1}: Define el protocolo CAN. Especifica la capa de enlace de datos (DLL) y la señalización física de la red BUS CAN,  de manera a  obtener un protocolo de comunicación serie que soporte el control en tiempo real y la multiplexación para uso dentro de los vehículos de carretera. Contiene especificación detallada de la subcapa  de control de enlace lógico (LLC) y la subcapa de control de acceso al medio (MAC), \cite{ISO1}.
+
+\textbf{ISO 11898-2}: Define la capa física de alta velocidad para BUS CAN. Especifica las características de alta velocidad de la Unidad de Acceso al Medio (MAU, por sus siglas en inglés), y algunas de las características de la Interfaz Dependiente del Medio (MDI, por sus siglas en inglés), que comprenden la capa física de la red de área del controlador BUS CAN, \cite{ISO2}.
+
+\textbf{ISO 11898-3}: Define la capa física de baja velocidad tolerante a fallos para CAN. Especifica las características de la creación de un intercambio de información digital entre las ECU de vehículos equipados con la red de área de controlador BUS CAN a velocidades de transmisión superiores a 40 Kbps hasta 125 Kbps, \cite{ISO3}.
+
+\textbf{ISO 11898-4}: Especifica la comunicación Time-Triggered en el BUS CAN, el cual se basa en el desarrollo de un tipo de intercambio de información de las ECU en los vehículos, \cite{ISO4}.
+
+\textbf{ISO 11898-5}: Describe las funciones de la unidad acceso al medio de alta velocidad (hasta 1Mbps)  en modo bajo consumo mientras no haya comunicaciòn en el bus, \cite{ISO5}. 
+
+\textbf{ISO 11898-6}: Define la unidad acceso al medio de alta velocidad con funcionalidad de atención selectiva.  Representa una extensión de la norma ISO 11898 e ISO 11898-2 al  5, que especifica un mecanismo de atención selectiva utilizando tramas CAN configurables, \cite{ISO6}.
+
+\textbf{ISO 16845}: Establece un plan  y los requisitos de pruebas para verificar si el transceptor BUS CAN con sus distintas funciones está conforme  a las funcionalidades especificadas. El tipo de prueba es nombrado como prueba de conformidad. 
+
+\textbf{ISO 11519-2}: obsoleta y sustituida por 11898-3. 
+
+\textbf{CiA (CAN in Automation)}:  es la organización internacional de usuarios y fabricantes que desarrolla y soporta los protocolos de capas superiores basados en CAN.
+esta organización apoya y participa en la tarea de realizar las especificaciones técnicas con los organismos internacionales tales como ISO. 
+
+Desde 1994, CiA a estandarizado varios protocolos de alto nivel a partir de BUS CAN, como CANopen, DeviceNet y otros proyectos para la capa de aplicación, \cite{NI}, \cite{CIA}.
+
+
+%Estandares >>
+
+
+Los estándares fundamentados en BUS CAN se toma como ejemplos los siguientes:
+
+\begin {itemize}
+\item SAE J1939: Basado en el CAN 2.0B, utilizado en aplicaciones automovilísticas de gran porte, como camiones y colectivos.
+\item NMEA 2000: Basado en el CAN 2.0B, utilizado en aplicaciones navales y aéreas.
+\item DIN 9684-LBS: Basado en el CAN 2.0A y es utilizado en aplicaciones agrícolas.
+\item ISO 11783: Basado en el CAN 2.0B, también utilizado en aplicaciones agrícolas.
+\end{itemize}
+
+Ventajas en la Utilización del  BUS CAN:
+
+\begin {itemize}
+\item Es un protocolo de comunicación estándar, que se comunica como una red multiplexada, disminuyendo de manera significativa el tamaño de la estructura y la cantidad de líneas de comunicación a utilizar.
+\item Es un protocolo considerado multi-maestro
+\item Garantiza la confiabilidad de la transmisión de datos utilizando un mecanismo de corrección de errores.
+\item Se reduce el tiempo de montaje de un nuevo nodo.
+\end {itemize}
+
+%%% hasta aqui
+
+
+
+
+
+
+
+
+%##############################################################################################################################################################################################################################################################3 EXCAPITULO3
+
+%\pagestyle{fancy}
+%\chapter[Capítulo 3. Protocolos OBDII y J1939]{Protocolos OBDII y J1939}
+
+%\section {Diferencias entre Protocolos CAN bus,  OBDII y J1939}
+\section{Diferencias entre Protocolos CAN bus,  OBDII y J1939}
+El protocolo {\bfseries CAN bus} es un tipo de bus de transmisión el cual permite que todos los nodos puedan ''escuchar'' todas las transmisiones presentes en el mismo. No hay manera de enviar un mensaje a un nodo específico; todos los nodos invariablemente captarán todo el tráfico. Sin embargo, el hardware de CAN proporciona un filtrado local para que cada nodo pueda reaccionar sólo a los mensajes interesantes. Los módulos se conectan al bus de forma cableada y el estándar CAN también define un elaborado esquema para el manejo de errores. Cabe resaltar que el protocolo CAN bus utiliza mensajes cortos, la carga máxima de datos enviados son de 8 bytes \cite{can_c3}. En la \textbf{Figura \ref{fig_can_c3}} observamos un ejemplo de las conexiones para una red CAN. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap3imagen/can.pdf}
+	\caption [Típico sistema de red CAN.]{Típico sistema de red CAN\textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{fig_can_c3} % Etiqueta para la referencia.
+\end{figure}
+
+El sistema {\bfseries OBDII} es un sistema de diagnóstico a bordo de segunda generación estandarizado y normalizado para el monitoreo de vehículos, el estándar define las partes del motor que obligadamente deben ser monitoreadas  y bajo que parámetros. En OBDII los distintos tipos de fallos están estandarizados de tal forma que se consigue reparar la falla en menos tiempo y de forma correcta \cite{obd_c3}. En la \textbf{Figura \ref{fig_obd_c3}} observamos un ejemplo de los sistemas presentes en un vehículo y la red OBDII presente en el mismo. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap3imagen/obd.pdf}
+	\caption [Típico sistema de red CAN.]{Típico sistema de red OBD II\textbf{ Fuente:} %\cite{cite_can_c3}.}
+		Elaboración propia.}
+	\label{fig_obd_c3} % Etiqueta para la referencia.
+\end{figure}
+
+Esta normalización está especificada en los documentos SAE J1979 e ISO1503-5 de las cuales podemos citar: Formato de los mensajes para petición de respuesta, Tiempo entre el mensaje de petición del equipo externo y el mensaje de respuesta por parte del vehículo, Comportamiento del vehículo y el equipo externo si el dato no está disponible, grupo de servicios de diagnósticos para satisfacer las regulaciones OBD, Tipo y ubicación de conectores físicos \cite{list_c3}, etc. Su relación con el protocolo {\bfseries CAN bus} es que OBDII se implementa sobre dicho protocolo, es decir, CAN bus se encarga de transferir datos binarios de un punto a otro en el bus de comunicación y  la norma OBDII define que datos serán transportados y como se realizará la comunicación entre dispositivos. También OBDII establece los pasos para la comunicación con la ECU mediante mensajes de pregunta y respuesta. 
+
+El sistema {\bfseries J1939} es un estándar definido por la SAE para el envío de datos orientado para sistemas de vehículos de carga, Tractores,  maquinaria agrícola y de construcción.  La problemática a solucionar con este sistema es el cambio constante de dispositivos conectados en estos transportes, el protocolo J1939 provee mecanismos de interconección de nuevos dispositivos para que pueda participar de la comunicación entre sistemas, el protocolo permite una comunicación uniforme entre ECUs soportando el principio de plug and play \cite{j19_c3}, ya que proporciona un mecanismo de identificación para que los demás dispositivos de la red sepan de las características del nuevo hardware conectado. Además, otras de las peculiaridades de implementar J1939 sobre el protocolo CAN BUS es que provee un mecanismo para enviar más de 8 bytes de datos a través del bus, esto se hace enviando varias tramas CAN BUS de un destino a otro. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{./Cap3imagen/trailer.pdf}
+	\caption [Típico sistema de red J1939.]{Típico sistema de red J1939\textbf{ Fuente:} \cite{cite_trailer_c3}.}
+	\label{fig_trailer_c3} % Etiqueta para la referencia.
+\end{figure}
+
+En la \textbf{Figura \ref{fig_trailer_c3}} se observa que los vehículos pesados pueden sufrir un cambio de remolque y para ello el sistema prevee una conexión e identificación de nuevos sensores y dispositivos para el reconocimiento por parte de la red. 
+
+
+
+\section{Teoría OBD II}
+
+\subsection{Modos de Funcionamiento OBDII}
+
+Existen 10 modos de diagnosticos que soporta OBD II, cada uno de estos modos tienen una particularidad en las lecturas de datos y se clasificaron en estos modos para una mejor organización para el diagnóstico de los vehículos ante muchas situaciones.
+
+\begin{itemize}
+
+
+\item  Modo 1:  Muestra los datos actuales y en tiempo real de los valores analógicos o digitales de las salidas y entradas de la ECU. Este modo devuelve los valores comunes para algunos sensores tales como: las revoluciones del motor, la velocidad del vehículo, temperatura del motor (aire, refrigerante) y la información sobre los sensores de oxígeno y la mezcla de aire/combustible.
+
+Cada sensor se caracteriza por un número llamado PID (Parámetro de identificador), utilizado para identificar el parámetro que se lee. Por ejemplo, la norma establece que la velocidad del motor tiene un PID de 12 (0x0C). La norma OBD incluye 137 PID y puede ir actualizandose con los años. En cuanto a los modos, no todos los coches son compatibles con todos los PID estándar. 
+
+\item Modo 2: Muestra los datos congelados de fallas que ocurrieron en el vehículo, es decir, son datos almacenados en la memoria de la ECU. Estos datos no son en tiempo real, sino que da la imagen congelada (o instantánea) de un conjunto datos relacionadas con el tipo de falla detectada por la ECU. Esto es así para saber las condiciones de los sensores cuando se detectó un fallo en el sistema. La encargada de registrar y almacenar los datos ante un fallo es la ECU. 
+
+\item Modo 3: Muestra los códigos de fallas del vehículo.
+Este modo muestra los códigos de diagnóstico almacenados DTC (Data Trouble Code, por sus siglas en inglés). Estos códigos de falla son estándar para todas las marcas de vehículos y se dividen en 4 categorías:
+    
+
+
+     \subitem P0xxx: para las fallas estándar vinculados a motor y transmisión.
+  	 \subitem C0xxx: para las fallas de serie en el chasis.
+     \subitem B0xxx: para fallas normales en la carrocería.
+     \subitem U0xxx: para las fallas de serie en la red de comunicaciones.
+     
+\item Modo 4: Borra los códigos de avería registrados que estan almacenados en la memoria de la ECU del vehículo, inlcuyendo los DTC y los datos congelados. Al hacer esto tambien apaga el indicador de fallo del motor MIL (Malfunction Indicator Lamp, por sus siglas en inglés).
+
+\item Modo 5: Devuelve los resultados de las pruebas de sensores de oxigeno para determinar el funcionamiento de los mismos y la eficiencia del convertidor catalítico.Este modo proporciona los resultados de autodiagnóstico realizadas en los sensores de oxígeno/Lamda. Se aplica principalmente sólo para los vehículos de gasolina. Para la nueva ECU mediante BUS CAN, ya no se utiliza este modo. El Modo 6 reemplaza las funciones que estaban disponibles en el Modo 5.
+
+\item Modo 6: Devuelve los resultados de prueba, no continuamente monitoreados. Este modo proporciona los resultados de autodiagnóstico realizado en sistemas que no están sujetos a una vigilancia constante.
+
+\item Modo 7: Permite leer los códigos de problemas pendientes almacenados en la memoria de la ECU. Este modo proporciona los códigos de avería no confirmados. Es muy útil después de una reparación para comprobar que el código de error no vuelva a aparecer sin tener que hacer un largo recorrido de prueba. Los códigos utilizados son idénticos a los del modo 3.
+
+\item Modo 8: Permite realizar las pruebas de actuadores. Permite activar y desactivar actuadores como bombas de combustible y válvula de ralentí. Este modo proporciona los resultados de autodiagnóstico en otros sistemas.  
+
+\item Modo 9: Permite la Petición de información del vehículo. Este modo proporciona la información relativa al vehículo, tales como: el VIN (Vehicle Identification Number, por sus siglas en inglés) que es el número de identificación del vehículo y proporciona además valores de calibración.
+
+\item Modo 10 (o Modo A): Solicita los códigos de problemas permanentes. Este modo proporciona los códigos de avería permanentes. Los códigos utilizados son idénticos a los modos 3 y 7. A diferencia de los modos 3 y 7, estos códigos no se pueden borrar mediante el modo 4. Sólo varios ciclos de carretera sin aspecto del problema puede borrar el fallo.
+
+
+
+\end{itemize}
+
+
+\subsection{Diagnosis, Normativas y Protocolos}
+
+La capacidad de que un vehículo pueda comprobar sus sistemas y reportar fallos encontrados se denomina diagnosis de abordo. Pero en general el término OBD se refiere a la normativa para el control de gases y anticontaminación de los vehículos a motor.
+
+Si el vehículo muestra algún fallo, estos suelen indicarse en un cuadro de instrumentos en forma de indicadores luminosos. De esta manera se pueden visualizar fallos mecánicos y eléctricos de los elementos del vehículo como: Carga del alternador, presión de aceite, temperatura excesiva, ABS (Antilock Brake System, por sus siglas en inglés) y Airbag, además existen otros fallos para verificar pero con menor importancia y por ello no están visualizados en el cuadro de instrumento del vehículo. Actualmente los fallos producidos se registran en las diferentes centrales electrónicas para cada sistema electrónico (Sistema de confort, sistemas de freno, etc.),  y se puede acceder a dicha información con instrumentos especiales denominados equipos de diagnosis.
+
+La manera con que estos equipos de diagnosis  extraen los datos de fallos es mediante protocolos  de comunicación implementados en los vehículos, el cual, con los años fue evolucionando. Cada fabricante suele tener un protocolo diferente para acceder y comunicar la diagnosis. Para evitar las diferencias de protocolos entre los fabricantes de vehículos se establecieron unos protocolos de comunicación estandarizados, generalmente relacionados con las normativas de anticontaminación. Así también se establecieron estándares para los conectores, tratando de llegar un estándar de conexión único. 
+
+\subsection{Normativa}
+
+La normativa OBD II (On Board Diagnosis, por sus siglas en inglés) establece que todos los vehículos vendidos en EEUU a partir de 1996 deben tener compatibilidad con OBD para la diagnosis a bordo. En Europa la fecha de inclusión OBD fue en el año 2001 para vehículos de gasolina y en el año 2004 para vehículos diésel. Con esta normativa se especifican los protocolos que se pueden utilizar, el conector único de diagnosis y el formato de mensajes.
+También incluye una lista extensa de parámetros para monitorizar  y como deben ser codificados. Y una lista de códigos de diagnósticos de fallos DTC (Diagnostic trouble codes, por sus siglas en inglés) correspondientes a grupos funcionales según la ubicación de los sistemas electrónicos del vehículo: El tren de potencia (motor y transmisión), el chasis y los sistemas de tracción-frenado, el habitáculo y  además la red de conexión de las diferentes centrales de control.
+
+\subsection{Conector de Diagnosis}
+
+El conector estandarizado por la normativa es el J1962, con la conexión hembra en el vehículo y la conexión macho para el equipo de diagnosis. Este conector debe ir ubicado dentro del habitáculo y cerca de la posición del conductor.
+
+El conector de diagnosis está formado por 16 pines, cada pin tiene una función específica, por ejemplo los pines 4, 5 y 16 son para la referencia y alimentación eléctrica. El pin 4 es la masa del chasis, el pin 5 la masa de la señal eléctrica y el pin 16 es la tensión positiva de la batería. Los pines 2, 6, 7, 14 y 15 son usados para los diferentes protocolos del OBD II. El resto de los pines libres son utilizados por cada fabricante para sus propios protocolos.  La distribución de los pines del conector de diagnosis J1962-Hembra se muestra en la \textbf{Figura \ref{OB}}:
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.5\textwidth]{./Cap3imagen/OBD_connector.png}
+	\caption[Segmento del tiempo de un bit.]{Conector hembra OBDII.\textbf{ Fuente:} Internet.}
+	\label{OB} % Etiqueta para la referencia.
+\end{figure}
+
+Para la máquina de diagnosis la conexión usada es el J1962-Macho pero el otro lado de conexión para la máquina de diagnosis no está definido, queda a discreción del fabricante de la máquina de diagnosis que conector utilizar.  Aunque suele ser un conector USB (mediante una interfaz) o un conector DB9 no compatible con RS-232 (utilizado en puertos seriales). 
+
+\subsection{Protocolos de Comunicación en OBDII}
+
+Existen 5 protocolos para la diagnosis OBD que se pueden encontrar en el conector del vehiculo, dependiendo del fabricante del mismo. Cada protocolo según la norma tiene definido en que pines del conector debe encontrarse sus entradas y salidas. Estos protocolos son: SAE J1850 PWM, SAE J1850 VPM, ISO 9141-2, ISO 14230 KWP y el ISO 15765 CAN.
+
+
+\subsection{Normativa SAE J1979}
+
+La normativa OBD II permite el acceso a la ECU del vehículo para la extracción de datos del mismo, además de acceder a los errores almacenados en memoria.
+La normativa SAE J1979 especifica los siguientes puntos:
+\begin{itemize}
+\item Formato de los mensajes de petición y respuesta.
+\item Tiempo de respuesta entre los mensajes de petición y su respuesta, ya sea simple o de mensajes múltiples.
+\item Modo de actuación si el dato solicitado no está disponible.
+\item Un conjunto de servicios de diagnosis.
+\end{itemize}
+
+\subsection{Formato de los Mensajes}
+
+Los mensajes de petición pueden tener un máximo de 8 bytes mientras que los mensajes de respuesta pueden tener todos los datos necesarios para poder responder a las peticiones hechas.
+Como la trama BUS CAN está compuesta por 8 bytes, para enviar más datos se utiliza más de una trama para responder, a este tipo de comunicación se le llama multitrama.
+La cabecera del mensaje de petición puede llevar dos tipos de identificadores los cuales son: identificador funcional e identificador físico, la diferencia consiste en que el identificador funcional está dirigido a todas las centrales de cómputo del automóvil, en cambio el identificador físico está dirigido a una central de cómputo específica.
+La \textbf{Figura \ref{TOBD}} muestra el formato de la trama OBDII de solicitud y la \textbf{Figura \ref{TOBDR}} muestra el formato de respuesta ambas con sus partes principales.
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./Cap3imagen/TramaOBDIIpregunta.pdf}
+	\caption[Trama OBDII.]{Trama OBDII de Solicitud.\textbf{ Fuente:} Elaboración propia.}
+	\label{TOBD} % Etiqueta para la referencia.
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./Cap3imagen/TramaOBDIIrespuesta.pdf}
+	\caption[Trama OBDII de Respuesta.]{Trama OBDII de Respuesta.\textbf{ Fuente:} Elaboración propia.}
+	\label{TOBDR} % Etiqueta para la referencia.
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Número de bytes}: indica el número de bytes presente en la trama, esto es debido a que para obtener algunos parámetros se realiza cálculos matemáticos de acuerdo a los datos de la trama.
+\item \textbf{Tipo de servicio}: existen más de 9 tipos de servicios implementados en OBD II y cada uno de ellos pueden manejar datos distintos.
+\item\textbf{Parámetro solicitado}: Indica el parámetro del cual se desea saber un valor o que parámetro se esta respondiendo.
+\item\textbf{Datos A, B, C, D}: Son los bytes en los cuales realizando ciertas operaciones matemáticas entre ellas se obtiene el valor del parámetro solicitado.
+
+\end{itemize}
+
+\subsection{Tiempo de Respuesta}
+
+El tiempo máximo de respuesta entre una petición desde un equipo externo y la respuesta de todas las centrales del vehículo es de 50ms. Si la respuesta es una multitrama, este tiempo corresponde sólo hasta la primera de las tramas que la componen. Si hay una respuesta negativa, el límite de tiempo hasta la siguiente respuesta se incrementa hasta los 5000ms.  
+\subsection {Dato no Disponible}
+Los mensajes con respuestas negativas, es decir, mensajes rechazados llevan el código 0x7F, seguido del código requerido y un código de respuesta. Si el dato solicitado no está disponible se pueden dar cuatros casos:
+
+\begin{itemize}
+\item La ECU no soporta la funcionalidad del mensaje pedido.
+\item Soporta el servicio pedido, pero no algunos datos de petición. Sólo responde en el mensaje los datos que soporta, pero no envía ninguna respuesta negativa para los no soportados, ya que otra ECU que los soporte puede dar la respuesta.
+\item El mensaje recibido sí es tolerable, pero el dato de respuesta no puede estar disponible por un momento. Aquí responderá un mensaje negativo con el código 0x22 que indica “condiciones no correctas”. Este caso se puede dar si no se cumplen las condiciones previas de la ECU, o el orden en una secuencia determinada no es el correcto.
+\item El dato sí es soportado, pero no da tiempo de enviarlo antes del tiempo límite de respuesta.  En este caso se envía una respuesta negativa 0x78 que indica “Petición recibida correctamente, respuesta pendiente”. Así el tiempo de respuesta pasa de 50ms a 5000ms. Tras la recepción de la respuesta el tiempo límite de respuesta del equipo de pruebas vuelve a 50ms.
+
+\end{itemize}
+
+
+\subsection {Identificadores Funcionales}
+Como no se puede saber a priori los identificadores de las centrales electrónicas presentes en el vehículo se definen identificadores estándar gracias al cual las centrales electrónicas pueden reconocer la comunicación.  Dicho identificador estándar se llama identificador funcional y para fines prácticos dicho valor para un BUS CAN de 8 bits es de 7DF en hexadecimal. Un automóvil tiene hasta 8 centrales electrónicas y cuyo identificadores funcionales van de 7E0 a 7E7 en hexadecimal.  Para BUS CAN de 29 bits el identificador funcional es 18DB33F1 en hexadecimal. 
+Como ejemplo, suponemos que el equipo externo envía una petición de un dato de diagnosis al vehículo, está petición llevaría consigo el ID 7DF. Una vez que el vehículo reciba dicho dato supongamos que responden dos centrales electrónicas presentes en el vehículo, ya que contiene los datos solicitados. Como el intervalo de ID de respuesta es de 7E0 a 7E7, estas centralitas responden con ID 7EA e ID 7EF. De esta manera si el equipo de diagnosis quiere volver a comunicarse ya no hace falta que utilice el ID funcional 7DF, sino utilizará la dirección especifica de cualquiera de las dos centrales electrónicas que respondieron, pero con una cuestión: para identificar su dirección física se debe restar 8 a ambas direcciones funcionales de respuesta, es decir las direcciones físicas serian 7EA – 8 = 7E2 y 7EF – 8 = 7E7 respectivamente.  
+
+\subsection {Lectura de Datos OBD con BUS CAN}
+
+Las normas requieren que cada comando OBD II o solicitud que se envía al vehículo debe cumplir con un formato. El primer byte enviado (conocido como el 'modo') describe el tipo de datos que se solicita, mientras que el segundo byte (y, posiblemente, un tercero o más) especifica la información real que se requiere.
+Los bytes que siguen después del byte "modo" se conoce como  identificador de parámetros o bytes de número de PID (parameter identification, por sus siglas en inglés). Los modos y PIDs se describen en detalle en los documentos tales como el SAE J1979, o las normas ISO 11898, y también puede ser definido por los fabricantes de vehículos. La norma SAE J1979 define actualmente diez posibles modos de prueba de diagnóstico, que son:
+Modo1,2,3,4,5,6,7,8,9.y el modo A.
+Los vehículos no necesariamente deben soportar todos los modos, y dentro de los modos, no están obligados a soportar todos los PID posibles (algunos vehículos del primer OBD sólo admiten un número muy pequeño de ellos). 
+Dentro de cada modo, PID 00 está reservada para mostrar cuales PID son compatibles con dicho modo.
+
+
+Con un ejemplo de cómo se maneja la información se puede entender mejor cómo funciona el protocolo, usando la comunicación BUS CAN con la norma OBD II. Para ello se realiza la petición de RPM (Revoluciones Por Minuto) del motor del vehículo.
+
+
+\begin{enumerate}
+\item El equipo externo realiza la petición de un dato actual, que es el servicio modo 1, el PID de las revoluciones por minuto del motor es PID = 0x0C. Este mensaje tiene 2 bytes de longitud. De esta manera la trama se construye de la siguiente forma:  
+02 01 0C 00 00 00 00 00
+\item La trama de respuesta desde la ECU tiene la siguiente estructura: primeramente envía la cantidad de datos de la trama, luego la respuesta al modo 1 es 0x41, después reenvía el PID solicitado, es decir, 0x0C y a continuación envía los datos solicitados en este caso en 2 bytes que son 0x0A y 0x 6B. El resto de la trama se rellena con ceros: 04 41 0C 0A 6B 00 00 00
+\item El equipo externo recibe la trama anterior e interpreta los valores obtenidos, en este caso la RPM se representan por 2 bytes. La ecuación está definida por las  normas OBD II y es la siguiente: (0A*256 + 6B)/4. En este caso da un valor de RPM = 666 rpm. 
+%\ldots{}
+\end{enumerate}
+
+Todos los PID del servicio modo 1 tienen una respuesta en forma de trama simple, ya que el tamaño máximo de un PID es de 4 bytes.
+En otros servicios si se pueden dar respuestas de más de 8 bytes de longitud, por lo que el mensaje irá partido en multitramas. A continuación se da un ejemplo de petición del número de chasis del vehículo.
+
+\begin{enumerate}
+\item El equipo externo realiza la petición de información del vehículo, modo 9, seguido del PID = 0x02 referido al VIN. Como son dos bytes en total, el primer campo sería 0x02. La trama quedaría así: 02 09 02 00 00 00 00 00. 
+\item La respuesta es el número de chasis del vehículo, que tiene 17 dígitos alfanuméricos y están codificados en ASCII. Suponemos para el ejemplo que el VIN es “1D4G00R55B123456” que codificados en ASCII es 31 44 34 47 50 30 30 52 35 35 42 31 32 33 34 35 36.
+Como el tamaño de datos es mayor a 8 bytes, se envía la trama primera y espera la trama de control de flujo. En esta trama primera se indica que es dicha trama con el numero 0x01, y el tamaño total de datos que son 20 bytes, 0x14 en hexadecimal. A continuación tenemos la respuesta al servicio modo 9 que es 0x49, el PID = 0x02, el elemento 0x01 y a continuación los datos del VIN: 31 44 34.
+La trama resulta así: 10 14 49 02 01 31 44 34.  
+\item El equipo externo debe responder con una trama de control de flujo indicando que puede continuar la transmisión por parte de una de las centrales electrónicas. Según la normativa se debe responder que envíe todas las tramas seguidas hasta terminar. Esta trama tiene la siguiente estructura: 30 00  00 00 00 00 00 00.
+\item El vehículo realiza la transmisión de todas las  tramas para finalizar el mensaje, para el ejemplo quedan 14 bytes restantes del VIN, los cuales se pueden transmitir en 2 tramas consecutivas. El primer campo de cada trama comienza por 2, indicando que es una trama consecutiva, y seguida por el número de orden, 1 en la primera y 2 en la segunda:
+Trama1 21 47 50 30 30 52 35 35.
+Trama2 22 42 31 32 33 34 35 36.
+\item El equipo externo debe recomponer las tramas recibidas y extraer el mensaje completo.
+\end{enumerate}
+
+\section{Teoría SAE J1939}
+La Normativa SAE J1939 es un estándar para la comunicación serial BUS CAN entre unidades de control electrónicas,  principalmente usado en el sector de vehículos comerciales de gran porte, a través del cual es posible transmitir valores medidos y datos de control de diagnóstico del vehículo.
+Las características SAE  J1939 son divididas en varias documentaciones de acuerdo al modelo de capa OSI (Open System Interconnection, por sus siglas en inglés),  estas documentaciones están enumeradas para identificar la norma estándar de cada capa del modelo OSI.  Así como todos los protocolos BUS CAN las capas 5 y 6 del modelo OSI no son necesarias y no se especifican. 
+
+La \textbf{Figura \ref{osij}} muestra la numeración de cada documentación SAE J1939 según el modelo OSI.
+
+%%%%%%%%%%%%%%%%%%%%%%%%% IMAGEN %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./Cap3imagen/OSIJ1939.pdf}
+	\caption[SAE J1939 en el modelo de capa OSI.]{SAE J1939 en el modelo de capa OSI.\textbf{ Fuente:} \cite{EPCAN}.}
+	\label{osij} % Etiqueta para la referencia.
+\end{figure}
+
+% CITAR IMAGEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Las especificaciones SAE J1939/11 definen un bus con transmisión diferencial de señal según ISO 11898, a través de un par trenzado terminadas con resistencias de 120 Ohms en ambos extremos. La velocidad es de 250 Kbps con una longitud máxima del bus de 40 metros con un máximo de 40 nodos conectados.
+Las especificaciones SAE J1939/12 describen una variante del medio utilizado en el bus por medio de 2 pares de alambres trenzados, siendo posible transmitir un voltaje de 12V por uno de ellos.
+SAE J1939/21 describe la capa de enlace de datos del BUS CAN, el cual indica el uso del formato extendido de trama para datos y el uso del formato estándar para uso exclusivo del fabricante. Describe servicios de red como solicitud de mensajes, transmisión confirmada y transmisión fragmentada de un bloque de datos.
+SAE J1939/31 describe la funcionalidad de un puente para la transmisión de mensajes entre dos segmentos de red. Por ejemplo conectar dos segmentos BUS CAN entre un camión y su tráiler.
+SAE J1939/71 y SAE J1939/73 describe los datos del BUS CAN. Cada dato es distinguido por un número denominado Número de Parámetro de Grupo.
+SAE J1939/81 es descrita como la función de administración de la red y puede considerarse como una unidad separada con acceso directo a la capa 1. 
+
+\subsection{Estructura del Mensaje}
+El mensaje consiste básicamente de un identificador de 29 bits y hasta 8 bytes de información en el campo de datos de la trama. Con el identificador de 29 bits es posible proveer una especificación completa de los mensajes y está dividido en tres partes que indican la prioridad, el número de parámetro de grupo y la dirección de origen del mensaje como muestra la \textbf{Figura \ref{bitj}}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%% IMAGEN %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./Cap3imagen/bit29.pdf}
+	\caption[Estructura del Identificador BUS CAN SAE J1939.]{Estructura del Identificador BUS CAN SAE J1939.\textbf{ Fuente:} \cite{EPCAN}.}
+	\label{bitj} % Etiqueta para la referencia.
+\end{figure}
+
+% CITAR IMAGEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Prioridad}
+Son los 3 bits más significantes del identificador y son los que determinan la prioridad del mensaje con respecto a otros mensajes. Esto bits no son utilizados en la recepción del mensaje sino solo se tiene en cuenta en el momento de competir por la utilización del bus.
+
+\subsection{Número de Parámetro de Grupo}
+
+El PGN (Parameter Group Number, por sus siglas en inglés) es un número identificativo que agrupa un conjunto de parámetros utilizados para la diagnosis de los vehículos que utilizan la norma J1939. Consta de los siguientes campos:
+\begin{itemize}
+\item Un bit Reservado (r).
+\item Un bit para Página de Datos DP (Data Page, por sus siglas en inglés).
+\item Un conjunto de 8 bits para el Formato PDU (protocol data unit, por sus siglas en inglés) indicado como PF (PDU Format, por sus siglas en inglés).
+\item Un campo de 8 bits para la Dirección de destino DA (Destination address, por sus siglas en inglés) y para el Grupo de Extensión GE (Group Extension, por sus siglas en inglés) cuyo uso depende del tipo de formato PDU empleado.
+\end{itemize}
+Por medio de los campos DP y PF se describen los datos contenidos dentro de un mensaje BUS CAN con la norma J1939. Los bits PF especifican 256 valores que representan diferentes contenidos del campo de datos y el bit DP posee 2 valores posibles de los cuales solo uno de ellos es usado y el otro es reservado para extensiones futuras de la norma.
+A través del campo PF el PGN especifica el tipo de transmisión sirviendo al mismo tiempo como identificador del mensaje en cuestión. El campo PF también sirve para diferenciar entre dos tipos de servicios de comunicación:
+\begin{itemize}
+\item Formato 1 PDU: Transmisión orientado al Nodo
+\item Formato 2 PDU: Transmisión orientado al mensaje
+\end{itemize}
+El campo DA/GE es usado como Dirección de Destino  o como Extensión de Grupo dependiendo del Formato de PDU  empleado. Con transmisión orientado al nodo se especifica la Dirección del nodo Destinatario del mensaje DA, lo cual permite intercambiar datos entre dos nodos en forma de comunicación peer to peer. Es posible también, utilizando una dirección de destino específica, direccionar a todos los nodos de una red (mensaje broadcast).
+Con transmisión orientada al mensaje, este campo será usado como Extensión de Grupo GE. No se especifica una dirección  de destino particular, y cada nodo receptor reconoce si el mensaje recibido es de su interés examinando el valor de su PF. Siendo posible de esta forma la transmisión multicasting.
+Finalmente  el bit r es reservado por SAE para usos posteriores, el mismo es establecido en cero.
+
+La \textbf{Tabla \ref{rango}} indica el rango de valores para los formatos 1 y 2 de PDU.
+%%%%%%%%%%%%%%%%%%%%% tabla %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Formato PDU & Rango de Valores & Significado del Campo DA/GE \\
+\hline \hline \hline
+1 &   0 ... 239 & Dirección de Destino DA\\ \hline
+2 & 240 ... 255 & Dirección de Origen GE\\ \hline
+\end{tabular}
+\caption{Rango de valores de mensajes en formato 1 y 2 de PDU.}
+\label{rango}
+\end{center}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+\subsection{Campo Dirección Origen}
+
+El campo de dirección origen de 8 bits especifica al transmisor de los datos. Cada nodo tiene una dirección única de dispositivo (0…253). En realidad son 256 posibles direcciones, enumeradas de 0 a 255 en dónde se reservan las dos últimas para otros usos.
+
+\subsection{Campo de Datos}
+Los bytes de datos asignados a un PGN son transmitidos a través de un campo de datos de 8 bytes de un mensaje BUS CAN. Si los datos de un PGN requieren más de 8 bytes de datos, el bloque de datos es fragmentado y transmitido en forma de varios mensajes BUS CAN:
+
+\subsection{Tipos de Mensajes}
+Se distinguen 5 tipos de mensajes en el protocolo SAE J1939.
+\begin{itemize}
+\item Comandos
+\item Solicitudes
+\item Mensaje de respuesta o Broadcast
+\item Mensaje de confirmación  ACK
+\item Funciones de Grupo
+\end{itemize}
+
+\subsection{Comandos}
+Sirven para llevar a cabo una función en uno o más nodos de destino. Pueden utilizar ambos tipos de formato PDU. Con el formato 1 de PDU, es posible direccionar a un nodo particular o a todos ellos. 
+\subsection{Solicitudes}
+Hace uso de transmisión orientada al nodo, pudiendo direccionar un nodo particular o a todos ellos a través del campo DA. Para este propósito no se usan tramas RTR sino tramas de datos cuyo campo PF posee el valor 24.
+\subsection{Mensaje de Respuesta}
+Son enviadas en respuesta a un comando o a una solicitud de mensaje. Hacen uso de la transmisión orientada al nodo en broadcast. En su campo PF lleva el valor 232 (Transmisión orientada al nodo) y en su campo DA direcciona a todos los nodos de la red. Son valores de ACK que pueden ser una respuesta positiva o negativa.
+\subsection{Mensaje de Confirmación}
+Son enviados en respuesta a un comando o a una solicitud de mensaje. Hacen uso de transmisión orientada al nodo en broadcast cuando en su campo PF lleva el valor 232 correspondiente a la transmisión orientada al nodo y en su campo DA direcciona a todos los nodos de la red. La respuesta puede ser afirmativa o negativa.
+\subsection{Funciones de Grupo}
+Son usados para identificar funciones especiales tales como transmisión de largos bloques de datos, mensajes propietarios y funciones de administración de red. PGN específicos son reservados para ser asignados a estas funciones de grupo.
+\subsection{Mensajes Propietarios}
+Esta funcionalidad provee a los fabricantes una completa libertad del campo de datos, pudiendo así definir sus propios servicios con mensajes de solicitud y confirmación. Dentro de la función de grupo para mensajes propietarios se hace una distinción entre dos tipos de comunicación:
+\begin{itemize}
+\item Propietario A: Transmisión orientada al nodo a través del formato 1 PDU (con 239 en el campo PF)
+\item Propietario B: Transmisión orientada al mensaje a través del formato 2 PDU (con 255 en el campo PF)
+\end{itemize}
+Con la transmisión orientada al mensaje no se requiere indicar la dirección de destino, por lo que los 8 bits del campo GE están disponibles para uso del fabricante, con ello éste cuenta con 256 diferentes mensajes por nodo para transmisión de mensajes propietarios.
+\subsection{Transmisión Fragmentada} 
+Los bloques de datos con más de 8 bytes de datos deben ser transmitidos en fragmentos. Ya que con transmisión fragmentada el primer byte de datos de cada mensaje es usado para enumerar los fragmentos o segmentos, solamente pueden ser transmitidos 7 bytes de datos por mensajes.
+
+SAE J1393 soporta dos tipos de transmisión fragmentada identificadas como transmisión fragmentada orientada al nodo y transmisión fragmentada en broadcast. En ambos casos hacen uso del formato 1 de PDU.
+
+\subsection{Administración de Red}
+A diferencia de otros protocolos de capas superiores, la administración de red aplicada en SAE J1939 sirve para la asignación automática o determinación de direcciones de los nodos, la administración de red no lleva a cabo el monitoreo del nodo y debe ser realizado a través de la aplicación de mensajes cíclicos de evaluación.
+La dirección del nodo representa una precondición básica para el protocolo SAE J1939. Por esta razón, todos ellos revisan su dirección pre configurada o piden una dirección libre durante su inicialización.  Esto ocurre a través del proceso denominado Solicitud de Dirección. Así, entonces SAE J1939 no tiene una unidad que asigne números a los nodos, sino que de manera descentralizada controlan esta asignación entre ellos mismos.
+Sin embargo como se ha visto existen dispositivos que tienen direcciones preasignadas que normalmente deberían ser usadas por los dispositivos mientras no exista conflicto con otros nodos. La \textbf{Tabla \ref{nodos}} muestra las clases de direcciones disponibles para los nodos. 
+
+
+%%%%%%%%%%%%%%%%%%%%% tabla %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htb]
+\begin{center}
+\begin{tabular} {p{2cm} p{9cm}}%{|l|l|}
+\hline
+Dirección & Uso  \\
+\hline \hline
+0 - 127 & Direcciones asignadas fijas para nodos de red que siempre o casi siempre están presentes \\ \hline
+128 - 247 & Direcciones asignadas para asignación específica o determinación dinámica \\ \hline
+248 - 253 & Direcciones asignadas fijas para nodos de red que siempre o casi siempre están presentes \\ \hline
+254 & Dirección cero. Es usada como dirección origen de un dispositivo cuando no se le ha podido asignar ninguna otra dirección \\ \hline
+255 & Dirección para mensajes de broadcast \\ \hline
+\end{tabular}
+\caption{Clases de Direcciones de Nodos.}
+\label{nodos}
+\end{center}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+Para asignar o pedir direcciones de nodo a través de la red, todos los nodos deben ser unívocamente identificables. Este es conseguido con un campo de 64 bits que representa el nombre del dispositivo y que es transmitido junto con el identificador de 29 bits (En el campo de datos de la trama) de un mensaje llamado Dirección Solicitada. 
+
+\subsection{Clases de configuración de los dispositivos}
+Dependiendo de la configuración de los nodos la norma SAE J1939 se divide en 4 categorias.
+\begin{itemize}
+\item \textbf{No configurable:} La dirección del nodo ya está programada para este dispositivo.
+\item \textbf{Configurable por servicio:} La dirección del nodo puede ser establecida o cambiada por una herramienta de servicio. Para lo cual el dispositivo debe estar en un modo especial de operación.
+\item \textbf{Configurable por comando:} La dirección del nodo puede ser establecida durante su operación normal por medio de un mensaje llamado Comando de Dirección.
+\item \textbf{Auto configurable:} El propio dispositivo es el que determina su dirección por medio de cálculo interno. A través de un mensaje Dirección Solicitada esta dirección es pedida a la red. Si surgen conflictivos de dirección, localmente debe determinar una dirección alternativa.
+\end{itemize}
+
+\subsection{Configuración Dinámica de Dirección de Nodo}
+En el proceso de configuración dinámica de Dirección de Nodos, un dispositivo envía en broadcast un mensaje  de Dirección Solicitada (PF con valor 238) con su actual dirección de nodo en el campo Dirección de Origen de su identificador junto con su nombre de dispositivo de 64 bits en el campo de datos. Si la dirección transmitida ya corresponde a otro, el dispositivo que se queda con ella es aquel que posee mayor prioridad en el campo de nombre de dispositivo. El nodo que pierde la dirección debe determinar otra y enviarla de nuevo a través de un mensaje de Dirección Solicitada. Si por alguna razón el nodo perdedor no puede determinar una nueva dirección debe enviar un mensaje “Dirección Origen No Asignada”. Si un receptor de un mensaje Dirección Solicitada posee la misma dirección pero con mayor prioridad debe enviar este mismo mensaje para indicarle al otro nodo que determine otra dirección para él.
+
+A través del mensaje Consulta de Dirección de Nodo (PF con valor 234), un nodo puede consultar a cualquier otro que dirección y nombre de dispositivo posee. Esta función es usada por un nodo que desea establecer su dirección origen y le permite conocer cuáles direcciones ya están siendo usadas. 
+
+Para asignar una dirección de nodo específica a un dispositivo perteneciente a la clase “Configurable por Comando” y que no posee dirección de nodo, se le transmite un mensaje denominado “Comando de Dirección” el cual en su campo de datos contiene el nombre del dispositivo (8 bytes) y la dirección asignada a éste (1 byte), haciendo uso del protocolo de fragmentación en broadcast. El receptor del mensaje responderá entonces con un mensaje “Dirección Solicitada” comunicando su nueva dirección de red.
+
+Usando los mensajes de administración de red mencionadas anteriormente, existe la posibilidad de conflicto de identificador en caso de por ejemplo  dos nodos transmitan un mensaje de Dirección Solicitada con la misma dirección de nodo al mismo tiempo. Los mensajes tendrán el mismo identificador, pero diferente nombre del dispositivo. Este conflicto es descubierto cuando uno de los controladores BUS CAN reconoce un bit de su campo de datos transmitido como dominante destruyendo el mensaje inmediatamente. Esto es luego reconocido por el controlador BUS CAN. Esto podría conducir a que el nodo en cuestión alcance el estado de bus off (suspendido), por ello es necesario emplear mecanismos especiales de retransmisión en el controlador BUS CAN. Por ejemplo con nodos del mismo tipo y comportamiento, un intento de retransmisión terminaría en un nuevo conflicto, por tanto se debe insertar un intervalo de tiempo diferente para cada nodo antes de iniciar la retransmisión.
+
+\subsection {Capa de Aplicación}
+
+La especificación SAE J1939/71 describe una capa de aplicación para vehículos, la cual describe los mensajes de esta capa (parámetros) así como grupos de estos mensajes (grupos de parámetros), con el fin de garantizar interoperabilidad entre sus componentes.
+Las últimas actualizaciones de esta especificación incorpora varias características adicionales como un número total de hasta casi 150 mensajes definidos, los cuales brindan funciones de antirrobo, inyección, presión de llantas, turbo cargador, control de combustible entre otras.
+
+\subsection{Definición de Parámetros}
+
+Asegura interoperabilidad entre nodos individuales, para ello describe la longitud de datos en bits y bytes, el tipo de mensaje y el número de parámetro de sospecha que sirve de referencia en mensajes de diagnóstico.
+
+\subsection{Definición de Grupos de Parámetros}
+
+La definición de un Grupo de Parámetros incluye, además de la descripción de características de transmisión, una lista de parámetros usados.
+Un grupo de Parámetros es por tanto descrito por los siguientes parámetros:
+\begin{itemize}
+\item Número de bytes de datos
+\item Número de Data Page (DP)
+\item Formato PDU (PF)
+\item Extensión PDU (DA/GE)
+\item Prioridad
+\item Número de Grupo de Parámetro (PGN)
+\item Lista de Parámetros
+\end{itemize}
+
+Además de la definición de parámetros y grupos de parámetros, esta capa también define mensajes adicionales para funciones de diagnóstico, los cuales permiten por ejemplo la lectura y escritura de áreas de almacenamiento y la eliminación de fallos.
+
+Los principales campos de aplicación de la norma SAE J1939 son en camiones y buses, vehículos agrícolas y de construcción, trenes de pasajeros, trenes de carga y en electrónica marítima.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% agregado en 2021
+\subsection{Lectura de Datos J1939 con BUS CAN}
+
+En la \textbf{Figura \ref{TB1}} se observa la trama completa BUS CAN para la norma SAE J1939 en dónde se observa sus distintas partes, pero para la programación del hardware se hace uso solamente de dos campos fundamentales: PGN (Número de Parámetro de Grupo) y los 8 bytes de datos que contiene las SPN (suspect parameter number, por sus siglas en inglés).
+Se debe distinguir entre PGN y SPN, el cual los PGN se escriben en el identificador BUS CAN y los SPN son los datos de los 8 bytes posibles. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap5imagen/ID29.pdf}
+	\caption[Trama J1939 BUS CAN.]{Trama J1939 BUS CAN.\textbf{ Fuente:} \cite{MCmi}.}
+	\label{TB1} % Etiqueta para la referencia.
+\end{figure}
+
+% CITAR IMAGEN
+En la \textbf{Figura \ref{TB2}} podemos hacer énfasis en las dos partes fundamentales que son la  PGN y los datos SPN.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./Cap5imagen/PGNDAT.pdf}
+	\caption[PGN y Datos BUS CAN.]{PGN y Datos BUS CAN\textbf{ Fuente:} \cite{MCmi}.}
+	\label{TB2} % Etiqueta para la referencia.
+\end{figure}
+
+Los valores de la trama no traen una lectura directa de los parámetros medidos sino que deben ser procesadas matemáticamente atendiendo valores de Offset y conversiones de datos.
+Con un ejemplo se explica el procedimiento de interpretación de la trama:
+
+Una vez recibida la trama, la ID permite extraer el PGN del mismo, junto a la PGN vienen los 8 datos SPN que se descomponen bits a bits para analizar su valores, \textbf{Figura \ref{TB3}}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{./Cap5imagen/PGNEJEM.pdf}
+	\caption[PGN y Datos SPN.]{PGN y Datos SPN\textbf{ Fuente:} \cite{MCmi}.}
+	\label{TB3} % Etiqueta para la referencia.
+\end{figure}
+
+Supongamos deseamos solicitar a la red CAN el PGN = 65262 cuyo valor en hexadecimal es 0xFEEE, este número indica un paquete de temperatura, para realizar dicha petición a la red debemos colocar los parametros PGN  de la trama con los siguientes datos presentados en la \textbf{Figura \ref{fig_pgndatos_c3}}, estós datos son guiados por los documentos de la SAE J1939/71. 
+
+    \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{./Cap3imagen/pgndatos.pdf}
+		\caption[Parámetros PGN para la solicitud de datos.]{Parámetros PGN para la solicitud de datos.\textbf{ Fuente:} %\cite{cite_obd0_c3}
+		Elaboración Propia.}
+		\label{fig_pgndatos_c3} % Etiqueta para la referencia.
+	\end{figure}
+
+PF  indica el comando de solicitud y para la solicitud de paquetes necesitamos colocar dicho valor a 234(decimal),   DA puede ser una dirección de destino específica o se puede enviar el comando a todos los dispositivos de la red colocando 255 en dicho campo. La palabra address es nuestra dirección particular. En datos debemos agregar el PGN en formato INTEL, es decir los bytes están al revés de lo normal,  para nuestra consulta si queresmos enviar el PGN= 00FEEE, colocamos en el byte1 = 0xEE, byte2 = 0xFE, y byte3  = 0x00, los demás bytes se colocan a cero, \textbf{Figura \ref{fig_datosj1939_c3}}.
+    
+    \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{./Cap3imagen/datosJ1939.pdf}
+		\caption[Datos en formato INTEL.]{Datos en formato INTEL.\textbf{ Fuente:} %\cite{cite_obd0_c3}
+		Elaboración Propia.}
+		\label{fig_datosj1939_c3} % Etiqueta para la referencia.
+	\end{figure}
+
+
+Una vez enviado, esperamos 1.25 ms para la respuesta, que será una trama PGN. En la \textbf{Figura \ref{fig_peticionj1939_c3}} observamos un diagrama de comunicación en dónde HW es el hardware que se desea comunicar y RED es la misma red Bus CAN.
+
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{./Cap3imagen/peticionj1939.pdf}
+		\caption[Solicitud de datos.]{Solicitud de datos.\textbf{ Fuente:} %\cite{cite_obd0_c3}
+		Elaboración Propia.}
+		\label{fig_peticionj1939_c3} % Etiqueta para la referencia.
+    	\end{figure}
+
+
+
+Recibiremos como respuesta la PGN 65262 y esta nos entrega datos en los bytes recibidos, al principio estos datos no tienen significado, debemos recurrir al documento SAE J1939/71 para elaborar un algoritmo que permita identificar estos valores, buscando dicho valor PGN 65262 en el documento observaremos especificaciones como se muestra en la siguiente \textbf{Tabla \ref{tabla5}}.
+
+\begin{table}[htb]
+	\begin{center}
+		\begin{tabular}{|l|l|l|}
+			\hline
+			Byte & Descripción & SPN \\
+			\hline \hline
+			1 & Engine Coolant Temperature   & 110\\ \hline
+			2 & Fuel Temperature  & 174\\ \hline
+			3, 4 & Engine Oil Temperature   & 175 \\ \hline
+			5, 6 & Turbocharger Oil Temperature & 176 \\ \hline
+			7    & Engine Intercooler Temperature & 52  \\ \hline
+			8    & Engine Intercooler Thermostat Opening & 1134 \\ \hline
+		\end{tabular}
+		\caption{Datos del Documento SAE J1939 para PGN 65262.}
+		\label{tabla5}
+	\end{center}
+\end{table}
+
+La \textbf{Tabla \ref{tabla5}} nos indica que parámetros están presentes en cualquiera de los 8 bytes de datos recibidos, pero cada bytes está asociado a un SPN, en la \textbf{Tabla \ref{tb_spn}} podemos observar algunas especificaciones para lograr calcular los parámetros de temperaturas recibidos. 
+
+\begin{table}[htb]
+	\begin{center}
+		\begin{tabular}{|l|l|l|l|} 
+			\hline
+			SPN & Rango & Resolución & Offset \\
+			\hline \hline
+			110 &-40$^{\circ}$C a 210$^{\circ}$C & 1$^{\circ}$C/Bit & -40$^{\circ}$C\\ \hline
+			174 &-40$^{\circ}$C a 210$^{\circ}$C & 1$^{\circ}$C/Bit & -40$^{\circ}$C\\ \hline
+			175 &-273$^{\circ}$C a 1735$^{\circ}$C & 0.03125$^{\circ}$C/Bit & -273$^{\circ}$C\\ \hline
+			176 &-273$^{\circ}$C a 1735$^{\circ}$C & 0.03125$^{\circ}$C/Bit & -273$^{\circ}$C\\ \hline
+			52    & -40$^{\circ}$C a 210$^{\circ}$ & 1$^{\circ}$C/Bit & -40$^{\circ}$C\\ \hline
+			1134   &  0 a 100\%     & 0.4\%/Bit & 0 \% \\ \hline
+		\end{tabular}
+		\caption{Datos de los Parametros SPN.}
+		\label{tb_spn}
+	\end{center}
+\end{table}
+
+Calcularemos como ejemplo la Temperatura del combustible, que está presente en el byte2, y cuya SPN es 174. vamos a la \textbf{Tabla \ref{tb_spn}} de SPN y observamos ciertos valores. A dichos valores aplicamos la siguiente formula: 
+
+   $$valor = [byte]*Resolucion + offset$$
+  
+  Si el valor del byte2 = 50 para los demás datos tendríamos que Resolución = 1 y offset = -40, entonces calculamos   $valor=50*1-40=10$$^{\circ}$C,
+  por ende la temperatura del combustible es de 10 grados centígrados. Podemos observar que 10 grados cae entre los rangos presentados en la tabla SPN. 
+
+\section{Equipos de lectura OBDII y J1939 presentes en el mercado.}
+
+\subsection{Dispositivos de Lectura OBD II}
+\begin{itemize}
+	\item Lectores para Smartphone: Son escáneres de coche OBD2 que funciona con una aplicación de smartphone y se conecta a dicho smartphone a través de Bluetooth o Wifi. El sensor puede simplemente conectarse al puerto de entrada OBD2 del auto motor para la medida de diferentes lecturas. Suelen ser usados para uso uso personal,  está más diseñado para ser utilizado por propietarios de automóviles individuales que desean solucionar problemas con sus vehículos cuando se producen. No registra tantas métricas de vehículos como los escáneres de grado profesional, pero funciona bien como un escáner OBD2 portátil para tenerlo a mano \cite{cite_obd0_c3} .  Algunos modelos de los productos de este tipo son : el BlueDriver Bluetooth Professional, el Mini ELM327 OBDII,  que se pueden observar en la \textbf{Figura \ref{fig_obd1_c3}}.
+	
+	%darioherrera. (2018, septiembre 12). Los Mejores Escáners de OBD. Supercoches.net. https://supercoches.net/escaners-obd/
+	%\bibitem{cite_obd0_c3} Dario Herrera. (2018, septiembre 12). Los Mejores Escáners de OBD. Supercoches.net. \url{https://supercoches.net/escaners-obd/}
+	
+	%ELM327
+	%https://www.amazon.es/IM77R-Bluetooth-esc%C3%A1ner-diagn%C3%B3stico-Control/dp/B07JHJL2X6/ref=sr_1_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=obd2+bluetooth&qid=1628438322&s=automotive&sr=1-1
+	
+	%OBDLink
+	%https://www.amazon.es/ScanTool-427201-herramienta-detecci%C3%B3n-profesional/dp/B00H9S71LW/ref=sr_1_2?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=obd2+bluetooth&qid=1628438322&s=automotive&sr=1-2
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{./Cap3imagen/BlueDriver.JPG}
+		\caption[Equipo de monitoreo CAN para Smartphone.]{Equipo de monitoreo CAN para Smartphone.\textbf{ Fuente:} \cite{cite_obd0_c3}.}
+		\label{fig_obd1_c3} % Etiqueta para la referencia.
+	\end{figure}
+	
+	
+	
+	%ELM
+	%https://www.amazon.es/dp/B01HYX7HHE/ref=sspa_dk_detail_4?psc=1&pd_rd_i=B01HYX7HHE&pd_rd_w=QWDge&pf_rd_p=4e7ddd1a-9380-4850-ad3a-4263ea77f6fd&pd_rd_wg=oOl2F&pf_rd_r=ZD771TCDDWGSSF3PYR9E&pd_rd_r=b82a88ff-9453-48b7-acf9-5a937dae2528&smid=A1EFSMQZ0I67KS&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFaWjhEN1FIMjdJQlcmZW5jcnlwdGVkSWQ9QTA4MTI0ODRDUFQyWVlTVUJFRjMmZW5jcnlwdGVkQWRJZD1BMDczMTIzMTNWNVdSVTYyNTNRMzUmd2lkZ2V0TmFtZT1zcF9kZXRhaWwmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl
+	
+	\item Lectores con Display: Son escáneres de coche OBD2 que funciona con un conector cableado que deberá ser enchufado al automovil y proporciona los datos del vehiculo en una Pantalla. Estos datos por lo general vienen en un formato de código y se debe contar con un manual de fallas para saber el tipo de fallo detectado. Un ejemplo es el modelo Innova 3100 y  Actron CP9690. En la \textbf{Figura \ref{fig_obd2_c3}} podemos observar algunos modelos de este tipo. 
+	%Innova
+	%https://www.amazon.es/Innova-3100-Lector-Herramienta-an%C3%A1lisis-diagn%C3%B3stico/dp/B01MR7FZS1?psc=1&SubscriptionId=AKIAJZLHY2LYVLTZ47MA&tag=momentines-21&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B01MR7FZS1
+	
+	%actron
+	%https://www.amazon.es/Actron-CP9690-Trilingual-AUTOSCANNER-Screen/dp/B011ICD2WQ?SubscriptionId=AKIAJZLHY2LYVLTZ47MA&tag=momentines-21&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B011ICD2WQ
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.4\textwidth]{./Cap3imagen/Innova.JPG}
+		\caption[Equipos de monitoreo OBD II con display.]{Equipos de monitoreo OBD II con display.\textbf{ Fuente:} \cite{cite_obd0_c3}.}
+		\label{fig_obd2_c3} % Etiqueta para la referencia.
+	\end{figure}
+	
+	
+	\item Lectores con sistemas embebidos: Son  herramientas profesionales de diagnóstico y escaneado. Tienen una pantalla táctil de tamaño considerable, con mangos de goma. Llevan un conector USB para cargar y transferir datos en un ordenador. Poseen ranura para tarjeta SD, el enchufe del cable OBD2 y un puerto USB para conectarlo a una impresora. Algunos más modernos  tienen aplicaciones específicas para Internet, PDF, calculadora y reloj. El acceso a internet inalámbrico es para buscar información sobre coches. No hace falta un manual externo de códigos de fallas pues lleva internamente mecanismos para traducir dichos códigos.  Poseen capacidad de mostrar gráficos  y almacenar todos los datos de códigos recopilados. Las Marcas Autel y Launch tienen varios modelos como se puede observar en la \textbf{Figura \ref{fig_obd3_c3}}. 
+	
+	%AL619
+	%https://www.amazon.es/dp/B0091DJWV0/?tag=momentines-21
+	
+	%autel Maxisys
+	%https://www.amazon.es/Autel-exploraci%C3%B3n-diagn%C3%B3stico-programaci%C3%B3n-Multitouch/dp/B01IT1M1OY/ref=sr_1_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Autel+Maxisys+maxicom&qid=1628441306&sr=8-1
+	
+	%LAUNCH X431 V
+	%https://www.amazon.es/dp/B07TCPXV1F/ref=sspa_dk_detail_0?psc=1&pd_rd_i=B07TCPXV1F&pd_rd_w=vMHck&pf_rd_p=4e7ddd1a-9380-4850-ad3a-4263ea77f6fd&pd_rd_wg=XFcEp&pf_rd_r=3BV4TQ7ERRPJPZYCETYN&pd_rd_r=b4eeb5e6-88e3-4233-98af-5ad9c5e3217c&smid=A30EQIZQ0EK03B&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExSzBPQ09VTUxXQjBZJmVuY3J5cHRlZElkPUEwODMwODY2MVBQSTE0Q0xBSlFQWiZlbmNyeXB0ZWRBZElkPUEwMzcyMjQyWTQxTkFEWUhISElCJndpZGdldE5hbWU9c3BfZGV0YWlsJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==
+	
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\textwidth]{./Cap3imagen/embebidos.JPG}
+		\caption[Equipos de monitoreo OBD II basado en sistemas embebidos.]{Equipos de monitoreo OBD II basado en sistemas embebidos.\textbf{ Fuente:} \cite{cite_obd0_c3}.}
+		\label{fig_obd3_c3} % Etiqueta para la referencia.
+	\end{figure}
+	
+	
+	
+\end{itemize}
+
+
+\subsection{Dispositivos de Lectura J1939}
+Como el protocolo CAN SAE J1939 es un protocolo destinado a permitir que se añadan nuevos dispositivos CAN al sistema del vehículo, existen muchas empresas que se encargan de proveer servicios automotrices para el manejo de este protocolo. Comentaremos algunas principales empresas que se ocupan de brindar estos dispositivos y sus respectivas herramientas de análisis más utilizadas:  
+
+\subsection{Technoton}
+Technoton  Es una empresa que se dedica al desarrollo y fabricación de dispositivos de rastreo GPS, sensores de nivel de combustible y medidores de flujo de combustible. Actualmente está enfocada, además de lo anterior, a la lectura y análisis de datos CANbus seguros\cite{cite_technoton_c3}. Entre sus productos está el CANcrocodile y  el MasterCAN tool. 
+
+
+CANCrocodile es un lector que utiliza el efecto hall para la lectura del bus CAN, de esta manera no se corta el bus y sin contacto eléctrico permite recibir datos del funcionamiento del transporte.  El lector sin contacto requiere de otro equipo llamado  MasterCAN Tool que atraves de un computador visualiza los datos del bus \cite{cite_cocodrile_c3}. 
+
+
+El MasterCAN Tool analiza los mensajes de bus automovilistico CAN a través del protocolo SAE J1939/71. permite detectar fallas de los bloques electrónicos de control (ECU). además de grabar los valores medidos en un archivo externo \cite{cite_mastertool_c3}. En las   \textbf{Figuras \ref{fig_cocodrile_c3} y \ref{fig_mastertool_c3}} podemos observar ambos dispositivos y en la \textbf{Figura \ref{fig_sistemacocodrile_c3}} su ensamblaje. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./Cap3imagen/cocodrile.jpg}
+	\caption[Lector sin contacto CANCrocodile.]{Lector sin contacto CANCrocodile.\textbf{ Fuente:} \cite{cite_cocodrile_c3}.}
+	\label{fig_cocodrile_c3} % Etiqueta para la referencia.
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{./Cap3imagen/mastercan-tool.png}
+	\caption[Analizador del bus CAN MasterCAN Tool.]{Analizador del bus CAN MasterCAN Tool.\textbf{ Fuente:} \cite{cite_mastertool_c3}.}
+	\label{fig_mastertool_c3} % Etiqueta para la referencia.
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{./Cap3imagen/esquemaMasterCAN.png}
+	\caption[ Conexión al bus CAN mediante CANCrocodile.]{ Conexión al bus CAN mediante CANCrocodile.\textbf{ Fuente:} \cite{cite_mastertool_c3}.}
+	\label{fig_sistemacocodrile_c3} % Etiqueta para la referencia.
+\end{figure}
+
+\subsection{Kvaser}
+Kvaser es una empresa que suministra soluciones CAN avanzadas para ingenieros que diseñan y despliegan sistemas en áreas tan amplias como camiones y autobuses, automóviles eléctricos, de gasolina, aviónica,  automatización industrial, etc. Uno de sus productos, entre varios, es el  Kvaser Leaf Light HS v2, \textbf{Figura \ref{fig_kvaserLeafLight_c3}},  que es un dispositivo de monitoreo de red bus CAN, el cual conectado luego a una computadora y con el software de "kvaser"  se pueden visualizar los datos presentes en el bus.  Su costo es de 358 dólares en el año del 2021 \cite{cite_kvaserLeaf_c3}.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./Cap3imagen/kvaserLeafLight.jpg}
+	\caption[ Dispositivo Leaf light HS v2 para lectura CAN.]{Dispositivo Leaf light HS v2 para lectura CAN.\textbf{ Fuente:} \cite{cite_kvaserLeaf_c3}.}
+	\label{fig_kvaserLeafLight_c3} % Etiqueta para la referencia.
+\end{figure}
+
+\subsection{ODO Solutions}
+Es una empresa encargada del desarrollo de equipos de registro de datos basados en la nube \cite{cite_odo_c3}.  ODO Solutions se alió con la empresa kvaser para crear ODOS CloudCommander \cite{cite_commander_c3}. Dicho Dispositivo combina la  interfaz CAN más popular de Kvaser, Kvaser Leaf Light, con la plataforma en la nube de ODOS y de esta manera  brindar una solución de registro de datos  CAN en la nube. En la \textbf{Figura \ref{fig_commander_c3}} se puede observar el diseño del dispositivo
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./Cap3imagen/TCU.png}
+	\caption[Dispositivo CloudCommander CAN.]{Dispositivo CloudCommander de las empresas ODO y Kvaser.\textbf{ Fuente:} \cite{cite_commander_c3}.}
+	\label{fig_commander_c3} % Etiqueta para la referencia.
+\end{figure}
+
+
+El equipo contiene un módulo GPS y un módulo de comunicación LTE para registrar los datos en la nube proveida por la empresa de ODO Solutions. En la \textbf{figura \ref{fig_commanderSystem_c3}} podemos observar un esquema de la tecnología empleada.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./Cap3imagen/system-overview-2.png}
+	\caption[Sistema CloudCommander CAN.]{Sistema CloudCommander CAN.\textbf{ Fuente:} \cite{cite_commander_c3}.}
+	\label{fig_commanderSystem_c3} % Etiqueta para la referencia.
+\end{figure}
+
+\subsection{Copperhilltech}
+Copperhill Technologies Corporation es una empresa de Estados Unidos que se encarga del desarrollo y venta de sistemas integrados basados en el protocolo CAN y SAE J1939 \cite{cite_copper_c3}, trabaja con varios sistemas embebidos como la Rasberry pi y la ESP32,  pero la solución propuesta de la propia compañia  para el protocolo CAN SAE J1939 es su sistema jCOM.   Copperhill Technologies también es miembro de SAE (Society of Automotive Engineers, por sus siglas en inglés). Esta empresa provee un software que funciona con las placas JCOM empleadas, \textbf{Figura \ref{fig_copper_c3}}. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./Cap3imagen/copperhill.jpg}
+	\caption[Productos CAN desarrollados por Copperhilltech .]{Productos CAN desarrollados por Copperhilltech.\textbf{ Fuente:} \cite{cite_copper_c3}.}
+	\label{fig_copper_c3} % Etiqueta para la referencia.
+\end{figure}
+
+\subsection{Vector}
+Vector es una empresa que se dedica al  desarrollo de la electrónica automotriz.  Tanto a nivel de software como de hardware. Desarrollar sistemas de monitoreo CAN es solo una parte de la empresa pero también gana una gran cantidad de mercado con la misma. Se destaca por desarrollar un software de monitoreo J1939 denominado: CANalyzer .J1939 \cite{cite_analyzer_c3}, con este software se puede obtener visualización, comprobaciones, interpretación, filtros y funciones de búsqueda específicas del protocolo. 
+
+En la \textbf{Figura \ref{fig_analyzer_c3}} podemos observar la apariencia de su sistema de monitoreo CAN. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./Cap3imagen/CANalyzer.png}
+	\caption[Software de Monitoreo CANalyzer .]{Software de Monitoreo CANalyzer.\textbf{ Fuente:} \cite{cite_CANalyzer_c3}.}
+	\label{fig_analyzer_c3} % Etiqueta para la referencia.
+\end{figure}
+
+
+
+
+
+
+
+
+

@@ -2,7 +2,7 @@
 
 \section{Simulador SAE J1939}
 
-El Au-SAE J1939 simulador Ver 2.00A es un dispositivo capaz de proveer la mayoría de las señales de la norma SAE J1939. Una topología de red típica SAE J1939 se ilustra en la \textbf{Figura \ref{TPSAE}}.
+El simulador Au-SAE J1939 Versión 2.00A es un dispositivo capaz de proveer la mayoría de las señales de la norma SAE J1939. Una topología de red típica SAE J1939 se ilustra en la \textbf{Figura \ref{TPSAE}}, en dónde el simulador se conecta al bus mediante una resistencia interna de 120 ohmios, además trae consigo un conector RS-232 para utilizarlo con una Computadora en caso de ser necesario. Este simulador es proporcionado por la empresa Electrónica Au Grup para utilizarlo en las pruebas de sistemas SAE J1939, en la \textbf{Figura \ref{Sim}} se observa su apariencia. 
 
 \begin{figure}[H]
 	\centering
@@ -11,7 +11,7 @@ El Au-SAE J1939 simulador Ver 2.00A es un dispositivo capaz de proveer la mayor�
 	\label{TPSAE} % Etiqueta para la referencia.
 \end{figure}
 
-Existen 6 ediciones del simulador  Gen II SAE J1939 de la \textbf{Figura \ref{Sim}}, que son proporcionados por Electrónica Au Grup para satisfacer las necesidades según los diferentes usuarios: 
+
 
 \begin{figure}[H]
 	\centering
@@ -19,47 +19,9 @@ Existen 6 ediciones del simulador  Gen II SAE J1939 de la \textbf{Figura \ref{Si
 	\caption[Simulador BUS CAN SAE J1939.]{Simulador BUS CAN SAE J1939.\textbf{ Fuente:} \cite{UserM}.}
 	\label{Sim} % Etiqueta para la referencia.
 \end{figure}
-
-
-\begin {itemize}
-  
-    \item Simulador Gen II  SAE-J1939  - Engine Basic Edition
-	\item Simulador Gen II  SAE-J1939  - Engine Basic Plus Edition
-	\item Simulador Gen II  SAE-J1939  - Engine Premium Edition
-	\item Simulador Gen II  SAE-J1939  - Engine Premium Plus Edition
-	\item Simulador Gen II  SAE-J1939  - Vehicle Platinum Edition
-	\item Simulador Gen II  SAE-J1939  - Vehicle Platinum Plus Edition
-
-\end{itemize}
-
-Las ediciones "Plus" tienen todas las funciones de las ediciones "no-Plus", además de un programa de ordenador de terminal remota que puede ser utilizado para controlar y visualizar los datos SAE J1939 en la pantalla del PC. Además un conjunto de herramientas de gestión de licencias proporciona la capacidad de actualizar el simulador de edición básica de edición premium / platino. "Non-Plus" edición es capaz de ser actualizado a las ediciones "Plus".
-
-\begin{itemize}
-\item Engine Basic Edition: Genera la mayor parte de los datos básicos del motor de manera "Estática" o "Dinámica". Los dos botones (Up y Down) se utilizan para ajustar la salida de datos del simulador en el "modo estático" o en el "modo dinámico" respectivamente.En el "modo dinámico" los datos cambian de forma automática según los intervalos de valores estándares para el SAE  J1939. Los LEDs indican el valor del paso de control de la señal de salida, tiene un zumbador que indica el cambio de estado del simulador e indica el encendido del mismo.
-\item Motor Premium Edition:
-Incluye todas las funciones del motor Basic Edition e Incluye características premium de diagnosis del vehículo denominado DM1 (Diagnostics Message 1, por sus siglas en inglés),  DM2 y DM3 los cuales son parámetros que diagnostican el estado del vehículo.
-
-\item Vehicle Platinum Edition: Incluye todas las funciones del motor Premium Edition, además incluye funciones que involucran la red interna del vehículo,  Señales relacionadas con el ABS (Antiblockiersystem), señales relacionadas con la transmisión y señales relacionadas con la Configuración del motor, \cite{UserM}.
-
-\end{itemize}
-
 \subsection {Principales Características del Simulador}
+El simulador SAE J1939  está equipado con una resistencia de carga interna de 120 ohmios, Protección TVS(\textit{Transient Voltage Suppressor}, por sus siglas en inglés) para protección contra altos niveles de tensión, LED de encendidios, zumbador para indicar el funcionamiento y botones de configuración. El simulador tiene como entrada un conector DB9  para las conexiones CANH y CANL, además de la propia alimentación del dispositivo. Trabaja a 12V y puede consumir una corriente máxima de 250mA. Puede operar en dos modos llamados estáticos y dinámicos. 
 
-\begin{itemize}
-
-\item Contiene una resistencia de carga interna 120 ohmios para montar una red BUS CAN.
-\item Protección con  TVS (Transient Voltage Suppressor, por sus siglas en ingles) para protección contra altos niveles de tensión. 
-\item Tamaño compacto.
-\item 9 Indicadores LED: Encendido, Rando y Advertencia, HASTA 100\%, frente a 0\%, 80\%, 60\%, 40\%, 20\%, el  LED parpadeará cuando se selecciona uno de estos seis valores especificados.
-\item Color de la carcasa: Negro 
-\item 1 Zumbador
-\item 3 botones: MENU, DOWN, UP, la señal J1939 se puede ajustar a través de estos pulsadores.
-\item 1 interfaz RS232 para la actualización de software, gestión de licencias y control remoto.
-\item 1 conector DB9 macho para la alimentación y la conexión CANH - CANL.
-\item Fuente de alimentación: 9 a 12 VDC, 250mA máximo.
-\item Temperatura de funcionamiento: -20$^{\circ}$C a 85$^{\circ}$C
-
-\end{itemize}
 
 \subsection{Modo de Funcionamiento}
 
@@ -82,11 +44,8 @@ A modo de resumen se indica las funciones básicas de los botones:
 \begin{itemize}
 \item Botón DOWN: permite disminuir todos los datos simulados hasta que alcanza el valor más bajo.
  \item botón UP: permite aumentar todos los datos simulados hasta que alcanza el valor más alto.
-\item botón MENÚ: activa y desactiva el DM1, esta opción no esta disponible en la versión básica.
-\item Mantener presionado el botón MENÚ cuando se enciende: el simulador entrará en modo BootLoader, si no se detecta ninguna comunicación de un programa Bootloader del PC en 10 segundos, se reanudará en modo normal.
- \item DoWN + UP: activa y desactiva el Control de alarma.
 \item MENÚ + UP: Cambia el funcionamiento del simulador entre el modo estático y dinámico.
-\item MENU + DOWN: activa y desactiva el DM2 (Diagnostics Message 2, por sus siglas en inglés), esta opción no esta disponible en la versión básica.
+
 \end{itemize}
 
 
@@ -160,6 +119,8 @@ Para obtenerlo, presionamos velocidad y luego activar, para poder filtrar de ent
 		Elaboración propia.}
 	\label{gauge_ref_c6} % Etiqueta para la referencia.
 \end{figure}
+
+\section{Vehículos con el sistema OBD II}
 
 Para el sistema OBD II fue puesta a prueba el sistema en tres vehículos de las marcas Toyota 2019, Hyundai Creta 2021 y Hyundai Tucson 2011, en donde se realizó las medidas de distintos sensores para obtener datos de revoluciones por minuto del motor, voltaje de batería, velocidad y lectura de lista de sensores presentes en el vehículo,etc. Se puede ver en las \textbf{Figuras \ref{auto_ref_c6}, \ref{creta_ref_c6} y \ref{tucson_ref_c6} }  las imágenes de los tipos de vehículo automotor usados en las pruebas. 
 
