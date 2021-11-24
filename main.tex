@@ -88,6 +88,9 @@
 \thispagestyle{fancy}
 }
 %*****************************************************************************%
+
+
+
 %   Titlesec                                                                  %
 %*****************************************************************************%
 \usepackage{titlesec}
@@ -173,6 +176,7 @@ urlcolor=black,%
 }
 
 \begin{document}
+
 %*****************************************************************************%
 %  Esta parte es para cambiar el formato de los títulos, capítulos, secciones %    
 %*****************************************************************************%
@@ -199,6 +203,10 @@ urlcolor=black,%
 %		Cuerpo del libro
 \mainmatter
 
+
+\pagestyle{fancy}
+
+
 %   Índices                                                                   
 \tableofcontents
 \listoftables
@@ -207,21 +215,22 @@ urlcolor=black,%
 %		A partir de aqui estan los capítulos del libro
 
 
-%\include{Cap01}
+\include{Cap01}
 
 %\include{Cap02}
 %\include{Cap03}
 
-%\include{Cap002}
-%\include{Cap003}
+\include{Cap002}
+\include{Cap003}
 
 %\include{Cap04}
 %\include{Cap05}
 
-%\include{Cap06}
-
-%\include{conclusion}
+\include{Cap06}
 \include{Cap100}
+
+\include{conclusion}
+
 \include{bibliografia}
 
 %Esta instruccion es para que aparezca la palabra

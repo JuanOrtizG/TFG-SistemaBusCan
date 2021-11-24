@@ -1,8 +1,12 @@
-\chapter[Capítulo 6. Pruebas de Funcionamiento]{Pruebas de Funcionamiento}
+\chapter[Pruebas y Resultados Experimentales]{Pruebas y Resultados Experimentales}
+
+En este capitulo se presentan las siguientes pruebas: Prueba 1, Prueba 2. Se concluye con el análisis financiero del desarrollo del producto.
 
 \section{Simulador SAE J1939}
 
-El simulador Au-SAE J1939 Versión 2.00A es un dispositivo capaz de proveer la mayoría de las señales de la norma SAE J1939. Una topología de red típica SAE J1939 se ilustra en la \textbf{Figura \ref{TPSAE}}, en dónde el simulador se conecta al bus mediante una resistencia interna de 120 ohmios, además trae consigo un conector RS-232 para utilizarlo con una Computadora en caso de ser necesario. Este simulador es proporcionado por la empresa Electrónica Au Grup para utilizarlo en las pruebas de sistemas SAE J1939, en la \textbf{Figura \ref{Sim}} se observa su apariencia. 
+El simulador Au-SAE J1939 Versión 2.00A es un dispositivo capaz de proveer la mayoría de las señales de la norma SAE J1939. 
+Una topología de red típica SAE J1939 se ilustra en la Figura~\ref{TPSAE} en dónde el simulador se conecta al bus mediante una resistencia interna de 120 ohmios, además trae consigo un conector RS-232 para utilizarlo con una Computadora en caso de ser necesario. 
+Este simulador es proporcionado por la empresa Electrónica Au Grup para utilizarlo en las pruebas de sistemas SAE J1939, en la Figura~\ref{Sim} se observa su apariencia. 
 
 \begin{figure}[H]
 	\centering
@@ -19,15 +23,22 @@ El simulador Au-SAE J1939 Versión 2.00A es un dispositivo capaz de proveer la m
 	\caption[Simulador BUS CAN SAE J1939.]{Simulador BUS CAN SAE J1939.\textbf{ Fuente:} \cite{UserM}.}
 	\label{Sim} % Etiqueta para la referencia.
 \end{figure}
+
+
 \subsection {Principales Características del Simulador}
-El simulador SAE J1939  está equipado con una resistencia de carga interna de 120 ohmios, Protección TVS(\textit{Transient Voltage Suppressor}, por sus siglas en inglés) para protección contra altos niveles de tensión, LED de encendidios, zumbador para indicar el funcionamiento y botones de configuración. El simulador tiene como entrada un conector DB9  para las conexiones CANH y CANL, además de la propia alimentación del dispositivo. Trabaja a 12V y puede consumir una corriente máxima de 250mA. Puede operar en dos modos llamados estáticos y dinámicos. 
+El simulador SAE J1939  está equipado con una resistencia de carga interna de 120 ohmios, Protección TVS(\textit{Transient Voltage Suppressor}, por sus siglas en inglés) para protección contra altos niveles de tensión, LED de encendidos, zumbador para indicar el funcionamiento y botones de configuración. 
+El simulador tiene como entrada un conector DB9  para las conexiones CANH y CANL, además de la propia alimentación del dispositivo. 
+Trabaja a 12V y puede consumir una corriente máxima de 250mA. 
+Puede operar en dos modos llamados estáticos y dinámicos. 
 
 
 \subsection{Modo de Funcionamiento}
 
 Las simulaciones pueden ser operadas con sólo el control de los 3 botones presentes en el equipo. Con la configuración guiada por estos botones se genera una señal SAE J1939 para su uso en desarrollos de sistemas BUS CAN para camiones.
 
-El equipo debe conectarse a una fuente externa entre 9-12 V. La alimentación se realiza con los pines 1 (Tierra) y 5 (Potencial positivo), la conexión del BUS CAN tanto CANH como CANL se realiza en los pines 6 y 7 como se muestra en la \textbf{Figura \ref{DB9}}.  El indicador LED de encendido se ilumina y al estar listo el equipo emite un sonido a través del zumbador, entonces el simulador Au SAE J1939 empieza a funcionar en el modo (estático o dinámico) guardado en la última vez de su funcionamiento.
+El equipo debe conectarse a una fuente externa entre 9-12 V. 
+La alimentación se realiza con los pines 1 (Tierra) y 5 (Potencial positivo), la conexión del BUS CAN tanto CANH como CANL se realiza en los pines 6 y 7 como se muestra en la \textbf{Figura \ref{DB9}}.  
+El indicador LED de encendido se ilumina y al estar listo el equipo emite un sonido a través del zumbador, entonces el simulador Au SAE J1939 empieza a funcionar en el modo (estático o dinámico) guardado en la última vez de su funcionamiento.
 
 \begin{figure}[H]
 	\centering
@@ -36,9 +47,15 @@ El equipo debe conectarse a una fuente externa entre 9-12 V. La alimentación se
 	\label{DB9} % Etiqueta para la referencia.
 \end{figure}
 
-El modo estático genera una señal SAE J1939 constante, los  dos pulsadores (Up y Down) se utiliza para cambiar las salidas de datos mediante la decisión del usuario. En el modo dinámico todos los datos SAE-J1939 cambian automáticamente sin que el rango de valores sea intervenido por el usuario del equipo. Para Pasar de un modo de funcionamiento a otro se presiona los botones MENU y UP al mismo tiempo durante más de 1 segundo, es decir, para cambiar entre el modo dinámico y el modo estático. Una vez realizado, la confirmación del cambio se detecta con un zumbido del equipo.
+El modo estático genera una señal SAE J1939 constante, los  dos pulsadores (Up y Down) se utiliza para cambiar las salidas de datos mediante la decisión del usuario. 
+En el modo dinámico todos los datos SAE-J1939 cambian automáticamente sin que el rango de valores sea intervenido por el usuario del equipo. 
+Para pasar de un modo de funcionamiento a otro se presiona los botones MENU y UP al mismo tiempo durante más de 1 segundo, es decir, para cambiar entre el modo dinámico y el modo estático. 
+Una vez realizado, la confirmación del cambio se detecta con un zumbido del equipo.
 
-En el modo estático el botón Down se utiliza para decrementar los valores de las señales SAE-J1939 presentes en las salidas del BUS CAN. Los leds muestran el descenso de las señales de manera porcentual, de la misma manera el botón Up se utiliza para aumentar los valores de las señales SAE-J1939 y los leds muestran el aumento de las señales de manera porcentual. la manera de cambiar entre estos dos modos se realiza presionando al mismo tiempo los botones MENÚ y UP por más de un segundo, de esta manera se intercala entre los modos de funcionamiento estático y dinámico. Un pitido largo será oído para reflejar la entrada de la tecla MENU y UP.
+En el modo estático el botón Down se utiliza para decrementar los valores de las señales SAE-J1939 presentes en las salidas del BUS CAN. 
+Los LEDs muestran el descenso de las señales de manera porcentual, de la misma manera el botón Up se utiliza para aumentar los valores de las señales SAE-J1939 y los LEDs muestran el aumento de las señales de manera porcentual. 
+la manera de cambiar entre estos dos modos se realiza presionando al mismo tiempo los botones MENÚ y UP por más de un segundo, de esta manera se intercala entre los modos de funcionamiento estático y dinámico. 
+Un pitido largo será oído para reflejar la entrada de la tecla MENU y UP.
 
 A modo de resumen se indica las funciones básicas de los botones:
 \begin{itemize}
@@ -48,10 +65,8 @@ A modo de resumen se indica las funciones básicas de los botones:
 
 \end{itemize}
 
-
-	
 \subsection{Medición de las Pruebas Realizadas}
-Se realiza una prueba con el simulador y para ello conectamos un bus entre el hardware y el simulador J1939, alimentados ambos por una fuente de tensión de 12v. Como se observa en la \textbf{Figura \ref{simulador_ref_c6}}
+Se realiza una prueba con el simulador y para ello conectamos un bus entre el hardware y el simulador J1939, alimentados ambos por una fuente de tensión de 12v. Como se observa en la Figura~\ref{simulador_ref_c6}
 
 \begin{figure}[H]
 	\centering
@@ -61,7 +76,7 @@ Se realiza una prueba con el simulador y para ello conectamos un bus entre el ha
 	\label{simulador_ref_c6} % Etiqueta para la referencia.
 \end{figure}
 
-Se conecta el modulo Xbee receptor al puerto USB de la computadora y se inicia el software al acceder en la página web, \textbf{Figura \ref{receptor_ref_c6}},  se selecciona el sistema J1939 y con el botón escucha se va recibiendo los datos enviados. 
+Se conecta el modulo Xbee receptor al puerto USB de la computadora y se inicia el software al acceder en la página web, Figura~\ref{receptor_ref_c6},  se selecciona el sistema J1939 y con el botón escucha se va recibiendo los datos enviados. 
 
 
 \begin{figure}[H]
@@ -72,7 +87,7 @@ Se conecta el modulo Xbee receptor al puerto USB de la computadora y se inicia e
 	\label{receptor_ref_c6} % Etiqueta para la referencia.
 \end{figure}
 
-Se selecciona la opción datos y observamos todas las tramas J1939 que está presente en el bus, aquí se puede observar la dirección de destino y origen de los dispositivos, los 8 bytes de datos en el cual los valores FF significa que dichos datos no están disponibles, pero los demás datos distintos a FF significan que son datos reales y disponibles, también podemos observar la prioridad de los mensajes que varía entre 3 y 6 según la \textbf{Figura \ref{escucha_ref_c6}}.
+Se selecciona la opción datos y observamos todas las tramas J1939 que está presente en el bus, aquí se puede observar la dirección de destino y origen de los dispositivos, los 8 bytes de datos en el cual los valores FF significa que dichos datos no están disponibles, pero los demás datos distintos a FF significan que son datos reales y disponibles, también podemos observar la prioridad de los mensajes que varía entre 3 y 6 según la Figura \ref{escucha_ref_c6}.
 
 \begin{figure}[H]
 	\centering
@@ -83,7 +98,9 @@ Se selecciona la opción datos y observamos todas las tramas J1939 que está pre
 \end{figure}
 
 
-También se puede observar la frecuencia de tipos de paquetes CAN presentes en el bus, en la \textbf{Figura \ref{paquetes_ref_c6}}, los paquetes 0xF004 han sido recibidos 102 veces y los paquetes 0xFEF2 solamente 2 veces han sido captados. Hay varias Tramas CAN que el simulador nos envía y mientras van apareciendo, el hardware los va captando y a su vez enviando al camputador para su visualización. En el caso de la 
+También se puede observar la frecuencia de tipos de paquetes CAN presentes en el bus, en la Figura~\ref{paquetes_ref_c6}, los paquetes 0xF004 han sido recibidos 102 veces y los paquetes 0xFEF2 solamente 2 veces han sido captados. 
+Hay varias tramas CAN que el simulador nos envía y mientras van apareciendo, el hardware los va captando y a su vez enviando al computador para su visualización. 
+En el caso de la 
 
 
 \begin{figure}[H]
@@ -95,9 +112,9 @@ También se puede observar la frecuencia de tipos de paquetes CAN presentes en e
 \end{figure}
 
 
-
-
-En la \textbf{Figura \ref{real_ref_c6}} siguiente podemos observar la distribución de los datos aleatorios que van dejando el simulador en el bus, en este caso pertenece a la velocidad  del vehículo. Se puede ver la forma en la cual el simulador distribuye los datos con el tiempo.  Los datos van ingresando y el programa ajusta la gráfica para que quepan todos los datos y se pueda observar su comportamiento.  
+En la Figura~\ref{real_ref_c6} siguiente podemos observar la distribución de los datos aleatorios que van dejando el simulador en el bus, en este caso pertenece a la velocidad del vehículo. 
+Se puede ver la forma en la cual el simulador distribuye los datos con el tiempo.  
+Los datos van ingresando y el programa ajusta la gráfica para que quepan todos los datos y se pueda observar su comportamiento.  
 
 \begin{figure}[H]
 	\centering
@@ -108,7 +125,7 @@ En la \textbf{Figura \ref{real_ref_c6}} siguiente podemos observar la distribuci
 \end{figure}
 
 
-En la \textbf{Figura \ref{gauge_ref_c6}} observamos una visualización en formato de tablero, para visualizar los datos manera familiar a la de un tablero de vehículo. 
+En la Figura \ref{gauge_ref_c6} observamos una visualización en formato de tablero, para visualizar los datos manera familiar a la de un tablero de vehículo. 
 Para obtenerlo, presionamos velocidad y luego activar, para poder filtrar de entre todas las tramas la trama que contiene los datos de la velocidad, se observa una captura de velocidad de 158 metros por segundo. 
 
 
@@ -122,7 +139,8 @@ Para obtenerlo, presionamos velocidad y luego activar, para poder filtrar de ent
 
 \section{Vehículos con el sistema OBD II}
 
-Para el sistema OBD II fue puesta a prueba el sistema en tres vehículos de las marcas Toyota 2019, Hyundai Creta 2021 y Hyundai Tucson 2011, en donde se realizó las medidas de distintos sensores para obtener datos de revoluciones por minuto del motor, voltaje de batería, velocidad y lectura de lista de sensores presentes en el vehículo,etc. Se puede ver en las \textbf{Figuras \ref{auto_ref_c6}, \ref{creta_ref_c6} y \ref{tucson_ref_c6} }  las imágenes de los tipos de vehículo automotor usados en las pruebas. 
+Para el sistema OBD II fue puesta a prueba el sistema en tres vehículos de las marcas Toyota 2019, Hyundai Creta 2021 y Hyundai Tucson 2011, en donde se realizó las medidas de distintos sensores para obtener datos de revoluciones por minuto del motor, voltaje de batería, velocidad y lectura de lista de sensores presentes en el vehículo,etc. 
+Se puede ver en las Figuras \ref{auto_ref_c6}, \ref{creta_ref_c6} y \ref{tucson_ref_c6}  las imágenes de los tipos de vehículo automotor usados en las pruebas. 
 
 \begin{figure}[H]
 	\centering
@@ -148,7 +166,7 @@ Para el sistema OBD II fue puesta a prueba el sistema en tres vehículos de las 
 	\label{tucson_ref_c6} % Etiqueta para la referencia.
 \end{figure}
 
-En la \textbf{Figura\ref{panel_ref_c6}}observamos las consultas soportadas actualmente por el sistema, que son:
+En la Figura\ref{panel_ref_c6} observamos las consultas soportadas actualmente por el sistema, que son:
 \begin{itemize}
     \item \textbf{Soportes PIDs}: presenta la lista de sensores del vehículo. 
     \item \textbf{Consulta PID}: sirve para consultar sensores que no soporta el sistema de visualización pero podemos leer la codificación. 
@@ -161,14 +179,14 @@ En la \textbf{Figura\ref{panel_ref_c6}}observamos las consultas soportadas actua
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{./Cap6imagen/soportes_fig_c6.png}
-	\caption [Panel Principla OBD II.]{Panel Principal OBD II \textbf{ Fuente:} %\cite{cite_can_c3}.}
+	\caption [Panel Principal OBD II.]{Panel Principal OBD II \textbf{ Fuente:} %\cite{cite_can_c3}.}
 		Elaboración propia.}
 	\label{panel_ref_c6} % Etiqueta para la referencia.
 \end{figure}
 
 
-
-En la \textbf{ Figura\ref{consola_ref_c6}} se pueden ver en modo consola las lecturas de algunos sensores del vehículo Toyota como las revoluciones por minuto, velocidad, niveles de batería y otros. Para el momento de la captura de imagen el sistema indicaba mediciones de rpm (revoluciones por minuto) del motor. 
+En la Figura\ref{consola_ref_c6} se pueden ver en modo consola las lecturas de algunos sensores del vehículo Toyota como las revoluciones por minuto, velocidad, niveles de batería y otros. 
+Para el momento de la captura de imagen el sistema indicaba mediciones de rpm (revoluciones por minuto) del motor. 
 
 \begin{figure}[H]
 	\centering
@@ -179,7 +197,8 @@ En la \textbf{ Figura\ref{consola_ref_c6}} se pueden ver en modo consola las lec
 \end{figure}
 
 
- Se realizó una lectura de medición de temperatura del aceite de motor en reposo, es decir,  antes de arrancar el motor del vehículo, se observó la siguiente medición que se muestra en la \textbf{Figura \ref{temp_ref_c6}}. La medida fue de 38 grados Celsius, la misma se presenta con un termómetro animado del lado izquierdo y el valor númerico del lado derecho.
+ Se realizó una lectura de medición de temperatura del aceite de motor en reposo, es decir, antes de arrancar el motor del vehículo, se observó la siguiente medición que se muestra en la Figura \ref{temp_ref_c6}. 
+ La medida fue de 38 grados Celsius, la misma se presenta con un termómetro animado del lado izquierdo y el valor numérico del lado derecho.
  
  \begin{figure}[H]
 	\centering
@@ -189,7 +208,7 @@ En la \textbf{ Figura\ref{consola_ref_c6}} se pueden ver en modo consola las lec
 	\label{temp_ref_c6} % Etiqueta para la referencia.
 \end{figure}
 
-Otra medida de prueba fueron las revoluciones por minuto en estado de reposo, pero con el vehículo encendido, se observa en la \textbf{Figura \ref{rpm_ref_c6}} la lectura obtenida de 872 rpm del motor del vehículo, nuevamente en dos formatos para una lectura familiarizada con el tablero analógico de un vehículo y otra digitalmente. 
+Otra medida de prueba fueron las revoluciones por minuto en estado de reposo, pero con el vehículo encendido, se observa en la Figura~\ref{rpm_ref_c6} la lectura obtenida de 872 rpm del motor del vehículo, nuevamente en dos formatos para una lectura familiarizada con el tablero analógico de un vehículo y otra digitalmente. 
 
 \begin{figure}[H]
 	\centering
@@ -204,14 +223,14 @@ Para el vehículo modelo \textbf{Tucson 2011} se realizaron las pruebas de:
 
 
 \begin{itemize}
-    \item lista de algunos sensores presentes en el vehículo
+    \item Lista de algunos sensores presentes en el vehículo
     \item Sensor de velocidad
     \item Voltaje de Batería en contacto marca una tensión de 12V y una vez encendido el motor marca una tensión de 14V, con lo cuál se puede concluir que son lecturas coherentes, pues el generador está activo y recargando la batería del vehículo. 
     \item Medida de revoluciones por minuto del motor en estado de reposo. 
     \item tiempo de encendido del motor
 \end{itemize}
 
-Algunas de estas  mediciones se muestran en la \textbf{Figura \ref{dash_ref_c6}}, además de una muestra por consola de los datos recibidos del hardware. 
+Algunas de estas  mediciones se muestran en la Figura \ref{dash_ref_c6}, además de una muestra por consola de los datos recibidos del hardware. 
 
 \begin{figure}[H]
 	\centering
@@ -222,9 +241,12 @@ Algunas de estas  mediciones se muestran en la \textbf{Figura \ref{dash_ref_c6}}
 \end{figure}
 
 
-El sistema provee una manera de leer los sensores que el hardware no tiene programado para hacerlo. Esto se realiza enviando el código PID deseado y  se traslada el calculo de la trama CAN al cliente. 
+El sistema provee una manera de leer los sensores que el hardware no tiene programado para hacerlo. 
+Esto se realiza enviando el código PID deseado y  se traslada el calculo de la trama CAN al cliente. 
 Para el ejemplo se realiza la lectura del temporizador del vehículo, el cual nos indica el tiempo que lleva encendido el automotor. 
-Para ello se consulta el documento SAE J1979, se observa el código PID y la formula requerida de lectura del temporizador, estos datos se introducen en el sistema mediante la interfaz gráfica, \textbf{Figura \ref{consulta_ref_c6}}, una vez presionado el botón \"activar\", el software dibuja  una gráfica en el tiempo de los valores de la consulta. En la \textbf{Figura \ref{grafica_ref_c6}} se observa la lectura del temporizador en el tiempo indicando que el automóvil lleva encendido 650 segundos. 
+Para ello se consulta el documento SAE J1979, se observa el código PID y la formula requerida de lectura del temporizador. 
+Estos datos se introducen en el sistema mediante la interfaz gráfica, Figura~\ref{consulta_ref_c6}, una vez presionado el botón \"activar\", el software dibuja  una gráfica en el tiempo de los valores de la consulta. 
+En la Figura~\ref{grafica_ref_c6} se observa la lectura del temporizador en el tiempo indicando que el automóvil lleva encendido 650 segundos. 
 
 \begin{figure}[H]
 	\centering
@@ -242,7 +264,8 @@ Para ello se consulta el documento SAE J1979, se observa el código PID y la for
 	\label{grafica_ref_c6} % Etiqueta para la referencia.
 \end{figure}
 
-Para el automotor modelo \textbf{Creta 2021} además de leer los mismos datos anteriores, se realizó una prueba en movimiento para medir los datos de los sensores de velocidad. La lectura se visualiza en la \textbf{Figura \ref{vel_ref_c6}} en dónde se compara con el tablero del vehículo.
+Para el automotor modelo Creta 2021 además de leer los mismos datos anteriores, se realizó una prueba en movimiento para medir los datos de los sensores de velocidad. 
+La lectura se visualiza en la Figura \ref{vel_ref_c6} en dónde se compara con el tablero del vehículo.
 
 \begin{figure}[H]
 	\centering

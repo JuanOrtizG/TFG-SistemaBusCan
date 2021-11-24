@@ -1,13 +1,16 @@
-\chapter[Capítulo 2. Marco Teórico y Fundamentos]{Estado del Arte y Marco Teórico}
+\chapter[Marco Teórico y Fundamentos]{Estado del Arte y Marco Teórico}
 
-El presente capítulo se centra en el  marco teórico y los fundamentos de  monitoreo vehicular denominado diagnosis vehicular. En ese contexto, se exponen las principales características de los sistemas de diagnosis vehicular como las tecnologías utilizadas para su desarrollo. Finaliza el capítulo con las conclusiones más relevantes del mismo.
+El presente capítulo se centra en el  marco teórico y los fundamentos de  monitoreo vehicular denominado diagnosis vehicular. 
+En ese contexto, se exponen las principales características de los sistemas de diagnosis vehicular como las tecnologías utilizadas para su desarrollo. 
+Finaliza el capítulo con las conclusiones más relevantes del mismo.
 
 
 \section{Generación de Diagnosis a Bordo}
 
 \subsection{Primera Generación de Diagnosis a Bordo (OBD-I)}
 
-Para notificar a los conductores del estado del vehículo y minimizar la contaminación atmosférica producida por el parque automovilístico, en 1987 se incluyó la primera generación de diagnosis a bordo en las nuevas producciones de vehículos vendidos, esto ocurrió en California (USA). Los vehículos tenían incorporados equipos electrónicos que ofrecían respuestas a demandas realizadas por las organizaciones americanas EPA (\textit{Environmental Protection Agency}) y SAE (\textit{Society Automobile Engineering}). 
+Para notificar a los conductores del estado del vehículo y minimizar la contaminación atmosférica producida por el parque automovilístico, en 1987 se incluyó la primera generación de diagnosis a bordo en las nuevas producciones de vehículos vendidos, esto ocurrió en California (USA). 
+Los vehículos tenían incorporados equipos electrónicos que ofrecían respuestas a demandas realizadas por las organizaciones americanas EPA (\textit{Environmental Protection Agency}) y SAE (\textit{Society Automobile Engineering}). 
 Más tarde se definieron los requisitos de la primera generación de diagnosis a bordo (OBD-I), el cual ofrecía:
 
 \begin{itemize}
@@ -17,7 +20,8 @@ Más tarde se definieron los requisitos de la primera generación de diagnosis a
 \item Monitorizar la emisión de gases de escape y relacionar dicha emisión con los fallos de los componentes eléctricos que controlan el funcionamiento del motor.
 \end{itemize}
 
-La primera generación de OBDs fue concebida para notificar sobre el fallo de mecanismos del vehículo que contribuían a las emisiones de gases contaminantes para el medio ambiente. En este grupo de sistemas se incluían:
+La primera generación de OBDs fue concebida para notificar sobre el fallo de mecanismos del vehículo que contribuían a las emisiones de gases contaminantes para el medio ambiente. 
+En este grupo de sistemas se incluían:
 
 \begin{itemize}
 \item Todos los sensores importantes del motor: temperatura de refrigeración del motor, temperatura interna del motor, posición de la mariposa, etc.
@@ -34,30 +38,43 @@ La segunda generación de diagnosis a bordo surge de la necesidad de mejorar las
 \item Mejorar el diagnostico de los datos que ofrece el sensor de oxigeno.
 \item Detección del fallo del motor.
 \item Detección de oxigeno no quemado en la explosión dentro del motor lo cual permitió mejorar la eficiencia de los mismos.
-\item Incorporación de equipos de diagnosis (Scantools). Al detectar fallos ocurridos en los sistemas a bordo del vehículo se genera un código para representar dicho fallo. Dicho código se memoriza en una zona de históricos en el vehículo para ser monitoreado, utilizando Scantools off-line. 
+\item Incorporación de equipos de diagnosis (Scantools). 
+Al detectar fallos ocurridos en los sistemas a bordo del vehículo se genera un código para representar dicho fallo. 
+Dicho código se memoriza en una zona de históricos en el vehículo para ser monitoreado, utilizando Scantools off-line. 
 \end{itemize}
 
-A partir de 1996 se impone de forma masiva la implementación de los OBD-II. Los vehículos de turismo y de mercancías ligeros se vieron obligados a incorporar las nuevas funcionalidades. Una particularidad de los OBD-II, es el requisito de que todos los sistemas y componentes relacionados con el sistema de expulsión de gases deben ser monitorizados para detectar cualquier mal funcionamiento que pudiera dar lugar a un incremento significativo en la emisión de gases nocivos. 
-OBD-II advierte al conductor mediante  el uso de “displays”, el funcionamiento anómalo de alguno de los componentes del vehículo y proporciona los códigos significativos del tipo de fallo y de los componentes defectuosos. Los datos proporcionados por OBD-II permiten determinar con precisión el componente específico que se ha estropeado, ahorrando tiempo y costo de reparación. 
+A partir de 1996 se impone de forma masiva la implementación de los OBD-II. 
+Los vehículos de turismo y de mercancías ligeros se vieron obligados a incorporar las nuevas funcionalidades. 
+Una particularidad de los OBD-II, es el requisito de que todos los sistemas y componentes relacionados con el sistema de expulsión de gases deben ser monitorizados para detectar cualquier mal funcionamiento que pudiera dar lugar a un incremento significativo en la emisión de gases nocivos. 
+OBD-II advierte al conductor mediante  el uso de “displays”, el funcionamiento anómalo de alguno de los componentes del vehículo y proporciona los códigos significativos del tipo de fallo y de los componentes defectuosos. 
+Los datos proporcionados por OBD-II permiten determinar con precisión el componente específico que se ha estropeado, ahorrando tiempo y costo de reparación. 
 En OBD-II la luz de chequeo o displays eran presentadas de tres formas:
+
 \begin{itemize}
-\item Destellos Ocasionales: se produce un parpadeo de forma ocasional cuando el defecto de funcionamiento es momentáneo, en cambio, si el defecto es más grave el parpadeo es continuo.
-\item Destellos constantes: indica que existe un problema que puede ocasionar un daño grave al motor si es que no se repara a tiempo. 
-\item Indicación de fallo grave: se activa cuando se presentan problemas muy graves, y permanece activo mientras el vehículo esté funcionando.
+    \item Destellos Ocasionales: se produce un parpadeo de forma ocasional cuando el defecto de funcionamiento es momentáneo, en cambio, si el defecto es más grave el parpadeo es continuo.
+    \item Destellos constantes: indica que existe un problema que puede ocasionar un daño grave al motor si es que no se repara a tiempo. 
+    \item Indicación de fallo grave: se activa cuando se presentan problemas muy graves, y permanece activo mientras el vehículo esté funcionando.
 \end{itemize}
 
 En todos los casos de diagnosis, la información que almacena la computadora central sobre los fallos ocurridos en el automóvil, se obtiene utilizando equipos de hardware concretos y un software apropiado conocido como “Scantools”, utilizando conectores y protocolos estandarizados.
 Dicha información consta de unos códigos también estandarizados, donde cada uno de ellos está asociado a la ubicación física donde se localiza e identifica el fallo.
-Europa estandarizó un sistema similar a OBD-I y OBD-II conocido como EOBD-I (European On Board Diagnostics, por sus siglas en inglés). Dicho estándar se empezó a aplicar a partir del 2001, y a partir de esa fecha todos los automóviles fabricados en Europa incorporan un sistema de diagnosis a bordo para monitorizar las emisiones de gases del motor.
+Europa estandarizó un sistema similar a OBD-I y OBD-II conocido como EOBD-I (\textit{European On Board Diagnostics}, por sus siglas en inglés).
+Dicho estándar se empezó a aplicar a partir del 2001, y a partir de esa fecha todos los automóviles fabricados en Europa incorporan un sistema de diagnosis a bordo para monitorizar las emisiones de gases del motor.
 
 \subsection {Tercera Generación de Diagnosis de a Bordo (OBD-III)}
 
 
-EL objetivo principal de OBD-III es el de minimizar la demora entre la detección de un fallo o funcionamiento defectuoso y la reparación del vehículo. La nueva versión deberá ser capaz de recibir la información proporcionada por OBD-II, interpretarla, enviar conclusiones a los conductores y talleres de reparación con las claves de los fallos detectados, y al mismo tiempo crear  un histórico en un centro de datos, para ser utilizados en diagnosis y diseños futuros.
+EL objetivo principal de OBD-III es el de minimizar la demora entre la detección de un fallo o funcionamiento defectuoso y la reparación del vehículo. 
+La nueva versión deberá ser capaz de recibir la información proporcionada por OBD-II, interpretarla, enviar conclusiones a los conductores y talleres de reparación con las claves de los fallos detectados, y al mismo tiempo crear un histórico en un centro de datos, para ser utilizados en diagnosis y diseños futuros.
 
 
-En la  \textbf{Figura \ref{DenB}} se expone el concepto de OBD-III. Los fallos del vehículo son enviados  a un centro de atención al cliente que analiza los datos recibidos. El centro de atención al cliente notifica al cliente las acciones a tomar para eliminar el fallo. El centro de atención al cliente envía al taller la información necesaria para la reparación  y las pruebas posteriores una vez subsanada la avería. También existe una conexión con la central de datos donde se almacena todas las averías del vehículo de manera a obtener un historial de fallos.
-OBD-III es la capacidad de comunicación del vehículo con el mundo exterior. En este sentido se están proponiendo y utilizando diferentes alternativas tecnológicas que permitan leer datos almacenados por OBD-II y enviarlos a Centros de Atención al Cliente, Centro de Datos, Servicios Móviles de Mantenimiento, etc.
+En la  \Figura~\ref{DenB} se expone el concepto de OBD-III. 
+Los fallos del vehículo son enviados  a un centro de atención al cliente que analiza los datos recibidos. 
+El centro de atención al cliente notifica al cliente las acciones a tomar para eliminar el fallo. 
+El centro de atención al cliente envía al taller la información necesaria para la reparación  y las pruebas posteriores una vez subsanada la avería. 
+También existe una conexión con la central de datos donde se almacena todas las averías del vehículo de manera a obtener un historial de fallos.
+OBD-III es la capacidad de comunicación del vehículo con el mundo exterior. 
+En este sentido se están proponiendo y utilizando diferentes alternativas tecnológicas que permitan leer datos almacenados por OBD-II y enviarlos a Centros de Atención al Cliente, Centro de Datos, Servicios Móviles de Mantenimiento, etc.
 
 \begin{figure}[H]
 	\centering
@@ -69,58 +86,73 @@ OBD-III es la capacidad de comunicación del vehículo con el mundo exterior. En
 
 \section {EL Protocolo BUS CAN}
 
-El desarrollo del  protocolo BUS CAN se debió al incremento de los dispositivos electrónicos en los vehículos como por ejemplo el administrador del motor, controlador de luces, aire acondicionado, entre otros.  El desarrollo del protocolo BUS CAN fue necesario para intercambiar de una mejor manera la información entre los diferentes sistemas de control y sus sensores.
-Cuando no existía el protocolo BUS CAN los vehículos tenían un sistema de control e intercambio de información mediante conexiones punto a punto, es decir, los modulos que deseaban comunicarse entre si, debían estar conectados de forma directa o indirecta.
+El desarrollo del  protocolo BUS CAN se debió al incremento de los dispositivos electrónicos en los vehículos como por ejemplo el administrador del motor, controlador de luces, aire acondicionado, entre otros.  
+El desarrollo del protocolo BUS CAN fue necesario para intercambiar de una mejor manera la información entre los diferentes sistemas de control y sus sensores.
+Cuando no existía el protocolo BUS CAN los vehículos tenían un sistema de control e intercambio de información mediante conexiones punto a punto, es decir, los módulos que deseaban comunicarse entre si, debían estar conectados de forma directa o indirecta.
 En una conexión  directa  cada línea de comunicación está asociada a un par de estaciones o dispositivos, los cuales intercambian información a través de dicha conexión, en cambio, en una conexión indirecta  la comunicación es realizada  mediante una o más estaciones intermediarias.
-A medida que las necesidades de control en los vehículos  aumentaron se necesitaban de muchas conexiones y muchas líneas de comunicación, afectando considerablemente el costo de los materiales y el tiempo de producción del vehículo. La solución a este problema es la conexión de los dispositivos y sensores en un bus serial común para todos.
+A medida que las necesidades de control en los vehículos  aumentaron se necesitaban de muchas conexiones y muchas líneas de comunicación, afectando considerablemente el costo de los materiales y el tiempo de producción del vehículo. 
+La solución a este problema es la conexión de los dispositivos y sensores en un bus serial común para todos.
 
 \subsection {Reseña Histórica}
-La firma alemana Robert Bosch GmbH inició un proyecto de desarrollo de un protocolo de comunicación entre los distintos dispositivos y sensores  electrónicos para el interior del vehículo en el año 1983. Durante la especificación del sistema de bus serial se unió la empresa fabricante de automóviles Mercedez-Benz y el fabricante de semiconductores Intel Corp. 
+La firma alemana Robert Bosch GmbH inició un proyecto de desarrollo de un protocolo de comunicación entre los distintos dispositivos y sensores  electrónicos para el interior del vehículo en el año 1983. 
+Durante la especificación del sistema de bus serial se unió la empresa fabricante de automóviles Mercedez-Benz y el fabricante de semiconductores Intel Corp. 
 Robert Bosch presenta oficialmente el sistema serial BUS CAN en febrero del año 1986, en el congreso de la Sociedad de Ingenieros Automotrices (SAE), celebrado en la ciudad de Detroit, Estados Unidos.
-A un año después, la firma Intel realizo la primera implementación física del protocolo en el controlador CAN 82526 y tiempo después la firma Philips introdujo el controlador CAN 82C200, ambos integrados son la base del desarrollo de los controladores actuales.
-No tardo mucho para que el protocolo BUS CAN trascendiera a ambientes fuera de lo automovilístico, de hecho las primeras aplicaciones aparecieron en las ramas industriales, como por ejemplo sistemas de control de elevadores, maquinas textiles, maquinas de rayos X entre otros.
-Fue en 1992 cuando Mercedez-Benz implementó el protocolo  CAN en sus vehículos Clase "S". El sistema estaba compuesto por dos redes CAN, en la cual una red era de alta velocidad para la comunicación de las ECUs del motor, de la caja de cambios y el tablero de instrumentos; y una red de baja velocidad para el control del aire acondicionado y de los dispositivos electrónicos internos.  Esta implementación de Mercedez-Benz impulso a que otros fabricantes de automóviles comenzaran a utilizar redes BUS CAN en sus modelos de lujo, por ejemplo, BMW, Jaguar, Volvo, Saab, y VW, más tarde se agregaron a la lista Fiat, Renault y PSA. 
-La estandarización del protocolo CAN se logro en el año 1993 bajo la norma ISO 11898. Varias versiones y mejoras aparecieron a partir de entonces, \cite{DSEEPC}.
+A un año después, la firma Intel realizó la primera implementación física del protocolo en el controlador CAN 82526 y tiempo después la firma Philips introdujo el controlador CAN 82C200, ambos integrados son la base del desarrollo de los controladores actuales.
+No tardó mucho para que el protocolo BUS CAN trascendiera a ambientes fuera de lo automovilístico, de hecho las primeras aplicaciones aparecieron en las ramas industriales, como por ejemplo sistemas de control de elevadores, maquinas textiles, maquinas de rayos X entre otros.
+Fue en 1992 cuando Mercedez-Benz implementó el protocolo CAN en sus vehículos Clase "S". El sistema estaba compuesto por dos redes CAN, en la cual una red era de alta velocidad para la comunicación de las ECUs del motor, de la caja de cambios y el tablero de instrumentos; y una red de baja velocidad para el control del aire acondicionado y de los dispositivos electrónicos internos.  
+Esta implementación de Mercedez-Benz impulsó a que otros fabricantes de automóviles comenzaran a utilizar redes BUS CAN en sus modelos de lujo, por ejemplo, BMW, Jaguar, Volvo, Saab, y VW, más tarde se agregaron a la lista Fiat, Renault y PSA. 
+La estandarización del protocolo CAN se logró en el año 1993 bajo la norma ISO 11898. 
+Varias versiones y mejoras aparecieron a partir de entonces~\cite{DSEEPC}.
 
 \subsection {Clasificación de las Aplicaciones Automotrices}
 La SAE estableció la siguiente clasificación formal de acuerdo a las áreas de aplicación dentro del automóvil:
 \begin {itemize} 
 
-\item \textbf{Clase A:} Se refiere a la comunicación con nodos no inteligentes como interruptores, luces, posición del asiento, posición de los espejos, seguros de puertas, etc. La información que se transmite requiere bajas velocidades de transferencia de datos, menor a 10Kbps. La conexión de cables es sencilla y los costos por conexión de nodos es bajo.
+\item \textbf{Clase A:} Se refiere a la comunicación con nodos no inteligentes como interruptores, luces, posición del asiento, posición de los espejos, seguros de puertas, etc. 
+La información que se transmite requiere bajas velocidades de transferencia de datos, menor a 10Kbps.
+La conexión de cables es sencilla y los costos por conexión de nodos es bajo.
 
-\item \textbf {Clase B:} En esta clase se distribuye una mayor cantidad de información, aquí se incluye la actualización del tablero de instrumentos y el control del aire acondicionado. La velocidad de transferencia de datos esta en el orden de 40Kbps
+\item \textbf {Clase B:} En esta clase se distribuye una mayor cantidad de información, aquí se incluye la actualización del tablero de instrumentos y el control del aire acondicionado. 
+La velocidad de transferencia de datos esta en el orden de 40Kbps
 
-\item \textbf{Clase C:} Comprende la transmisión de datos en tiempo real (real time) con latencia de mensajes menores a 1ms. En esta clase los paquetes de datos transmitidos son mayor a 1 byte a una velocidad que va de 250Kbps a 1Mbps. Dentro de esta categoría están las aplicaciones de comunicación entre los diferentes sistemas de control  de motor, transmisión, estabilidad, frenos y dirección.
+\item \textbf{Clase C:} Comprende la transmisión de datos en tiempo real (\textit{real time}) con latencia de mensajes menores a 1ms. 
+En esta clase los paquetes de datos transmitidos son mayor a 1 byte a una velocidad que va de 250Kbps a 1Mbps. 
+Dentro de esta categoría están las aplicaciones de comunicación entre los diferentes sistemas de control  de motor, transmisión, estabilidad, frenos y dirección.
 
-\item \textbf{Clase D:} En esta categoría se comunican grandes bloques de datos para aplicaciones de conexión del sistema de radio, teléfono, navegación GPS, consola de interfaz para controladores genéricos que tienen la finalidad de descargar programas, etc. La velocidad de datos requeridas está en el rango de 1 a 10Mbps \cite{DSEEPC}.
+\item \textbf{Clase D:} En esta categoría se comunican grandes bloques de datos para aplicaciones de conexión del sistema de radio, teléfono, navegación GPS, consola de interfaz para controladores genéricos que tienen la finalidad de descargar programas, etc. 
+La velocidad de datos requeridas está en el rango de 1 a 10Mbps~\cite{DSEEPC}.
 \end{itemize}
 
 \section {Características del Protocolo BUS CAN}
 
-El BUS CAN es un protocolo de comunicación serie que soporta control distribuido en tiempo real con un alto nivel de seguridad y multiplicación  \cite{PSMR}. La red de BUS CAN comunica todos los dispositivos a través de un único bus de comunicación de datos, a estos dispositivos se los denomina comúnmente como nodos. Cada nodo es capaz de interactuar con cualquier otro nodo sin la necesidad de una conexión punto a punto entre ellos.
-El protocolo BUS CAN está definido internacionalmente por el conjunto de estándares ISO 11898, en dónde se definen las caracteristicas del protocolo, la capa física del bus, sus sistemas para alta y baja velocidad entre otros. El otro estándar que lo acompaña en el proceso de desarrollo del BUS CAN es la ISO 16845, el cual proporciona una  metodología y un conjunto de pruebas necesarias para comprobar la conformidad de cualquier implementación BUS CAN con base a la norma ISO 11898-1 \cite{ISO}, de esta manera se garantiza la comunicación entre los nodos BUS CAN de distintos fabricantes.
+El BUS CAN es un protocolo de comunicación serie que soporta control distribuido en tiempo real con un alto nivel de seguridad y multiplicación  \cite{PSMR}. 
+La red de BUS CAN comunica todos los dispositivos a través de un único bus de comunicación de datos, a estos dispositivos se los denomina comúnmente como nodos. 
+Cada nodo es capaz de interactuar con cualquier otro nodo sin la necesidad de una conexión punto a punto entre ellos.
+El protocolo BUS CAN está definido internacionalmente por el conjunto de estándares ISO 11898, en dónde se definen las características del protocolo, la capa física del bus, sus sistemas para alta y baja velocidad entre otros. 
+El otro estándar que lo acompaña en el proceso de desarrollo del BUS CAN es la ISO 16845, el cual proporciona una  metodología y un conjunto de pruebas necesarias para comprobar la conformidad de cualquier implementación BUS CAN con base a la norma ISO 11898-1~\cite{ISO}, de esta manera se garantiza la comunicación entre los nodos BUS CAN de distintos fabricantes.
 
 \section {Capas del Modelo OSI y Capas del Protocolo CAN}
-El modelo de comunicación desarrollado por la ISO (International Organization for Standardization, por sus siglas en inglés), llamado OSI (Open System Interconnection, por sus siglas en inglés), es popular debido a que ayuda a dar una explicación  sencilla de la relación entre el hardware  y los protocolos utilizados en una red. El modelo OSI está conformado por 7 capas en las cuales cada una de las capas cumple con una función específica, que permite realizar la comunicación en una red.
-La arquitectura del protocolo BUS CAN como muestra en la \textbf{Figura \ref{ABC}}, de acuerdo al modelo de referencia OSI incluye tres capas: Física, Enlace de Datos y Aplicación, además establece una capa especial para la gestión y control del nodo llamada Capa de Supervisor. 
+El modelo de comunicación desarrollado por la ISO (\textit{International Organization for Standardization}, por sus siglas en inglés), llamado OSI (\textit{Open System Interconnection}, por sus siglas en inglés), es popular debido a que ayuda a dar una explicación  sencilla de la relación entre el hardware  y los protocolos utilizados en una red. 
+El modelo OSI está conformado por 7 capas en las cuales cada una de las capas cumple con una función específica, que permite realizar la comunicación en una red.
+La arquitectura del protocolo BUS CAN como muestra en la Figura~\ref{ABC}, de acuerdo al modelo de referencia OSI incluye tres capas: Física, Enlace de Datos y Aplicación, además establece una capa especial para la gestión y control del nodo llamada Capa de Supervisor. 
 
 
-\begin{figure}[H]
+\begin{figure}[t]
 	\centering
 		\includegraphics[width=0.8\textwidth]{./Cap2imagen/protocolocan.pdf}
 	\caption[Arquitectura de protocolos BUS CAN.]{Arquitectura de protocolos BUS CAN.\textbf{ Fuente:} \cite{DSEEPC}.}
 	\label{ABC} % preguntar que va aquí
 \end{figure}
 
-\subsection  {Capa Física}
-
-La capa física es responsable por la transferencia de bits entre diferentes nodos de red y define los aspectos del medio físico para la transmisión de datos entre los nodos. Los más importantes hacen referencia a los niveles de señal, sincronización, representación y tiempos en que los bits se transfieren al bus. 
+\subsection{Capa Física}
+La capa física es responsable por la transferencia de bits entre diferentes nodos de red y define los aspectos del medio físico para la transmisión de datos entre los nodos. 
+Los más importantes hacen referencia a los niveles de señal, sincronización, representación y tiempos en que los bits se transfieren al bus. 
 Las especificaciones Bosch del protocolo BUS CAN no define una capa física, sin embargo, el estándar  ISO 11898 establece las características que deben cumplir las aplicaciones para la transferencia en alta y baja velocidad.
  
 %\subsubsubsection{SubCapa Fisica} %%%%%% lo cambie
-\subsection{SubCapa Física}
+\subsection{Sub-capa de Señalización Física}
 
-La SubCapa de señalización física (PLS, Physical Layer Signalling, por sus siglas en inglés) define la representación, tiempo y sincronización de los bits, y está implementada en los controladores del protocolo BUS CAN.
+La SubCapa de señalización física (PLS, \textit{Physical Layer Signalling}, por sus siglas en inglés) define la representación, tiempo y sincronización de los bits, y está implementada en los controladores del protocolo BUS CAN.
 
 
 %\subsubsubsubsection {Representación de los bits}
@@ -187,7 +219,7 @@ Los cuatro segmentos que forman un tiempo de bit nominal son:
 \end{itemize}
 
 Para la transferencia de bits entre distintos nodos de red es necesario estudiar la capa física, la cual define parámetros como los niveles de señal, la sincronización, la impedancia de la línea de bus de comunicación de acuerdo con el medio físico adoptado y la velocidad de comunicación entre ellos. En el protocolo BUS CAN no todos los nodos conectados a la red mediante el bus necesitan transmitir a la misma velocidad, esto dependerá de las funciones que desempeña cada nodo y de la importancia de sus mensajes, es por ello que el protocolo BUS CAN posee varias tasas de transmisión de bits especificados  por el estándar ISO. Las velocidades van desde la tasa baja de 125kbps hasta la tasa alta de 1Mbps.
-La capa física define el medio de transmisión. La representación de los niveles lógicos en las líneas del bus de comunicación BUS CAN es realizada de acuerdo al nivel de tensión que serán establecidos en el mismo bus. Existen dos variables para representar las líneas del BUS: CANH y CANL. Un bit recesivo (1 lógico) es representado a través de dos líneas del bus con un nivel de tensión de 2.5V, de modo que la diferencia de potencial entre CANH  y CANL será de 0V, en cambio, un bit dominante (0 lógico) es representado colocando el CANH = 3.5V y el CANL = 1.5V. Esto da una diferencia de potencial para un bit dominante de cerca de 2V, \cite{PSMR}. De esta manera los datos no son representados por bits de nivel “0” y “1”, sino son representados por bits dominantes y recesivos como se muestra en la \textbf{Figura \ref{N_N}} . 
+La capa física define el medio de transmisión. La representación de los niveles lógicos en las líneas del bus de comunicación BUS CAN es realizada de acuerdo al nivel de tensión que serán establecidos en el mismo bus. Existen dos variables para representar las líneas del BUS: CANH y CANL. Un bit recesivo (1 lógico) es representado a través de dos líneas del bus con un nivel de tensión de 2.5V, de modo que la diferencia de potencial entre CANH  y CANL será de 0V, en cambio, un bit dominante (0 lógico) es representado colocando el CANH = 3.5V y el CANL = 1.5V. Esto da una diferencia de potencial para un bit dominante de cerca de 2V,~\cite{PSMR}. De esta manera los datos no son representados por bits de nivel “0” y “1”, sino son representados por bits dominantes y recesivos como se muestra en la Figura \ref{N_N} . 
 
 
 \begin{figure}[H]
@@ -789,12 +821,14 @@ La \textbf{Tabla \ref{rango}} indica el rango de valores para los formatos 1 y 2
 %%%%%%%%%%%%%%%%%%%%% tabla %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[htb]
 \begin{center}
-\begin{tabular}{|l|l|l|}
-\hline
+\begin{tabular}{c c c}
+\toprule
 Formato PDU & Rango de Valores & Significado del Campo DA/GE \\
-\hline \hline \hline
-1 &   0 ... 239 & Dirección de Destino DA\\ \hline
-2 & 240 ... 255 & Dirección de Origen GE\\ \hline
+\midrule
+%\hline \hline \hline
+1 &   0 ... 239 & Dirección de Destino DA\\ %\hline
+2 & 240 ... 255 & Dirección de Origen GE\\ %\hline
+\bottomrule
 \end{tabular}
 \caption{Rango de valores de mensajes en formato 1 y 2 de PDU.}
 \label{rango}
@@ -852,14 +886,20 @@ Sin embargo como se ha visto existen dispositivos que tienen direcciones preasig
 \begin{table}[htb]
 \begin{center}
 \begin{tabular} {p{2cm} p{9cm}}%{|l|l|}
-\hline
+\toprule
 Dirección & Uso  \\
-\hline \hline
-0 - 127 & Direcciones asignadas fijas para nodos de red que siempre o casi siempre están presentes \\ \hline
-128 - 247 & Direcciones asignadas para asignación específica o determinación dinámica \\ \hline
-248 - 253 & Direcciones asignadas fijas para nodos de red que siempre o casi siempre están presentes \\ \hline
-254 & Dirección cero. Es usada como dirección origen de un dispositivo cuando no se le ha podido asignar ninguna otra dirección \\ \hline
-255 & Dirección para mensajes de broadcast \\ \hline
+\midrule
+%\hline \hline
+0 - 127 & Direcciones asignadas fijas para nodos de red que siempre o casi siempre están presentes \\ 
+%\hline
+128 - 247 & Direcciones asignadas para asignación específica o determinación dinámica \\ 
+%\hline
+248 - 253 & Direcciones asignadas fijas para nodos de red que siempre o casi siempre están presentes \\ 
+%\hline
+254 & Dirección cero. Es usada como dirección origen de un dispositivo cuando no se le ha podido asignar ninguna otra dirección \\
+%\hline
+255 & Dirección para mensajes de broadcast \\ %\hline
+\bottomrule
 \end{tabular}
 \caption{Clases de Direcciones de Nodos.}
 \label{nodos}
@@ -988,16 +1028,22 @@ Recibiremos como respuesta la PGN 65262 y esta nos entrega datos en los bytes re
 
 \begin{table}[htb]
 	\begin{center}
-		\begin{tabular}{|l|l|l|}
-			\hline
+		\begin{tabular}{l l r}
+			\toprule
 			Byte & Descripción & SPN \\
-			\hline \hline
-			1 & Engine Coolant Temperature   & 110\\ \hline
-			2 & Fuel Temperature  & 174\\ \hline
-			3, 4 & Engine Oil Temperature   & 175 \\ \hline
-			5, 6 & Turbocharger Oil Temperature & 176 \\ \hline
-			7    & Engine Intercooler Temperature & 52  \\ \hline
-			8    & Engine Intercooler Thermostat Opening & 1134 \\ \hline
+			\midrule
+			1 & Engine Coolant Temperature   & 110\\ 
+%			\hline
+			2 & Fuel Temperature  & 174\\ 
+%			\hline
+			3, 4 & Engine Oil Temperature   & 175 \\ 
+%			\hline
+			5, 6 & Turbocharger Oil Temperature & 176 \\ 
+%			\hline
+			7    & Engine Intercooler Temperature & 52  \\ 
+%			\hline
+			8    & Engine Intercooler Thermostat Opening & 1134 \\
+			\bottomrule
 		\end{tabular}
 		\caption{Datos del Documento SAE J1939 para PGN 65262.}
 		\label{tabla5}
@@ -1008,11 +1054,13 @@ La \textbf{Tabla \ref{tabla5}} nos indica que parámetros están presentes en cu
 
 \begin{table}[htb]
 	\begin{center}
-		\begin{tabular}{|l|l|l|l|} 
-			\hline
+		\begin{tabular}{ l l l l } 
+			\toprule
 			SPN & Rango & Resolución & Offset \\
-			\hline \hline
-			110 &-40$^{\circ}$C a 210$^{\circ}$C & 1$^{\circ}$C/Bit & -40$^{\circ}$C\\ \hline
+			\midrule
+%			\hline \hline
+			110 &-40$^{\circ}$C a 210$^{\circ}$C & 1$^{\circ}$C/Bit & -40$^{\circ}$C\\ 
+			\hline
 			174 &-40$^{\circ}$C a 210$^{\circ}$C & 1$^{\circ}$C/Bit & -40$^{\circ}$C\\ \hline
 			175 &-273$^{\circ}$C a 1735$^{\circ}$C & 0.03125$^{\circ}$C/Bit & -273$^{\circ}$C\\ \hline
 			176 &-273$^{\circ}$C a 1735$^{\circ}$C & 0.03125$^{\circ}$C/Bit & -273$^{\circ}$C\\ \hline
@@ -1059,7 +1107,7 @@ Calcularemos como ejemplo la Temperatura del combustible, que está presente en 
 	%ELM
 	%https://www.amazon.es/dp/B01HYX7HHE/ref=sspa_dk_detail_4?psc=1&pd_rd_i=B01HYX7HHE&pd_rd_w=QWDge&pf_rd_p=4e7ddd1a-9380-4850-ad3a-4263ea77f6fd&pd_rd_wg=oOl2F&pf_rd_r=ZD771TCDDWGSSF3PYR9E&pd_rd_r=b82a88ff-9453-48b7-acf9-5a937dae2528&smid=A1EFSMQZ0I67KS&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFaWjhEN1FIMjdJQlcmZW5jcnlwdGVkSWQ9QTA4MTI0ODRDUFQyWVlTVUJFRjMmZW5jcnlwdGVkQWRJZD1BMDczMTIzMTNWNVdSVTYyNTNRMzUmd2lkZ2V0TmFtZT1zcF9kZXRhaWwmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl
 	
-	\item Lectores con Display: Son escáneres de coche OBD2 que funciona con un conector cableado que deberá ser enchufado al automovil y proporciona los datos del vehiculo en una Pantalla. Estos datos por lo general vienen en un formato de código y se debe contar con un manual de fallas para saber el tipo de fallo detectado. Un ejemplo es el modelo Innova 3100 y  Actron CP9690. En la \textbf{Figura \ref{fig_obd2_c3}} podemos observar algunos modelos de este tipo. 
+	\item Lectores con Display: Son escáneres de coche OBD2 que funciona con un conector cableado que deberá ser enchufado al automovil y proporciona los datos del vehiculo en una Pantalla. Estos datos por lo general vienen en un formato de código y se debe contar con un manual de fallas para saber el tipo de fallo detectado. Un ejemplo es el modelo Innova 3100 y  Actron CP9690. En la Figura \ref{fig_obd2_c3} podemos observar algunos modelos de este tipo. 
 	%Innova
 	%https://www.amazon.es/Innova-3100-Lector-Herramienta-an%C3%A1lisis-diagn%C3%B3stico/dp/B01MR7FZS1?psc=1&SubscriptionId=AKIAJZLHY2LYVLTZ47MA&tag=momentines-21&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B01MR7FZS1
 	
@@ -1075,7 +1123,7 @@ Calcularemos como ejemplo la Temperatura del combustible, que está presente en 
 	\end{figure}
 	
 	
-	\item Lectores con sistemas embebidos: Son  herramientas profesionales de diagnóstico y escaneado. Tienen una pantalla táctil de tamaño considerable, con mangos de goma. Llevan un conector USB para cargar y transferir datos en un ordenador. Poseen ranura para tarjeta SD, el enchufe del cable OBD2 y un puerto USB para conectarlo a una impresora. Algunos más modernos  tienen aplicaciones específicas para Internet, PDF, calculadora y reloj. El acceso a internet inalámbrico es para buscar información sobre coches. No hace falta un manual externo de códigos de fallas pues lleva internamente mecanismos para traducir dichos códigos.  Poseen capacidad de mostrar gráficos  y almacenar todos los datos de códigos recopilados. Las Marcas Autel y Launch tienen varios modelos como se puede observar en la \textbf{Figura \ref{fig_obd3_c3}}. 
+	\item Lectores con sistemas embebidos: Son  herramientas profesionales de diagnóstico y escaneado. Tienen una pantalla táctil de tamaño considerable, con mangos de goma. Llevan un conector USB para cargar y transferir datos en un ordenador. Poseen ranura para tarjeta SD, el enchufe del cable OBD2 y un puerto USB para conectarlo a una impresora. Algunos más modernos  tienen aplicaciones específicas para Internet, PDF, calculadora y reloj. El acceso a internet inalámbrico es para buscar información sobre coches. No hace falta un manual externo de códigos de fallas pues lleva internamente mecanismos para traducir dichos códigos.  Poseen capacidad de mostrar gráficos  y almacenar todos los datos de códigos recopilados. Las Marcas Autel y Launch tienen varios modelos como se puede observar en la Figura~\ref{fig_obd3_c3}. 
 	
 	%AL619
 	%https://www.amazon.es/dp/B0091DJWV0/?tag=momentines-21
@@ -1178,9 +1226,10 @@ Copperhill Technologies Corporation es una empresa de Estados Unidos que se enca
 \end{figure}
 
 \subsection{Vector}
-Vector es una empresa que se dedica al  desarrollo de la electrónica automotriz.  Tanto a nivel de software como de hardware. Desarrollar sistemas de monitoreo CAN es solo una parte de la empresa pero también gana una gran cantidad de mercado con la misma. Se destaca por desarrollar un software de monitoreo J1939 denominado: CANalyzer .J1939 \cite{cite_analyzer_c3}, con este software se puede obtener visualización, comprobaciones, interpretación, filtros y funciones de búsqueda específicas del protocolo. 
-
-En la \textbf{Figura \ref{fig_analyzer_c3}} podemos observar la apariencia de su sistema de monitoreo CAN. 
+Vector es una empresa que se dedica al  desarrollo de la electrónica automotriz.  
+Tanto a nivel de software como de hardware. Desarrollar sistemas de monitoreo CAN es solo una parte de la empresa pero también gana una gran cantidad de mercado con la misma. 
+Se destaca por desarrollar un software de monitoreo J1939 denominado: CANalyzer .J1939 \cite{cite_analyzer_c3}, con este software se puede obtener visualización, comprobaciones, interpretación, filtros y funciones de búsqueda específicas del protocolo. 
+En la Figura \ref{fig_analyzer_c3} podemos observar la apariencia de su sistema de monitoreo CAN. 
 
 
 \begin{figure}[H]

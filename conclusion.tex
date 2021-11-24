@@ -1,23 +1,27 @@
-\chapter[Capítulo 5. Conclusiones y Trabajo Futuro]{Conclusiones y Trabajo Futuro}
-\section{Conclusión}
+\chapter[Conclusiones y Trabajo Futuro]{Conclusiones y Trabajo Futuro}
+%\section{Conclusión}
 
-En base  a los objetivos trazados se tuvo éxito en diseñar e implementar una plataforma de comunicación con el vehiculo automotor mediante el protocolo CAN, con el cual se logró la comunicación con los sensores y monitoreo de los subsistemas electrónicos presentes en los vehículos modernos, soportando el Estandar OBDII para vehiculos livianos y el estandar J1939 para vehiculos pesados. El diseño se organizó en dos etapas, el diseño del hardware que maneja el protocolo CAN y el diseño del Software para el tratamiento de datos y visualización, esta forma de ortanizar el trabajo permitió una independencia en ambos diseños. 
+En base  a los objetivos trazados se tuvo éxito en diseñar e implementar una plataforma de comunicación con el vehículo automotor mediante el protocolo CAN, con el cual se logró la comunicación con los sensores y monitoreo de los subsistemas electrónicos presentes en los vehículos modernos, soportando el estándar OBDII para vehículos livianos y el estándar J1939 para vehículos pesados. 
+El diseño se organizó en dos etapas, el diseño del hardware que maneja el protocolo CAN y el diseño del Software para el tratamiento de datos y visualización. 
+Esta forma de organizar el trabajo permitió una independencia en ambos diseños. 
 
-Se logró diseñar una interfaz gráfica en dónde se interactua con el sistema CAN del vehiculo mediante el hardware diseñado y las pruebas resultaron satisfactorias en vehiculos livianos. Se realizaron pruebas con vehiculos que soportan el protocolo CAn y el standar OBDII a una velocidad de 500kbps, teniendose exitos en la comunicación y lectura de sensores
+Se logró diseñar una interfaz gráfica en dónde se interactúa con el sistema CAN del vehículo mediante el hardware diseñado y las pruebas resultaron satisfactorias en vehículos livianos. 
+Se realizaron pruebas con vehículos que soportan el protocolo CAN y el standar OBDII a una velocidad de 500kbps, teniéndose éxitos en la comunicación y lectura de sensores
 
 
-El hardware diseñado permitió leer e interpretar los datos  del simulador J1939 a travez del protocolo CAN, logrando la captura y envió de parametros al Cliente Web para su visualización en la interfaz gráfica. La velocidad de comunicación fue de  250kbps, cumpliendo con el estándar. 
+El hardware diseñado permitió leer e interpretar los datos  del simulador J1939 a través del protocolo CAN, logrando la captura y envió de parámetros al cliente Web para su visualización en la interfaz gráfica. 
+La velocidad de comunicación fue de 250kbps, cumpliendo con el estándar. 
 
 Se logró desarrollar un hardware prototipo para el monitoreo de sensores Del vehículo que puede ser escalable en caso de querer agregar hardware extra como una pantalla LCD, otros dispositivos de comunicación, etc. 
 
-Trabajos Futuros
+%\section{Trabajos Futuros}
 Para un continua mejora del sistema se propone algunos aportes o trabajos futuros para el desarrollo del sistema como: 
 \begin{itemize}
     \item Ampliar el desarrollo del firmware para soportar los 10 modos de trabajo del sistema OBDII. 
-    \item Agregar un sistema de visualización al hardware y poder ser utilizado sin una computadora o telefono celular. 
-    \item sustituir el modúlo xbee por modulos wifi o bluetooh para la comunicación directa con dispositivos mobiles. 
+    \item Agregar un sistema de visualización al hardware y poder ser utilizado sin una computadora o teléfono celular. 
+    \item sustituir el módulo xbee por módulos wifi o bluetooh para la comunicación directa con dispositivos móviles. 
     \item Miniaturizar el dispositivo utilizando componentes electrónicos superficiales, así reducir el espacio utilizado por el hardware. 
-    \item Poder desarrollar elementos nuevos de diagnostico para la industria de camiones mediante el estandar J1939. 
+    \item Poder desarrollar elementos nuevos de diagnostico para la industria de camiones mediante el estándar J1939. 
 \end{itemize}
 
 
