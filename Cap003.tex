@@ -1,6 +1,6 @@
 \chapter[Diseño del Hardware y Software del Sistema]{Diseño del Hardware y Software del Sistema.}
 
-Este capitulo presenta el diseño del hardware y del software del sistema desarrollado. En la parte de hardware se habla de esto y esto. En la parte de software, se habla de esto y esto.
+Este capitulo presenta el diseño del hardware y del software del sistema desarrollado. En la parte de hardware se habla de las características del microcontrolador empleado, los elementos necesarios para la comunicación con el protocolo CAN BUS y el proceso de construcción para llegar al hardware final. En la parte de software, se habla del diseño del firmware del microcontrolador, tanto para el estándar OBD-II como J1939, y también se presenta las partes del software BUS CAN en su manera de adquirir los datos, procesarlo y presentarlo en formato agradable para el usuario del sistema. 
 
 En la Figura~\ref{fig_bloque_c4} se presenta el diagrama en bloques simplificado del sistema, en dónde el principal componente es el microprocesador, que será alimentado por la batería del vehículo y se comunicará con el mismo mediante el transceiver CAN.  
 Los datos obtenidos por el microprocesador serán procesados y enviados a un receptor por medio de un módulo inalámbrico, el receptor desplegará la información en un gráfico entendible para los usuarios del sistema. 
@@ -20,7 +20,7 @@ Para dicho diseño, se utilizará un microcontrolador de la familia PIC (\textit
 Son fabricados por \textit{Microchip Tecnhology Inc.} y existe una gran cantidad de modelos con características y prestaciones, esto nos permite escoger el modelo que se ajusta a la necesidad. 
 Para el Proyecto se utilizó el PIC18F4580 que incluye internamente un módulo CAN y un módulo serial. 
 
-\section{Diseño del Hardware con el PIC18F4580}
+\section{Implementación del Hardware con el PIC18F4580}
 \subsection{Microcontrolador PIC18F4580}
 
 Las características del módulo CAN incorporado en el PIC son las siguientes:
@@ -50,7 +50,7 @@ Las características del módulo CAN incorporado en el PIC son las siguientes:
 
 Para que el PIC pueda realizar sus funciones es necesario programarlo y hemos de escribir un programa que contenga los procesos que el PIC debe ejecutar para manejar el módulo CAN y operar el protocolo. 
 Este programa se puede escribir en varios lenguajes de programación, pero los  más utilizados son el ``Assembler'' (ensamblador) y el C. 
-En el proyecto se utiliza el lenguaje C por su potencia y robustez para sistemas embebidos, para un último paso y traducir el programa a lenguaje máquina se utiliza el compilador  de CCS (\textit{Custom Computer Services, Inc.}, por sus siglas en inglés).
+En el proyecto se utiliza el lenguaje C por su potencia y robustez para sistemas embebidos, y como compilador del mismo se utiliza CCS (\textit{Custom Computer Services, Inc.}, por sus siglas en inglés), que es un compilador de lenguaje C optimizado para microcontroladore PIC.
 
 Otras características que se aprovecha del PIC18F4580 son: 
 \begin{itemize}
@@ -76,7 +76,9 @@ En este proyecto utiliza este modo de funcionamiento.
 Las pendientes de subida y bajada de los bits se pueden ajustar mediante la conexión de una resistencia a tierra en el PIN 8, ya que la pendiente del bit es proporcional a la corriente de salida del PIN. 
 Este control de la pendiente se implementa aplicando valores a la resistencia externa en el PIN 8. 
 Por ejemplo con una resistencia de 10 kohm se logra una pendiente de bit de 15V/us,  y con una resistencia de 100 kohm se logra una pendiente de bit de 2V/us. 
-Si se aplica un nivel lógico alto al PIN 8 el transceiver entra en modo standby, para ahorrar energía y vuelve a su estado de trabajo al aplicar un nivel lógico bajo al PIN 8. El pin $V_{ref}$ 5 está disponible como una referencia de tensión~\cite{sn}.
+Si se aplica un nivel lógico alto al PIN 8 el transceiver entra en modo standby, para ahorrar energía y vuelve a su estado de trabajo al aplicar un nivel lógico bajo al PIN 8. 
+
+Por último el PIN 5 está disponible como una referencia de tensión, la cual en el proyecto se utiliza la referencia de masa~\cite{sn}.  %$V_{ref}$ 5 está disponible como una referencia de tensión.
 
 \subsection{Módulos inalámbricos Xbee}
  los módulos XBee son soluciones integradas que brindan un medio inalámbrico para la interconexión y comunicación entre dispositivos. Estos módulos utilizan el protocolo de red llamado IEEE 802.15.4 para crear redes POINT-TO-MULTIPOINT (punto a multipunto); o para redes PEER-TO-PEER (punto a punto). Fueron diseñados para aplicaciones que requieren de un alto tráfico de datos, baja latencia y una sincronización de comunicación predecible~\cite{xbee_c4}, en la Figura ~\ref{fig_xbee_4} observamos su apariencia. 
@@ -217,7 +219,6 @@ En la Figura~\ref{Esch8} se observa la apariencia del sistema y la elaboración 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
 %###############################################################################
 Una vez culminado el proceso en la Figura~\ref{Esch9} se presenta la placa pcb terminada. 
 
@@ -242,6 +243,32 @@ Una vez obtenida el diseño de las pistas del circuito en la placa PCB, se proce
 	\label{Esch10} % Etiqueta para la referencia.
 \end{figure}
 %###############################################################################
+
+
+
+Para la presentación final se diseña una caja protectora para posar el hardware en su interior, la misma se construyó con una impresora 3D, presentada en la Figura~\ref{3d}  y se observa su presentación y apariencia final en la Figura~\ref{final}, en dónde el elemento cableado es el conector OBD-II que debe conectarse al vehículo motor. 
+
+%###########################
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./Cap4imagen/circuitoycaja_fig.jpeg}
+	\caption[Diseño de una caja protectora 3D.]{Diseño de una caja protectora 3D. \textbf{ Fuente:} Elaboración propia.}
+	\label{3d} % Etiqueta para la referencia.
+\end{figure}
+%###############################################################################
+
+
+%###########################
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./Cap4imagen/disenofinal_fig.jpg}
+	\caption[Presentación final del hardware CAN.]{Presentación final del hardware CAN. \textbf{ Fuente:} Elaboración propia.}
+	\label{final} % Etiqueta para la referencia.
+\end{figure}
+%###############################################################################
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %%%%%%%%% SIGUIENTE EXcAPITULO 5
@@ -293,14 +320,28 @@ Para ello se utiliza los documentos OBD-II SAE J1979 donde indica los procedimie
 
 Luego se envía dichos datos a nuestro servidor con la función {\bfseries print()}. 
 El formato de envío de mensaje se llama JSON, es un tipo de formato para el intercambio de datos entre software basado en texto y se utiliza mucho para el desarrollo web. 
-Esto permitirá que en el lado del servidor podamos manipular mejor los datos enviados por el PIC: 
+Esto permitirá que en el lado del servidor podamos manipular mejor los datos enviados por el PIC, el formato JSON que utiliza el sistema OBD-II se ve observa en la Tabla~\ref{tabla:jsoncan}. 
 
-\{
-	''A'':  00, 
-	''B'': 11, 
-	''C'': 22, 
-	''D'': 33, 
-	''value'': 44 \}
+
+%%%%%%%%%%%%%%%%%%%%% tabla %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{l c c  }
+\toprule
+\textbf{Esquema de datos JSON}  & &   \\ 
+
+\{            &  &    \\   
+  ``A" : ``F004",  &  &  \\
+  ``B" :  ``04",   &  &   \\  
+  ``C : ``FF",    &  &   \\  
+  ``D : ``[0,1,2,3,4,5,6,7]", & &  \\ ``Value: ``100""  &  &  \\    
+  \}          &  & \\ \bottomrule
+\end{tabular}
+\caption{Formato de envío JSON de los campos del protocolo CAN.}
+\label{tabla:jsoncan}
+\end{center}
+\end{table}
+
 
 donde A, B, C y D son campos de datos del protocolo y ''value'' es el valor calculado de la respuesta del vehículo, los valores 00, 11, 22, 33 y 44 son valores asignados para ejemplo. 
 
@@ -335,14 +376,28 @@ Si dicho reclamo es exitoso podemos empezar la comunicación con cualquier dispo
 Una vez conectados se leen los mensajes presentes en el bus con la función {\bfseries J1939GetMessage()} y recuperamos el PGN (\textit{Parameter Group Number}, por sus siglas en inglés) , 
 Dichos parámetros PGN pueden ser decodificados utilizando como referencia el documento SAE j1939-71 que nos proporciona las operaciones matemáticas para obtener la medición del sensor deseado.  
 Todo ello se realiza con la función {\bfseries lecturaParametro()}.
-Una vez leído y codificado pasamos los datos al servidor, con la cadena JSON  mediante la función {\bfseries print(JSON)}, dicho formato se representa como: 
-\{
-''PG'': ''F004'',
-''DA'':  ''04'',
-''SA'':  ''FF'',
-''Data'' : [0,1,2,3,4,5,6,7],
-''Value'': ''100''
-\}
+Una vez leído y codificado pasamos los datos al servidor, con la cadena JSON  mediante la función {\bfseries print(JSON)}, dicho formato se representa en la Tabla~\ref{tabla:json}. 
+
+
+%%%%%%%%%%%%%%%%%%%%% tabla %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{l c c  }
+\toprule
+\textbf{Esquema de datos}  & &   \\ 
+
+\{            &  &    \\   
+  ``PG" : ``F004",  &  &  \\
+  ``DA" :  ``04",   &  &   \\  
+  ``SA : ``FF",    &  &   \\  
+  ``Data : ``[0,1,2,3,4,5,6,7]", & &  \\  
+  ``Value: ``100""  &  &  \\    
+  \}          &  & \\ \bottomrule
+\end{tabular}
+\caption{Formato de envio JSON, desde el microcontrolador al Servidor.}
+\label{tabla:json}
+\end{center}
+\end{table}
 
 Donde PG significa Parámetro de Grupo, DA es Dirección de destino, SA dirección de origen, Data son los 8 bytes del bus can recibidos y ''Value'' es el dato calculado real para visualizar en el lado del cliente.
 
@@ -419,20 +474,17 @@ El siguiente diagrama en secuencia en la \textbf{Figura \ref{cweb}} detalla la s
 
 
 %%% GITHUG
-Los códigos del proyecto se encuentra en los siguientes repositorios de github, además de sus correspondientes archivos ``readme", que indican los pasos para su utilización: 
+Los códigos del proyecto se encuentra en repositorios de github, se pasa a explicar su contenido en la siguiente lista: 
 \begin{itemize}
-    \item Desarrollo del Hardware prototipo para el manejo del protocolo BUS CAN:
+    \item En \cite{githw} se encuentra los archivos de desarrollo del Hardware prototipo para el manejo del protocolo BUS CAN, los mismos fueron hechos en el software Proteus y además se encuentra los archivos gerber del circuito, también se encuentra los modelos de vista 3D de algunos componentes utilizados.  
+    
+    \item En \cite{gitfirm} se encuentra los códigos, en lenguaje C, del microprocesador PIC18F4580 para configurar y controlar el módulo CAN, además de la programación del estándar OBD II.
+    
+    \item En \cite{gitj} se encuentra los códigos, en lenguaje C, de los códigos del microprocesador PIC18F4580 para el manejo del estándar J1939.
    
-   \url{https://github.com/JuanOrtizG/Prototipo-Hardware-CAN.git}
-    \item Códigos del mircroprocesador PIC18F4580 para el sistema OBD II:
    
-    \url{https://github.com/JuanOrtizG/canBusPic.git}
-    \item Códigos del microprocesador PIC18F4580 para el sistema J1939: 
-   
-    \url{https://github.com/JuanOrtizG/canBusPic_J1939.git}
-    \item Códigos del servidor para el sistema de visualización de datos: 
-   
-    \url{https://github.com/JuanOrtizG/nodeCan.git}
+    \item En \cite{gitnode} se encuentra los códigos del programa servidor para el sistema de visualización de datos, contiene un archivo ``readme" que explica paso a paso el proceso de instalación del sistema y las herramientas requeridas.  
+  
 \end{itemize}
 
 

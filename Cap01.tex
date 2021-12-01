@@ -8,8 +8,7 @@
 Actualmente, el transporte es de crucial importancia en la vida cotidiana. Como consecuencia, los vehículos están cada vez más equipados con dispositivos informáticos y electrónicos a bordo. 
 Tanto las empresas como en los consumidores la demanda de conectividad en los vehículos está creciendo rápidamente~\cite{VWC}.
 
-En la actualidad los automóviles cuentan con una serie de unidades de control que incluyen microprocesadores en diversos sistemas, tales como la unidad de control del motor, sistemas de transmisión, airbags, sistema de frenos anti-bloqueo, entre otros. 
-A pesar de que varios de estos subsistemas son independientes del resto (ABS, Navegación, Tren Motriz, etc.), la comunicación entre otros subsistemas es esencial para la seguridad, el confort en el vehículo y para hacer mejor la estancia tanto del conductor como del pasajero en el caso de buses comerciales.
+En la actualidad los automóviles cuentan con una serie de unidades de control que incluyen microprocesadores en diversos sistemas, tales como la unidad de control del motor, sistemas de transmisión, airbags, sistema de frenos anti-bloqueo, entre otros. A pesar de que varios de estos subsistemas son independientes (ABS, Navegación, Tren Motriz, etc.), la comunicación entre estos subsistemas es esencial para la seguridad y el confort de los pasajeros en el vehículo.
 
  El avance de la electrónica y de las comunicaciones ha sido uno de los motivos que han animado a los fabricantes de automóviles a introducir nuevas tecnologías para mejorar el funcionamiento de los sistemas existentes en los automóviles e incorporar otros nuevos, destinados a mejorar aspectos de seguridad, confort, mantenimiento, protección ambiental etc. 
  El creciente número de ECUs (Unidad de Control Electrónico) y la mayor demanda de prestaciones entre las que se encuentran las funciones de ayuda al diagnóstico, ha obligado a establecer una comunicación entre todos los sistemas electrónicos a bordo~\cite{EA}.
@@ -58,7 +57,7 @@ La conexión eléctrica se realiza como muestra el trabajo de Santana et al.~\ci
 En dicho trabajo el sistema fue desarrollado en base a microcontroladores y ajustado a la unidad de control del motor o ECU (\textit{Engine Control Unit}, por sus siglas en inglés) del vehículo, con la misión de monitorear datos de la velocidad de un vehículo de carreras. 
 Se debe agregar que la medición de velocidad se realizó con sensores elaborados por Santana, en nuestro caso el proyecto tratará de leer datos originales del vehículo y sólo si se requiere se podrían añadir otros sensores de interés para el presente proyecto. 
 Para la elaboración del proyecto nace una pregunta crucial ¿Es posible desarrollar un hardware de bajo costo con altas capacidades de recolección de datos mediante el BUS CAN?.
-Según varios proyectos si es posible,  como nos muestra The et al.~\cite{HAMS}, dónde con componentes electrónicos disponibles en el mercado desarrollan un sistema Domótico mediante el protocolo BUS CAN, aunque el sistema no tiene un tratamiento de datos, es decir, un sistema que interprete los datos medidos. 
+Según varios proyectos si es posible,  como nos muestra kent et al.~\cite{HAMS}, dónde con componentes electrónicos disponibles en el mercado desarrollan un sistema Domótico mediante el protocolo BUS CAN, aunque el sistema no tiene un tratamiento de datos, es decir, un sistema que interprete los datos medidos. 
 Es posible proveer de eso al sistema como lo hicieron  Burje et al.~\cite{EOBD}, en el cual de la misma manera presentan una comunicación entre módulos BUS CAN, el cual se basaba en el monitoreo de sensores de temperaturas e interpretaban dichas mediciones con la implementación de un sistema OBD (\textit{On Board Diagnostic}, por sus siglas en inglés) en un sistema embebido, demostrando que BUS CAN puede implementarse y además es posible expandir el protocolo a otros lugares fuera del ámbito automovilístico. 
 El sistema OBD es una herramienta importante para interpretar las señales provistas por varios sensores y dar un mensaje al usuario de la acción a realizar para tratar dichos errores. 
 Una alternativa para el desarrollo de hardware podría ser utilizar kits de desarrollo como lo hicieron Paturkar et al.~\cite{AABT} cuyo objetivo fue la construcción de un prototipo de hardware industrial para medición de calor utilizando sensores de temperatura. 
@@ -87,16 +86,16 @@ Adicionalmente en dichos proyectos se requiere de un software que interprete los
 
 \subsection{Objetivo General}
 
-Desarrollar un sistema prototipo de monitoreo de sensores y de datos de subsistemas electrónicos presentes en vehículos modernos, OBDII y J1939,  utilizando el protocolo BUS CAN.
+Desarrollar un sistema prototipo de monitoreo de sensores y de datos de subsistemas electrónicos presentes en vehículos modernos utilizando el protocolo BUS CAN.
 
 \subsection{Objetivos Específicos}
 
 \begin{itemize}
 	\item Diseñar e implementar una plataforma de comunicación acorde al protocolo CAN. 
 
-	\item Realizar pruebas del sistema OBDII en automóviles livianos.
+	\item Realizar pruebas  del protocolo CAN con el sistema estándar OBD-II, utilizados en automóviles livianos.
 	
-	\item Realizar pruebas del sistema  J1939 en un simulador del protocolo.
+	\item Realizar pruebas  del protocolo CAN con el sistema estándar J1939, utilizados en vehículos pesados, mediante un  simulador del estándar.
 	
 	\item Fabricar un prototipo final que integre todos los componentes necesarios para la comunicación con los sensores del vehículo y los subsistemas.
 	
@@ -116,7 +115,6 @@ Desarrollar un sistema prototipo de monitoreo de sensores y de datos de subsiste
 \section{Organización del Documento}
 
 
-En el Capítulo $1$ se presentan las motivaciones para el desarrollo del TFG (Trabajo Final de Grado), así como los objetivos generales y específicos. 
 A continuación en el Capítulo $2$ se presenta el marco teórico y los fundamentos del TFG. Luego, en el Capítulo $3$ se presenta el estudio técnico, en donde se define el problema y los requerimientos necesarios para la utilización del protocolo BUS CAN. 
 Seguidamente en el Capítulo $4$ se describe el hardware necesario para la implementación del protocolo. 
 En el Capítulo $5$  se describe el software del sistema de monitoreo del hardware y del servidor. 
